@@ -10,10 +10,6 @@ else{
 }
 ?>
 
-
-
-
-
 <html>
 <head></head>
 <body>
@@ -22,6 +18,8 @@ else{
     <br>
     [<a href="?controller=pages&action=home"> HOME </a>]
     [<a href="?controller=maxperday&action=index"> MAX_PER_DAY </a>]
+    [<a href="?controller=results&action=index"> RESULTS </a>]
+
 
     <br> 
     <?php require_once("routes.php");?>
