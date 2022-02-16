@@ -15,6 +15,10 @@ function call($controller,$action){
         case"results":  require_once("models/resultsModel.php");
                         $controller = new ResultsController();
         break;
+
+        case"hospital": require_once("models/hospitalModel.php");
+                        $controller = new hospital();
+        break;
         
     }
     $controller->{$action}();
