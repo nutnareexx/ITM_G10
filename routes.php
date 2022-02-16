@@ -1,5 +1,8 @@
 <?php 
-$controllers = array('pages'=>['home','error'],'max_per_day'=>['index'],'results'=>['index']);
+$controllers = array('pages'=>['home','error'],
+'max_per_day'=>['index'],
+'results'=>['index'],
+'hospital'=>['index']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
