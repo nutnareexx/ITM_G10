@@ -6,3 +6,4 @@
     echo "<tr> <td>$r->id</td><td>$r->name</td><td>update</td><td>delete</td></tr>";
 }
 echo "</table> "
+?>
