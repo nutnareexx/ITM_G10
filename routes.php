@@ -1,5 +1,5 @@
 <?php 
-$controllers = array('pages'=>['home','error']);
+$controllers = array('pages'=>['home','error'],'max_per_day'=>['index']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
@@ -7,6 +7,9 @@ function call($controller,$action){
     {
         case"pages": 
             $controller = new PagesController();
+        break;    
+        case"max_per_day": require_once("models/maxperdayModel.php");
+                           $controller = new maxperdayController();
         break;
 
     }
