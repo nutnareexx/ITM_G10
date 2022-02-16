@@ -6,7 +6,6 @@ function call($controller,$action){
     switch($controller)
     {
         case"pages": 
-            require_once("models/homeModel.php");
             $controller = new PagesController();
         break;
 
