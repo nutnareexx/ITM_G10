@@ -3,7 +3,7 @@ class hospital
 {
     public function index()
     {
-        $hospitalmodellist = hospitalModels::getAll();
+        $hospitalmodellist = hospitalModel::getAll();
         require_once('views/hospital/indexhospital.php');
     }
 }?>
