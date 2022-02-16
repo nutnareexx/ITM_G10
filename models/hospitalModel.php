@@ -1,6 +1,6 @@
 <p>Hospital</p>
 <?php
-class hospitalModels{
+class hospitalModel{
     public $Hid;
     public $H_name;
     public $H_time_open;
@@ -19,7 +19,7 @@ class hospitalModels{
     public static function get($Hid)
     {
         require("connection_connect.php");
-        $sql = "SELECT * FROM `hospital` WHERE Hid = $Hid";
+        $sql = "SELECT * FROM `hostpital` WHERE Hid = $Hid";
         $result = $result->query($sql);
         $my_row = $result->fetch_assoc();
         $Hid = $my_row[Hid];
@@ -29,14 +29,14 @@ class hospitalModels{
         $H_price = $my_row[H_price];
         require("connection_close.php");
 
-        return new hospitalModels($Hid,$H_name,$H_time_open,$H_time_close,$H_price);
+        return new hospitalModel($Hid,$H_name,$H_time_open,$H_time_close,$H_price);
     }
 
     public static function getAll()
     {
         $hospitalmodelList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `hospital`";
+        $sql = "SELECT * FROM `hostpital`";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -45,8 +45,7 @@ class hospitalModels{
             $H_time_open = $my_row[H_time_open];
             $H_time_close = $my_row[H_time_close];
             $H_price = $my_row[H_price];
-            $hospitalmodelList[] = new hospitalModels($Hid,$H_name,$H_time_open,$H_time_close,$H_price);
-
+            $hospitalmodelList[] = new hospitalModel($Hid,$H_name,$H_time_open,$H_time_close,$H_price);
         }
         require("connection_close.php");
         return $hospitalmodelList;
