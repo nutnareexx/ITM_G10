@@ -23,7 +23,6 @@ else{
     [<a href="?controller=results&action=index"> RESULTS </a>]
     <br>
     [<a href="?controller=hospital&action=index"> HOSPITAL </a>]
-    <br> 
     <?php require_once("routes.php");?>
 </body>
 </html>
