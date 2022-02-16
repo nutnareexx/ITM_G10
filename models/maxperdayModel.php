@@ -1,0 +1,1 @@
+<p>Max per day</p>
