@@ -19,7 +19,7 @@ else{
     [<a href="?controller=maxperday&action=index"> MAX_PER_DAY </a>]
     <br>
     [<a href="?controller=maxperday&action=index"> MAX_PER_DAY </a>]
-    [<a href="?controller=results&action=index"> RESULTS </a>]
+
     [<a href="?controller=results&action=index"> Results naaaaa </a>]
     [<a href="?controller=hospital&action=index"> HOSPITAL </a>]
     <?php require_once("routes.php");?>
