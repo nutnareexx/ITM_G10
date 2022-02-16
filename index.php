@@ -15,15 +15,11 @@ else{
 <body>
     <?php echo "controller = ".$controller.", action = ".$action ;?>
     <br>
-    <br>
     [<a href="?controller=pages&action=home"> HOME </a>]
+
     [<a href="?controller=maxperday&action=index"> MAX_PER_DAY </a>]
-    [<a href="?controller=results&action=index"> RESULTS </a>]
+    [<a href="?controller=results&action=index"> Results naaaaa </a>]
     [<a href="?controller=hospital&action=index"> HOSPITAL </a>]
-
-
-
-    <br> 
     <?php require_once("routes.php");?>
 </body>
 </html>
