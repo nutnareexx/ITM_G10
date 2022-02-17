@@ -21,8 +21,8 @@ public static function get($id)
     $sql = "SELECT * FROM `results`";
     $result = $conn->query($sql);
     $my_row = $result->fetch_assoc();
-    $rs = $my_row[r_id];
-    $id = $my_row[results];
+    $id = $my_row[r_id];
+    $rs = $my_row[results];
     $uid = $my_row[user_id];
     $hid = $my_row[Hid];
     require("connection_close.php");
@@ -37,8 +37,8 @@ public static function getAll()
     $sql = "SELECT * FROM `results`";
     $result = $conn->query($sql);
     while($my_row=$result->fetch_assoc()) {
-        $rs = $my_row[r_id];
-        $id = $my_row[results];
+        $id = $my_row[r_id];
+        $rs = $my_row[results];
         $uid = $my_row[user_id];
         $hid = $my_row[Hid];
         $resultList[]=new Results($id,$rs,$uid,$hid);
@@ -49,4 +49,6 @@ public static function getAll()
 }
 
 
+
 }
+?>
