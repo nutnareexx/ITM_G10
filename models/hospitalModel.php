@@ -55,8 +55,8 @@ class hospitalModel{
     {
         $hospitalmodelList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `hostpital` WHERE (Hid like '$key' or H_name like '$key' or H_time_open like '$key' or H_time_close like '$key'
-        or H_price like '$key')";
+        $sql = "SELECT * FROM `hostpital` WHERE (Hid like '%$key%' or H_name like '%$key%' or H_time_open like '%$key%' 
+        or H_time_close like '%$key%' or H_price like '%$key%')";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
