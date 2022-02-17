@@ -6,7 +6,7 @@ class ResultsController
 {
     public function index()
     {
-        $results_list = Results::getAll();
+        $resultsList = Results::getAll();
         require_once('views/Results/index_results.php');
     }
 }
