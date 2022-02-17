@@ -51,24 +51,5 @@ class hospitalModel{
         return $hospitalmodelList;
     }
 
-    public static function search($key)
-    {
-        $hospitalmodelList = [];
-        require("connection_connect.php");
-        $sql = "SELECT * FROM `hostpital` WHERE (Hid like '%$key%' or H_name like '%$key%' or H_time_open like '%$key%' 
-        or H_time_close like '%$key%' or H_price like '%$key%')";
-        $result = $conn->query($sql);
-        while($my_row = $result->fetch_assoc())
-        {
-            $Hid = $my_row[Hid];
-            $H_name = $my_row[H_name];
-            $H_time_open = $my_row[H_time_open];
-            $H_time_close = $my_row[H_time_close];
-            $H_price = $my_row[H_price];
-            $hospitalmodelList[] = new hospitalModel($Hid,$H_name,$H_time_open,$H_time_close,$H_price);
-        }
-        require("connection_close.php");
-        return $hospitalmodelList;
-    }
 }
 ?>
