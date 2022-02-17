@@ -18,7 +18,7 @@ public function __construct($id,$rs,$uid,$hid)
 public static function get($id)
 {
     require("connection_connect.php");
-    $sql = "SELECT * FROM `results`";
+    $sql = "SELECT * FROM `results` NATURAL JOIN user NATURAL JOIN hostpital WHERE user_id = '$id' ";
     $result = $conn->query($sql);
     $my_row = $result->fetch_assoc();
     $id = $my_row[r_id];
@@ -34,7 +34,7 @@ public static function getAll()
 {
     $resultList=[];
     require("connection_connect.php");
-    $sql = "SELECT * FROM `results`";
+    $sql = "SELECT * FROM `results` NATURAL JOIN user NATURAL JOIN hostpital";
     $result = $conn->query($sql);
     while($my_row=$result->fetch_assoc()) {
         $id = $my_row[r_id];
