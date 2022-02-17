@@ -3,7 +3,7 @@ class maxperdayController
 {
     public function index()
     {
-        $maxperday_list = Maxperday::getAll();
+        $maxperday_list = MaxperdayModel::getAll();
         require_once('views/mex_per_day/index_mexperday.php');
 
     }
