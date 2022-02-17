@@ -1,11 +1,10 @@
 <?php 
 $controllers = array('pages'=>['home','error'],
 'maxperday'=>['index'],
-'results'=>['index'],
-'hospital'=>['index','search']);
+'hospital'=>['index','search'],
+'results'=>['index','newResults','addResults']);
 
 function call($controller,$action){
-    require_once("controllers/".$controller."_controller.php");
     switch($controller)
     {
         case"pages": 

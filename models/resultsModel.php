@@ -48,7 +48,16 @@ public static function getAll()
     return $resultList;
 }
 
+public static function add($id,$rs,$uid,$hid)
+{
+    require("connection_connect");
+    $sql = "INSERT INTO `results`(`r_id`, `results`, `user_id`, `Hid`) 
+    VALUES ($id,$rs,$uid,$hid)";
+    $result = $conn->query($sql);
+    require("connection_close.php");
 
+    return "add success $result rows";
+}
 
 }
 ?>
