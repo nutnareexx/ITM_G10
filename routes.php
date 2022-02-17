@@ -1,6 +1,6 @@
 <?php 
 $controllers = array('pages'=>['home','error'],
-'max_per_day'=>['index'],
+'maxperday'=>['index'],
 'results'=>['index'],
 'hospital'=>['index']);
 
