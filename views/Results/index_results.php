@@ -1,4 +1,7 @@
 <table border=1>
+<br>
+new Results <a href="?controller=results&action=newResults"> CLICK!!! </a> <br>
+<br>
     <tr> <td>ID</td>
     <td>ผลการตรวจ</td>
     <td>Uid</td>
