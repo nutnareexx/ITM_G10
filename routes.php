@@ -1,7 +1,7 @@
 <?php 
 $controllers = array('pages'=>['home','error'],
 'maxperday'=>['index'],
-'results'=>['index'],
+'results'=>['index','newResults','addResults'],
 'hospital'=>['index']);
 
 function call($controller,$action){
