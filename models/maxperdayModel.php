@@ -37,6 +37,7 @@ class MaxperdayModel{
 
     public static function getAll()
     {
+        echo "1";
         $maxperday_list = [];
         require("connection_connect.php");
         $sql = "SELECT * FROM `max_per_day`";
