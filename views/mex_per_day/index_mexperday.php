@@ -6,10 +6,16 @@
     <td>จำนวนที่รับได้ต่อวัน</td>
     <td>update</td>
     <td>delete</td></tr>
-    <?php foreach($resultsList as $r)
+    <?php foreach($maxperday_list as $m)
 {
-    echo "<tr> <td>$r->Hid</td><td>$r->max_date</td><td>$r->max_topen</td><td>$r->max_tclose</td>
-    <td>$r->max_num</td><td>update</td><td>delete</td></tr>";
+    echo "<tr> <td>$m->Hid</td>
+    <td>$m->max_date</td>
+    <td>$m->max_topen</td>
+    <td>$m->max_tclose</td>
+    <td>$m->max_num</td>
+    <td>update</td>
+    <td>delete</td>
+    </tr>";
 }
 echo "</table> "
 ?>
