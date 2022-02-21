@@ -12,7 +12,7 @@ function call($controller,$action){
         case"pages": 
             $controller = new PagesController();
         break;    
-        case"max_per_day": require_once("models/maxperdayModel.php");
+        case"maxperday": require_once("models/maxperdayModel.php");
                            $controller = new maxperdayController();
         break;
 
