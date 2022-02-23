@@ -10,7 +10,7 @@ class hospital
     public function search()
     {
         $key = $_GET['key'];
-        $hospitalmodellist = hospitalModel::search($key);
+        $hospitalmodelList = hospitalModel::search($key);
         require_once('views/hospital/indexhospital.php');
     }
 
