@@ -30,7 +30,10 @@ public function __construct($id,$rs,$uid,$hid,$nt,$name,$sname,$hname,$phone,$ma
 public static function get($id)
 {
     require("connection_connect.php");
-    $sql = "SELECT * FROM `results` NATURAL JOIN user NATURAL JOIN hostpital NATURAL JOIN names_Title WHERE user_id = '$id' ";
+    $sql = "SELECT u.user_id,names_title.name_nt,u.user_name,u.user_surname,u.user_phone, 
+    u.user_mail,h.H_name,r.results,r.r_id,h.Hid FROM user AS u NATURAL JOIN names_title 
+    LEFT OUTER JOIN results AS r ON u.user_id=r.user_id LEFT OUTER JOIN hostpital AS h ON r.Hid=h.Hid 
+    WHERE u.user_id=$id";
     $result = $conn->query($sql);
     $my_row = $result->fetch_assoc();
     $id = $my_row['r_id'];
@@ -52,7 +55,9 @@ public static function getAll()
 {
     $resultList=[];
     require("connection_connect.php");
-    $sql = "SELECT * FROM `results` NATURAL JOIN user NATURAL JOIN hostpital NATURAL JOIN names_Title";
+    $sql = "SELECT u.user_id,names_title.name_nt,u.user_name,u.user_surname,u.user_phone,u.user_mail,
+    h.H_name,r.results,r.r_id,h.Hid FROM user AS u NATURAL JOIN names_title LEFT OUTER JOIN results AS r 
+    ON u.user_id=r.user_id LEFT OUTER JOIN hostpital AS h ON r.Hid=h.Hid";
     $result = $conn->query($sql);
     while($my_row=$result->fetch_assoc()) {
         $id = $my_row['r_id'];

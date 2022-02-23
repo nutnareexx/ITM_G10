@@ -1,11 +1,11 @@
 <?php 
 $controllers = array('pages'=>['home','error'],
-'maxperday'=>['index','search'],
-'hospital'=>['index','search'],
-'results'=>['index','newResults','addResults'],
-'user'=>['index'],
-'login'=>['index'],
-'prename'=>['index']);
+                    'maxperday'=>['index','search'],
+                    'hospital'=>['index','search'],
+                    'results'=>['index','newResults','addResults','updateForm'],
+                    'user'=>['index'],
+                    'login'=>['index'],
+                    'prename'=>['index']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");

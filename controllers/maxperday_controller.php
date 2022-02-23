@@ -8,4 +8,12 @@ class maxperdayController
         require_once('views/mex_per_day/index_mexperday.php');
 
     }
+
+    public function search()
+    {
+        $key = $_GET['key'];
+        $maxperday_list = MaxperdayModel::search($key);
+        require_once('views/mex_per_day/index_mexperday.php');
+    }
+
 }?>
