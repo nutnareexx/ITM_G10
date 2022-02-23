@@ -40,16 +40,16 @@
     <label>อีเมลล์<input type="text" name="mail"
         value="<?php echo $resultss->mail; ?>"/></label><br>
     <label>โรงพยาบาล<select name="hid">
-    <?php foreach($hospitalList as $h)
+    <?php foreach($hospitalmodelList as $h)
      {
-         echo "<option value= $h->hid";
-         if($h->hid==$resultss->hid) 
+         echo "<option value= $h->Hid";
+         if($h->Hid==$resultss->hid) 
          {
              echo " selected='selected'";
          }
-         echo "> $h->hname</option>";
+         echo "> $h->H_name</option>";
      }?>
-</select></label><br>
+    </select></label><br>
 
 <br><input type="hidden" name="controller" value="results"/>
 
