@@ -3,8 +3,8 @@ $controllers = array('pages'=>['home','error'],
                     'maxperday'=>['index','search','newMaxperday'],
                     'hospital'=>['index','search'],
                     'results'=>['index','newResults','addResults','updateForm'],
-                    'user'=>['index'],
-                    'login'=>['index'],
+                    'user'=>['index','signin','add'],
+                    'login'=>['index','login'],
                     'prename'=>['index']);
 
 function call($controller,$action){
