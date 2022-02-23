@@ -2,7 +2,8 @@
 $controllers = array('pages'=>['home','error'],
 'maxperday'=>['index','search'],
 'hospital'=>['index','search'],
-'results'=>['index','newResults','addResults']);
+'results'=>['index','newResults','addResults'],
+'user'=>['index']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
