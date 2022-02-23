@@ -2,7 +2,7 @@
 $controllers = array('pages'=>['home','error'],
                     'maxperday'=>['index','search','newMaxperday'],
                     'hospital'=>['index','search'],
-                    'results'=>['index','newResults','addResults','updateForm'],
+                    'results'=>['index','newResults','addResults','updateForm','update'],
                     'user'=>['index','signin','add'],
                     'login'=>['index','login'],
                     'prename'=>['index']);
