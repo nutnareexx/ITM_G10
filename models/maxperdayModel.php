@@ -24,12 +24,12 @@ class MaxperdayModel{
         $sql = "SELECT * FROM `max_per_day` WHERE max_id = $max_id";
         $result = $result->query($sql);
         $my_row = $result->fetch_assoc();
-        $max_id = $my_row[max_id];
-        $max_date = $my_row[date];
-        $max_topen = $my_row[time_open];
-        $max_tclose = $my_row[time_close];
-        $max_num = $my_row[max];
-        $Hid = $my_row[Hid];
+        $max_id = $my_row['max_id'];
+        $max_date = $my_row['date'];
+        $max_topen = $my_row['time_open'];
+        $max_tclose = $my_row['time_close'];
+        $max_num = $my_row['max'];
+        $Hid = $my_row['Hid'];
         require("connection_close.php");
 
         return new MaxperdayModel($max_id,$max_date,$max_topen,$max_tclose,$max_num,$Hid);
@@ -44,12 +44,12 @@ class MaxperdayModel{
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
-            $max_id = $my_row[max_id];
-            $max_date = $my_row[date];
-            $max_topen = $my_row[time_open];
-            $max_tclose = $my_row[time_close];
-            $max_num = $my_row[max];
-            $Hid = $my_row[Hid];
+            $max_id = $my_row['max_id'];
+            $max_date = $my_row['date'];
+            $max_topen = $my_row['time_open'];
+            $max_tclose = $my_row['time_close'];
+            $max_num = $my_row['max'];
+            $Hid = $my_row['Hid'];
             $maxperday_list[] = new MaxperdayModel($max_id,$max_date,$max_topen,$max_tclose,$max_num,$Hid);
         }
         require("connection_close.php");
