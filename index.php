@@ -22,4 +22,13 @@ else{
     [<a href="?controller=hospital&action=index"> HOSPITAL </a>]
     <?php require_once("routes.php");?>
 </body>
+
+<body>
+    <form method="get" action="">
+        <br>
+        <label> USERNAME <input type="text" name="username"/> </label>
+        <br>
+        <label> PASSWORD <input type="text" name="password"/> </label>
+    </form>
+</body>
 </html>
