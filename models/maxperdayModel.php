@@ -1,4 +1,4 @@
-<p>Max per day</p>
+
 <?php
 class MaxperdayModel{
     public $max_id;
@@ -86,7 +86,7 @@ class MaxperdayModel{
         return $maxperday_list;
     }
 
-    
+
 
 
 }

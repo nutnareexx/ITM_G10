@@ -1,4 +1,4 @@
-<p>Hospital</p>
+
 <?php
 class hospitalModel{
     public $Hid;
