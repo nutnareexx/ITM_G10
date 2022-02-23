@@ -88,5 +88,24 @@ public static function add($id,$rs,$uid,$hid)
     return "add success $result rows";
 }
 
+public static function update($id,$uid,$hid,$rs)
+{
+    require("connection_connect.php");
+    $sql = "UPDATE `results` SET `r_id`=$id,`results`=$rs,`user_id`=$uid,`Hid`=$hid WHERE r_id=$id";
+    $result=$conn->query($sql);
+    require("connection_close.php");
+
+    return "update success $result row";
+}
+
+public static function delete($id)
+{
+    require_once("connection_connect.php");
+    $sql = "DELETE FROM `user` WHERE id=$id";
+    $result = $conn->query($sql);
+    require("connection_close.php");
+
+    return "delete success $result row";
+}
 }
 ?>
