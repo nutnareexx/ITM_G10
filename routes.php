@@ -12,7 +12,8 @@ function call($controller,$action){
             $controller = new PagesController();
         break;    
         case"maxperday": require_once("models/maxperdayModel.php");
-                           $controller = new maxperdayController();
+                         require_once("models/hospitalModel.php");
+                        $controller = new maxperdayController();
         break;
 
         case"results":  require_once("models/resultsModel.php");
