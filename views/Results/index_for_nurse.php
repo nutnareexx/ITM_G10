@@ -22,7 +22,8 @@
     <td>$r->mail</td>
     <td>$r->hname</td>
     <td>Upload File</td>
-    <td>update</td><td>delete</td></tr>";
+    <td><a href=?controller=results&action=updateForm&id=$r->uid> update </a></td>
+    <td><a href=?controller=results&action=deleteConfirm&id=$r->uid> delete </a></td></tr>";
 }
 echo "</table> "
 ?>

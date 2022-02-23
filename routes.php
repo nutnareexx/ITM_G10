@@ -1,9 +1,11 @@
 <?php 
 $controllers = array('pages'=>['home','error'],
-'maxperday'=>['index','search'],
-'hospital'=>['index','search'],
-'results'=>['index','newResults','addResults','updateForm'],
-'user'=>['index']);
+                    'maxperday'=>['index','search'],
+                    'hospital'=>['index','search'],
+                    'results'=>['index','newResults','addResults','updateForm'],
+                    'user'=>['index'],
+                    'login'=>['index'],
+                    'prename'=>['index']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
@@ -24,6 +26,16 @@ function call($controller,$action){
         case"hospital": require_once("models/hospitalModel.php");
                         $controller = new hospital();
         break;
+
+        case"user": require_once("models/userModel.php");
+        break;
+
+        case"login": require_once("models/loginModel.php");
+        break;
+
+        case"prename": require_once("models/prenameModel.php");
+        break;
+
         
     }
     $controller->{$action}();

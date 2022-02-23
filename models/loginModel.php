@@ -57,10 +57,9 @@ class userModel{
         }
         require("connection_close.php");
         return $userList;
-    }
-
-    public static function add(){
         
+        
+
     }
 }
 ?>
