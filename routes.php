@@ -1,11 +1,18 @@
 <?php 
 $controllers = array('pages'=>['home','error'],
+<<<<<<< Updated upstream
                     'maxperday'=>['index','search'],
                     'hospital'=>['index','search'],
                     'results'=>['index','newResults','addResults','updateForm'],
                     'user'=>['index'],
                     'login'=>['index'],
                     'prename'=>['index']);
+=======
+'maxperday'=>['index','search','newMaxperday'],
+'hospital'=>['index','search'],
+'results'=>['index','newResults','addResults','updateForm'],
+'user'=>['index']);
+>>>>>>> Stashed changes
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
