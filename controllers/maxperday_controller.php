@@ -5,7 +5,7 @@ class maxperdayController
     {
         $maxperday_list = MaxperdayModel::getAll();
         $hospitalmodelList = hospitalModel::getAll();
-        require_once('views/mex_per_day/index_mexperday.php');
+        require_once('views/max_per_day/index_maxperday.php');
 
     }
 
@@ -13,7 +13,7 @@ class maxperdayController
     {
         $key = $_GET['key'];
         $maxperday_list = MaxperdayModel::search($key);
-        require_once('views/mex_per_day/index_mexperday.php');
+        require_once('views/max_per_day/index_maxperday.php');
     }
 
 }?>
