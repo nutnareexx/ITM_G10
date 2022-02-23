@@ -9,7 +9,7 @@
     <td>อีเมลล์</td>
     <td>โรงพยาบาล</td>
     <td>ผลการตรวจ</td>
-    <td>Download file</td>
+    <td>Download File</td>
     </tr>
 <?php foreach($resultsList as $r)
 {
