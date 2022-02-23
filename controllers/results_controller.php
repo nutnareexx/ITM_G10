@@ -8,6 +8,7 @@ class ResultsController
     {
         $resultsList = Results::getAll();
         require_once('views/Results/index_for_nurse.php');
+        require_once('views/Results/index_for_user.php');
     }
 
     public function newResults()
