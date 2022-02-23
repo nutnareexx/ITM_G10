@@ -21,10 +21,10 @@ public static function get($id)
     $sql = "SELECT * FROM `results` NATURAL JOIN user NATURAL JOIN hostpital WHERE user_id = '$id' ";
     $result = $conn->query($sql);
     $my_row = $result->fetch_assoc();
-    $id = $my_row[r_id];
-    $rs = $my_row[results];
-    $uid = $my_row[user_id];
-    $hid = $my_row[Hid];
+    $id = $my_row['r_id'];
+    $rs = $my_row['results'];
+    $uid = $my_row['user_id'];
+    $hid = $my_row['Hid'];
     require("connection_close.php");
 
     return new Result($id,$rs,$uid,$hid);
@@ -37,10 +37,10 @@ public static function getAll()
     $sql = "SELECT * FROM `results` NATURAL JOIN user NATURAL JOIN hostpital";
     $result = $conn->query($sql);
     while($my_row=$result->fetch_assoc()) {
-        $id = $my_row[r_id];
-        $rs = $my_row[results];
-        $uid = $my_row[user_id];
-        $hid = $my_row[Hid];
+        $id = $my_row['r_id'];
+        $rs = $my_row['results'];
+        $uid = $my_row['user_id'];
+        $hid = $my_row['Hid'];
         $resultList[]=new Results($id,$rs,$uid,$hid);
     }
     require("connection_close.php");
