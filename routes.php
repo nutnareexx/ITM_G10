@@ -2,7 +2,7 @@
 $controllers = array('pages'=>['home','error'],
 'maxperday'=>['index','search'],
 'hospital'=>['index','search'],
-'results'=>['index','newResults','addResults'],
+'results'=>['index','newResults','addResults','updateForm'],
 'user'=>['index']);
 
 function call($controller,$action){
