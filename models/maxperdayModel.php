@@ -37,10 +37,11 @@ class MaxperdayModel{
 
     public static function getAll()
     {
-        echo "1";
+        //echo "1";
         $maxperday_list = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `max_per_day`";
+        $sql = "SELECT hostpital.H_name, max_per_day.date,max_per_day.time_open, max_per_day.time_close,max_per_day.max 
+        FROM max_per_day NATURAL JOIN hostpital WHERE max_per_day.Hid=hostpital.Hid;";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
