@@ -21,8 +21,18 @@ class ResultsController
     {
         $id = $_GET['id'];
         $resultss = Results::get($id);
-        $resultsList = Results::getAll();
+        $hospitalmodelList = hospitalModel::getAll();
         require_once('views/Results/updateResults.php');
+    }
+
+    public function update()
+    {
+        $id = $_GET['id'];
+        $uid = $_GET['uid'];
+        $hid = $_GET['hid'];
+        $rs = $_GET['rs'];
+        Results::update($id,$uid,$hid,$rs);
+        ResultsController::index();
     }
 }
 
