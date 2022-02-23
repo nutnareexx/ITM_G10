@@ -16,4 +16,10 @@ class maxperdayController
         require_once('views/max_per_day/index_maxperday.php');
     }
 
+    public function newMaxperday()
+    {
+        $maxperday_list = MaxperdayModel::getAll();
+        require_once('views/max_per_day/index_maxperday.php');
+    }
+
 }?>
