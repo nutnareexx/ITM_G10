@@ -1,18 +1,11 @@
 <?php 
 $controllers = array('pages'=>['home','error'],
-<<<<<<< Updated upstream
-                    'maxperday'=>['index','search'],
+                    'maxperday'=>['index','search','newMaxperday'],
                     'hospital'=>['index','search'],
                     'results'=>['index','newResults','addResults','updateForm'],
                     'user'=>['index'],
                     'login'=>['index'],
                     'prename'=>['index']);
-=======
-'maxperday'=>['index','search','newMaxperday'],
-'hospital'=>['index','search'],
-'results'=>['index','newResults','addResults','updateForm'],
-'user'=>['index']);
->>>>>>> Stashed changes
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
@@ -43,7 +36,6 @@ function call($controller,$action){
         case"prename": require_once("models/prenameModel.php");
         break;
 
-        
     }
     $controller->{$action}();
 }
