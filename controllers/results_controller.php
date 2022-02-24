@@ -17,20 +17,33 @@ class ResultsController
         require_once('views/Results/newResults.php');
     }
 
+    public function addResults()
+    {
+        $id = $_GET['r_id'];
+        $rs = $_GET['results'];
+        $uid = $_GET['user_id'];
+        $hid = $_GET['Hid'];
+        Results::add($id,$rs,$uid,$hid);
+
+        ResultsController::index();
+    }
+
     public function updateForm()
     {
-        $id = $_GET['id'];
+        $id = $_GET['r_id'];
         $resultss = Results::get($id);
-        $hospitalmodelList = hospitalModel::getAll();
+        $prenameList = prenameModel::getAll();
+        $h_List = hospitalModel::getAll();
+        $u_List = userModel::getAll();
         require_once('views/Results/updateResults.php');
     }
 
     public function update()
     {
-        $id = $_GET['id'];
-        $uid = $_GET['uid'];
-        $hid = $_GET['hid'];
-        $rs = $_GET['rs'];
+        $id = $_GET['r_id'];
+        $uid = $_GET['user_id'];
+        $hid = $_GET['Hid'];
+        $rs = $_GET['results'];
         Results::update($id,$uid,$hid,$rs);
         ResultsController::index();
     }
