@@ -1,5 +1,5 @@
-
-<br>new max per day <a href="?controller=maxperday&action=newMaxperday"> click!!! </a> </br>
+<br>
+<h3>new max per day <a href="?controller=maxperday&action=newMaxperday"> click!!! </a> </h3>
 
 
 <form method="get" action="">
