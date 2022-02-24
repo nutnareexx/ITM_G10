@@ -17,7 +17,9 @@
 
 
 <input type="hidden" name="controller" value="maxperday"/>
+<input type="hidden" name="max_id" value="<?php echo $m->max_id;?>"/>
+<input type="hidden" name="Hid" value="<?php echo $m->Hid;?>"/>
 <button type="submit" name="action" value="index">Back</button>
 <button type="submit" name="action" value="update"> update </button>
 
-</form>
+</form> 
