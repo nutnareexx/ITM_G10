@@ -17,10 +17,10 @@
     <br>
     <label> เบอร์โทรศัพท์ <input type="text" name="uphone"/> </label>
     <br>
-    <label> E-mail <input type="text" name="uid"/> </label>
+    <label> E-mail <input type="text" name="umail"/> </label>
     <br>
 
     <input type="hidden" name="controller" value="user"/>
-    <button type="submit" name="action" value="index"> BACK </button>
+    <button type="submit" name="action" value="indexlogin"> BACK </button>
     <button type="submit" name="action" value="adduser"> NEXT </button>
 </form>

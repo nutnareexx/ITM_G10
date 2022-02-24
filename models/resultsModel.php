@@ -101,7 +101,7 @@ public static function update($id,$uid,$hid,$rs)
 public static function delete($id)
 {
     require_once("connection_connect.php");
-    $sql = "DELETE FROM `user` WHERE id=$id";
+    $sql = "DELETE FROM `results` WHERE r_id='$id'";
     $result = $conn->query($sql);
     require("connection_close.php");
 

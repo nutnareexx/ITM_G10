@@ -14,6 +14,7 @@ class ResultsController
     public function newResults()
     {
         $resultsList = Results::getAll();
+        $h_List = hospitalModel::getAll();
         require_once('views/Results/newResults.php');
     }
 
@@ -45,6 +46,20 @@ class ResultsController
         $hid = $_GET['hid'];
         $rs = $_GET['rs'];
         Results::update($id,$uid,$hid,$rs);
+        ResultsController::index();
+    }
+
+    public function deleteConfirm()
+    {
+        $id = $_GET['id'];
+        $resultss = Results::get($id);
+        require_once('views/Results/deleteConfirm.php');
+    }
+
+    public function delete()
+    {
+        $id = $_GET['id'];
+        Results::delete($id);
         ResultsController::index();
     }
 }
