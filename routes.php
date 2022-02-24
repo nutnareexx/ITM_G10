@@ -2,15 +2,9 @@
 $controllers = array('pages'=>['home','error'],
                     'maxperday'=>['index','search','newMaxperday','addMaxperday','updateForm','update','deleteConfirm'],
                     'hospital'=>['index','search'],
-<<<<<<< Updated upstream
                     'results'=>['index','newResults','addResults','updateForm','update','deleteConfirm','delete'],
-                    'user'=>['index','signin','adduser'],
-                    'login'=>['index','login','addpassword'],
-=======
-                    'results'=>['index','newResults','addResults','updateForm','update'],
                     'user'=>['index','signin','adduser','indexlogin','login','addpassword'],
                     'login'=>[],
->>>>>>> Stashed changes
                     'prename'=>['index']);
 
 function call($controller,$action){
