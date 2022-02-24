@@ -20,6 +20,8 @@ function call($controller,$action){
         break;
 
         case"results":  require_once("models/resultsModel.php");
+                        require_once("models/hospitalModel.php");
+                        
                         $controller = new ResultsController();
         break;
 
