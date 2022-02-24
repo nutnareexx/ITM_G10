@@ -49,10 +49,10 @@ class userModel{
             $uid = $my_row['user_id'];
             $id_name = $my_row['name_nt'];
             $uname = $my_row['user_name'];
-            $usurname = $my_row['name_surname'];
-            $udob = $my_row['name_dateOfbirth'];
-            $uphone = $my_row['name_phone'];
-            $umail = $my_row['name_mail'];
+            $usurname = $my_row['user_surname'];
+            $udob = $my_row['user_dateOfbirth'];
+            $uphone = $my_row['user_phone'];
+            $umail = $my_row['user_mail'];
             $userList[] = new userModel($uid,$id_name,$uname,$usurname,$udob,$uphone,$umail);
         }
         require("connection_close.php");
