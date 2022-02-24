@@ -1,4 +1,4 @@
-<table border=1>
+<table border=1><br>
 
 <br>new Results <a href="?controller=results&action=newResults"> CLICK!!! </a> <br>
 <br>

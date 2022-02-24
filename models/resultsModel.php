@@ -81,7 +81,7 @@ public static function add($id,$rs,$uid,$hid)
 {
     require("connection_connect.php");
     $sql = "INSERT INTO `results`(`r_id`, `results`, `user_id`, `Hid`) 
-    VALUES ($id,$rs,$uid,$hid)";
+    VALUES ('$id','$rs','$uid','$hid')";
     $result = $conn->query($sql);
     require("connection_close.php");
 
