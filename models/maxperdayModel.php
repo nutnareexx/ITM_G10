@@ -23,8 +23,9 @@ class MaxperdayModel{
     public static function get($max_id)
     {
         require("connection_connect.php");
-        $sql = "SELECT * FROM `max_per_day` WHERE max_id = $max_id";
-        $result = $result->query($sql);
+        $sql = "SELECT h.H_name,m.Hid,m.max_id, m.date,m.time_open, m.time_close,m.max
+        FROM max_per_day AS m NATURAL JOIN hostpital AS h WHERE m.Hid=h.Hid AND m.max_id = '$max_id';";
+        $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $max_id = $my_row['max_id'];
         $max_date = $my_row['date'];
@@ -34,6 +35,7 @@ class MaxperdayModel{
         $Hid = $my_row['Hid'];
         $H_name = $my_row['H_name'];
         require("connection_close.php");
+        //echo $max_id,$max_date,$max_topen,$max_tclose,$max_num,$Hid,$H_name;
 
         return new MaxperdayModel($max_id,$max_date,$max_topen,$max_tclose,$max_num,$Hid,$H_name);
     }
