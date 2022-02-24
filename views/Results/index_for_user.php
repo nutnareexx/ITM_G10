@@ -1,7 +1,8 @@
 <table border=1>
 
 <br>
-    <tr> <td>เลขบัตรประชาชน</td>
+    <tr> <td>ลำดับที่</td>
+    <td>เลขบัตรประชาชน</td>
     <td>คำนำหน้า</td>
     <td>ชื่อ</td>
     <td>นามสกุล</td>
@@ -13,7 +14,8 @@
     </tr>
 <?php foreach($resultsList as $r)
 {
-    echo "<tr> <td>$r->uid</td>
+    echo "<tr> <td>$r->id</td>
+    <td>$r->uid</td>
     <td>$r->nt</td>
     <td>$r->name</td>
     <td>$r->sname</td>
