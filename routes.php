@@ -31,6 +31,7 @@ function call($controller,$action){
         break;
 
         case"login": require_once("models/loginModel.php");
+                    $controller = new lohinController();
         break;
 
         case"prename": require_once("models/prenameModel.php");
