@@ -3,8 +3,8 @@ $controllers = array('pages'=>['home','error'],
                     'maxperday'=>['index','search','newMaxperday','addMaxperday','updateForm','update','deleteConfirm'],
                     'hospital'=>['index','search'],
                     'results'=>['index','newResults','addResults','updateForm','update'],
-                    'user'=>['index','signin','add'],
-                    'login'=>['index','login'],
+                    'user'=>['index','signin','adduser'],
+                    'login'=>['index','login','addpassword'],
                     'prename'=>['index']);
 
 function call($controller,$action){
@@ -30,6 +30,8 @@ function call($controller,$action){
         break;
 
         case"user": require_once("models/userModel.php");
+                    require_once("models/prenameModel.php");
+                    $controller = new userController();
         break;
 
         case"login": require_once("models/loginModel.php");
