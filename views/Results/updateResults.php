@@ -1,46 +1,23 @@
 <form method="get" action="">
-    <label>เลขบัตรประชาชน<input type="text" name="uid"
-        value="<?php echo $resultss->uid; ?>"/></label><br>
-    <label>คำนำหน้า<select name="nt">
+    <label> ลำดับที่ <input type="text" name="id" 
+        value="<?php echo $resultss->id;?>"/></label><br>
+    <label>เลขบัตรประชาชน<select name="uid">
     <?php foreach($resultsList as $r)
      {
-         echo "<option value= $r->nt";
-         if($r->nt==$resultss->nt) 
+         echo "<option value= $r->uid";
+         if($r->uid==$resultss->id) 
          {
              echo " selected='selected'";
          }
-         echo "> $r->nt</option>";
+         echo "> $r->uid</option>";
      }?>
     </select></label><br>
-    <label>ชื่อ<select name="name">
-    <?php foreach($resultsList as $r)
-     {
-         echo "<option value= $r->name";
-         if($r->name==$resultss->name) 
-         {
-             echo " selected='selected'";
-         }
-         echo "> $r->name</option>";
-     }?>
-    </select></label><br>
-    <label>นามสกุล<select name="sname">
-    <?php foreach($resultsList as $r)
-     {
-         echo "<option value= $r->sname";
-         if($r->sname==$resultss->sname) 
-         {
-             echo " selected='selected'";
-         }
-         echo "> $r->sname</option>";
-     }?>
-    </select></label><br>
-    
-    <label>เบอร์โทรศัพท์<input type="text" name="phone"
-        value="<?php echo $resultss->phone; ?>"/></label><br>
-    <label>อีเมลล์<input type="text" name="mail"
-        value="<?php echo $resultss->mail; ?>"/></label><br>
+    <?php echo "ชื่อ $resultss->nt$resultss->name   $resultss->sname<br>
+    เบอร์โทรศัพท์ $resultss->phone<br>
+    อีเมลล์ $resultss->mail";?><br>
+
     <label>โรงพยาบาล<select name="hid">
-    <?php foreach($hospitalmodelList as $h)
+    <?php foreach($h_List as $h)
      {
          echo "<option value= $h->Hid";
          if($h->Hid==$resultss->hid) 
@@ -50,9 +27,11 @@
          echo "> $h->H_name</option>";
      }?>
     </select></label><br>
+    <label> ผลการตรวจ <input type="text" name="rs" 
+        value="<?php echo $resultss->rs;?>"/></label><br>
 
 <br><input type="hidden" name="controller" value="results"/>
-
+<input type="hidden" name="id" value="<?php echo $resultss->id;?>"/>
 <button type="submit" name="action" value="index">Back</button>
 <button type="submit" name="action" value="update"> update </button>
 </form>
