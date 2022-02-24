@@ -88,15 +88,37 @@ class MaxperdayModel{
         return $maxperday_list;
     }
 
-    public static function add($H_name,$max_date,$max_topen,$max_tclose,$max_num)
+    public static function add($max_id,$Hid,$max_date,$max_topen,$max_tclose,$max_num)
     {
-        require("connection_connect");
-        $sql = "INSERT INTO `max_per_day`(`Hid`, `date`, `time_open`, `time_close`, `max` )
-        VALUES ($H_name,$max_date,$max_topen,$max_tclose,$max_num)";
+        require("connection_connect.php");
+        $sql = "INSERT INTO `max_per_day`(`max_id`, `Hid`, `date`, `time_open`, `time_close`, `max`) 
+        VALUES ('$max_id','$Hid','$max_date','$max_topen','$max_tclose','$max_num')";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        //echo $max_id,$max_date,$max_topen,$max_tclose,$max_num,$Hid;
+        return "add success $result rows";
+    }
+
+    public static function update($max_id,$Hid,$max_date,$max_topen,$max_tclose,$max_num)
+    {
+        require("connection_connect.php");
+        $sql = "UPDATE `max_per_day` SET `Hid`='$Hid',`date`='$max_date',
+        `time_open`='$max_topen',`time_close`='$max_tclose',`max`='$max_num'
+        WHERE `max_id`='$max_id'";
         $result = $conn->query($sql);
         require("connection_close.php");
 
-        return "add success $result rows";
+        return "update success $result row";
+    }
+
+    public static function delete($max_id)
+    {
+        require_once("connection_connect.php");
+        $sql = "DELETE FROM `max_per_day` WHERE max_id='$max_id'";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+
+        return "delete success $result row";
     }
 
 

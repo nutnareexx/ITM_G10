@@ -25,12 +25,14 @@ class maxperdayController
 
     public function addMaxperday()
     {
-        $Hid = $_GET['Hid'];
-        $max_date = $_GET['date'];
-        $max_topen = $_GET['time_open'];
-        $max_tclose = $_GET['time_close'];
-        $max_num = $_GET['max'];
-        MaxperdayModel::Add($Hid,$max_date,$max_topen,$max_tclose,$max_num);
+        $max_id = $_GET['max_id'];
+        $Hid = $_GET['H_name'];
+        $max_date = $_GET['max_date'];
+        $max_topen = $_GET['max_topen'];
+        $max_tclose = $_GET['max_tclose'];
+        $max_num = $_GET['max_num'];
+        $hospitalmodelList = hospitalModel::getAll();
+        MaxperdayModel::add($max_id,$Hid,$max_date,$max_topen,$max_tclose,$max_num);
         maxperdayController::index();
 
     }
@@ -45,12 +47,28 @@ class maxperdayController
 
     public function update()
     {
-        $id = $_GET['id'];
-        $uid = $_GET['uid'];
-        $hid = $_GET['hid'];
-        $rs = $_GET['rs'];
-        Results::update($id,$uid,$hid,$rs);
-        ResultsController::index();
+        $max_id = $_GET['max_id'];
+        $Hid = $_GET['Hid'];
+        $max_date = $_GET['max_date'];
+        $max_topen = $_GET['max_topen'];
+        $max_tclose = $_GET['max_tclose'];
+        $max_num = $_GET['max'];
+        //$hospitalmodelList = hospitalModel::getAll();
+        MaxperdayModel::update($max_id,$Hid,$max_date,$max_topen,$max_tclose,$max_num);
+        maxperdayController::index();
     }
 
+    public function deleteConfirm()
+    {
+        $max_id = $_GET['max_id'];
+        $m = MaxperdayModel::get($max_id);
+        require_once('views/max_per_day/deleteConfirm.php');
+    }
+
+    public function delete()
+    {
+        $max_id = $_GET['max_id'];
+        MaxperdayModel::delete($max_id);
+        maxperdayController::index();
+    }
 }?>
