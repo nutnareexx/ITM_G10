@@ -5,7 +5,7 @@
     <?php foreach($resultsList as $r)
      {
          echo "<option value= $r->uid";
-         if($r->uid==$resultss->id) 
+         if($r->uid==$resultss->uid) 
          {
              echo " selected='selected'";
          }
