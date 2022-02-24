@@ -28,14 +28,13 @@ class prenameModel{
         $result = $conn->query($sql);
 
         while($my_row = $result->fetch_assoc()){
-            $my_row = $result->fetch_assoc();
             $id = $my_row['id_nt'];
             $name = $my_row['name_nt'];
             $pernameList[] = new prenameModel($id,$name);
         }
         
         require("connection_close.php");
-        return $prenameList;
+        return $pernameList;
     }
 
 }
