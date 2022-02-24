@@ -1,5 +1,6 @@
 
-<br>new max per day <a href="?controller=maxperday&action=newMaxperday"> click!!! </a> <br>
+<br>new max per day <a href="?controller=maxperday&action=newMaxperday"> click!!! </a> </br>
+
 
 <form method="get" action="">
     <input type="text" name="key">
@@ -23,9 +24,11 @@ Search </button>
     <td>$m->max_topen</td>
     <td>$m->max_tclose</td>
     <td>$m->max_num</td>
-    <td>update</td>
-    <td>delete</td>
+    <td> <a href=?controller=maxperday&action=updateForm&max_id=$m->max_id>update</a></td>
+    <td> <a href=?controller=maxperday&action=deleteConfirm&max_id=$m->max_id>delete</td>
     </tr>";
 }
+
+
 echo "</table> "
 ?>
