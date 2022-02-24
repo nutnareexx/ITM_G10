@@ -19,7 +19,8 @@ class maxperdayController
     public function newMaxperday()
     {
         $maxperday_list = MaxperdayModel::getAll();
-        require_once('views/max_per_day/index_maxperday.php');
+        $hospitalmodelList = hospitalModel::getAll();
+        require_once('views/max_per_day/newMaxperday.php');
     }
 
 }?>
