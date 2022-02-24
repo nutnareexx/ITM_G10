@@ -1,6 +1,6 @@
 <?php 
 $controllers = array('pages'=>['home','error'],
-                    'maxperday'=>['index','search','newMaxperday'],
+                    'maxperday'=>['index','search','newMaxperday','addMaxperday','updateForm','update','deleteConfirm'],
                     'hospital'=>['index','search'],
                     'results'=>['index','newResults','addResults','updateForm','update'],
                     'user'=>['index','signin','add'],
