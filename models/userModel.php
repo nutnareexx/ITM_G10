@@ -59,8 +59,15 @@ class userModel{
         return $userList;
     }
 
-    public static function add(){
-        
+    public static function add($uid,$id_name,$uname,$usurname,$udob,$uphone,$umail){
+        require("connection_connect.php");
+        $sql = "INSERT INTO user(user_id,id_nt,user_name,user_surname,user_dateOfbirth,user_phone,user_mail)
+        VALUES('$uid','$id_name','$uname','$usurname','$udob','$uphone','$umail')";
+
+        $result = $conn->query($sql);
+        require("connection_close.php");
+
+        return "ADD success $result rows";
     }
 }
 ?>
