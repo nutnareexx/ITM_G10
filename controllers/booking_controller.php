@@ -4,7 +4,7 @@ class bookingController
     public function index()
     {
         $booking_list = MaxperdayModel::getAll();
-        //$hospitalmodelList = hospitalModel::getAll();
+        $hospitalmodelList = hospitalModel::getAll();
         require_once('views/booking/index_booking.php');
 
     }
@@ -13,7 +13,13 @@ class bookingController
     {
         $key = $_GET['key'];
         $booking_list = MaxperdayModel::search($key);
-        require_once('views/max_per_day/index_maxperday.php');
+        
+        require_once('views/booking/index_datebook.php');
+    }
+
+    public function bookdate(){
+        $booking_list = MaxperdayModel::getAll();
+        require_once('views/booking/index_datebook.php');
     }
 
      /*public function newMaxperday()
