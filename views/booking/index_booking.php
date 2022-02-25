@@ -46,16 +46,20 @@ Search </button>
     
     
     <?php foreach($hospitalmodelList as $hospital)
-{
+    {
     echo "<tr> 
-    <td>$hospital->H_name</td>
-    <td> <a href=?controller=booking&action=bookdate&Hid=$hospital->Hid>จอง</a></td>
+    
+    <td> <a href=?controller=booking&action=bookdate&Hid=$hospital->Hid>$hospital->H_name</a></td>
+    
     </tr>";
     
     echo "<br>";
-}
+    
+    
+    }
 echo "</table> "
 ?>
+<input type="hidden" name="Hid" value="<?php echo $hospital->Hid;?>"/>
 
 </body>
 
