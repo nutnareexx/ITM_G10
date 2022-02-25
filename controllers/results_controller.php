@@ -62,6 +62,23 @@ class ResultsController
         Results::delete($id);
         ResultsController::index();
     }
+
+    public function upload()
+    {
+        //$FileID = $_GET['FileID'];
+        //$FileList = UploadFile::upload($FileID);
+        //UploadFile::upload($FileID);
+       // require_once('views/Results/uploadResults.php');
+        require_once('views/Results/uploadResults.php');
+        
+    }
+
+    public function search()
+    {
+        $key = $_GET['key'];
+        $resultsList = Results::search($key);
+        require_once('views/Results/index_for_nurse.php');
+    }
 }
 
 ?>

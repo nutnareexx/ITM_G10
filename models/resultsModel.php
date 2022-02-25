@@ -107,5 +107,35 @@ public static function delete($id)
 
     return "delete success $result row";
 }
+
+public static function search($key)
+{
+    $resultList=[];
+    require("connection_connect.php");
+    $sql = "SELECT u.user_id,n.name_nt,u.user_name,u.user_surname,u.user_phone,u.user_mail,
+    h.H_name,r.results,r.r_id,h.Hid FROM user AS u NATURAL JOIN names_title AS n 
+    LEFT OUTER JOIN results AS r ON u.user_id=r.user_id LEFT OUTER JOIN hostpital AS h ON r.Hid=h.Hid
+    WHERE (u.user_id LIKE '%$key%' OR n.name_nt LIKE '%$key%' OR u.user_name LIKE '%$key%' OR 
+    u.user_surname LIKE '%$key%' OR u.user_phone LIKE '%$key%' OR u.user_mail LIKE '%$key%' OR 
+    h.H_name LIKE '%$key%' OR r.results LIKE '%$key%' OR r.r_id LIKE '%$key%')";
+    
+    $result = $conn->query($sql);
+    while($my_row=$result->fetch_assoc()) {
+        $id = $my_row['r_id'];
+        $rs = $my_row['results'];
+        $uid = $my_row['user_id'];
+        $hid = $my_row['Hid'];
+        $nt = $my_row['name_nt'];
+        $name = $my_row['user_name'];
+        $sname = $my_row['user_surname'];
+        $phone = $my_row['user_phone'];
+        $mail = $my_row['user_mail'];
+        $hname = $my_row['H_name'];
+        $resultList[]=new Results($id,$rs,$uid,$hid,$nt,$name,$sname,$hname,$phone,$mail);
+    }
+    require("connection_close.php");
+
+    return $resultList;
+}
 }
 ?>

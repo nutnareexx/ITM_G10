@@ -23,7 +23,7 @@
     <td>$r->mail</td>
     <td>$r->hname</td>
     <td>$r->rs</td>
-    <td>DL</td>
+    <td> dow</td>
     </tr>";
 }
 echo "</table> "

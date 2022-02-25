@@ -2,8 +2,8 @@
 $controllers = array('pages'=>['home','error'],
                     'maxperday'=>['index','search','newMaxperday','addMaxperday','updateForm','update','deleteConfirm','delete'],
                     'hospital'=>['index','search'],
-                    'results'=>['index','newResults','addResults','updateForm','update','deleteConfirm','delete','upload'],
-                    'user'=>['index','signin','adduser','indexlogin','login','newpassword','addpassword','error'],
+                    'results'=>['index','newResults','addResults','updateForm','update','deleteConfirm','delete','upload','search','Submit'],
+                    'user'=>['index','signin','adduser','indexlogin','login','addpassword'],
                     'login'=>[],
                     'prename'=>['index'],
                     'booking'=>['index','search','bookdate','checkbook']);
@@ -22,7 +22,7 @@ function call($controller,$action){
 
         case"results":  require_once("models/resultsModel.php");
                         require_once("models/hospitalModel.php");
-                        
+                        require_once("upload2/upload_file.php");
                         $controller = new ResultsController();
         break;
 
