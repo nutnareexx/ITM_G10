@@ -57,9 +57,18 @@ class userModel{
         }
         require("connection_close.php");
         return $userList;
-        
-        
 
+    }
+
+    public static function add($id,$password){
+        require("connection_connect.php");
+        $sql = "INSERT INTO `userlogin`(`user_id`, `password`) 
+        VALUES ($id,$password)";
+
+        $result = $conn->query($sql);
+        require("connection_close.php");
+
+        return "ADD success $result rows";
     }
 }
 ?>
