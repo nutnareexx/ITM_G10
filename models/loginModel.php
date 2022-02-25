@@ -1,69 +1,48 @@
 <?php
-class userModel{
+class loginModel{
     public $uid;
-    public $id_name;
-    public $uname;
-    public $usurname;
-    public $udob;
-    public $uphone;
-    public $umail;
+    public $pw;
 
-    public function __construct($id,$prename,$name,$surname,$dob,$phone,$mail)
+    public function __construct($id,$p)
     {
         $this->uid = $id;
-        $this->id_name = $prename;
-        $this->uname = $name;
-        $this->usurname = $surname;
-        $this->udob = $dob;
-        $this->uphone = $phone;
-        $this->umail = $mail;
+        $this->pw = $p;
         
     }
 
     public static function get($id){
         require("connection_connect.php");
-        $sql="SELECT u.user_id,nt.name_nt,u.user_name,u.user_surname,u.user_dateOfbirth,u.user_phone,u.user_mail 
-            FROM user AS u NATURAL JOIN names_title AS nt";
+        $sql="SELECT * FROM `userlogin` WHERE user_id='$id'";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $uid = $my_row['user_id'];
-        $id_name = $my_row['name_nt'];
-        $uname = $my_row['user_name'];
-        $usurname = $my_row['name_surname'];
-        $udob = $my_row['name_dateOfbirth'];
-        $uphone = $my_row['name_phone'];
-        $umail = $my_row['name_mail'];
+        $pw = $my_row['password'];
         require("connection_close.php");
 
-        return new userModel($uid,$id_name,$uname,$usurname,$udob,$uphone,$umail);
+        return new loginModel($uid,$pw);
 
     }
 
     public static function getAll(){
-        $userList =[];
+        $loginList =[];
         require("connection_connect.php");
-        $sql="SELECT u.user_id,nt.name_nt,u.user_name,u.user_surname,u.user_dateOfbirth,u.user_phone,u.user_mail 
-            FROM user AS u NATURAL JOIN names_title AS nt";
+        $sql="SELECT * FROM `userlogin`";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc()){
             $uid = $my_row['user_id'];
-            $id_name = $my_row['name_nt'];
-            $uname = $my_row['user_name'];
-            $usurname = $my_row['name_surname'];
-            $udob = $my_row['name_dateOfbirth'];
-            $uphone = $my_row['name_phone'];
-            $umail = $my_row['name_mail'];
-            $userList[] = new userModel($uid,$id_name,$uname,$usurname,$udob,$uphone,$umail);
+            $pw = $my_row['password'];
+            $loginList[] = new loginModel($uid,$pw);
         }
         require("connection_close.php");
-        return $userList;
+        return $loginList;
 
     }
 
-    public static function add($id,$password){
+    public static function add($id,$pass){
+        echo "Add ".$id.$pass." -";
         require("connection_connect.php");
         $sql = "INSERT INTO `userlogin`(`user_id`, `password`) 
-        VALUES ($id,$password)";
+        VALUES ('$id','$pass')";
 
         $result = $conn->query($sql);
         require("connection_close.php");
