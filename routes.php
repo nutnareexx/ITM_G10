@@ -6,7 +6,7 @@ $controllers = array('pages'=>['home','error'],
                     'user'=>['index','signin','adduser','indexlogin','login','newpassword','addpassword','error'],
                     'login'=>[],
                     'prename'=>['index'],
-                    'booking'=>['index','search','bookdate']);
+                    'booking'=>['index','search','bookdate','checkbook']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
