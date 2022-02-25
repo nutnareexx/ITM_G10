@@ -27,24 +27,26 @@ class userController
         $dob = $_GET['udob'];
         $phone = $_GET['uphone'];
         $mail = $_GET['umail'];
-        $x=0;
+        $check = 0;
+
         foreach ($userList as $u){
             if($u->uid==$id){
                 echo "".$u->uid. ", ".$id;
                 echo " have user ";
-                $x =1;
+                $check = 1;
+                break;
             }
             else{
-                $x=0;
+                $check = 0;
             }  
         }
 
-        if($x==1){
+        if($check == 1){
             userController::error();
         }
         else{
             echo " suceess ";
-            //userModel::add($id,$preid,$name,$surname,$dob,$phone,$mail);
+            userModel::add($id,$preid,$name,$surname,$dob,$phone,$mail);
             userController::newpassword($id);
         }
     }
@@ -55,19 +57,57 @@ class userController
 
     public function newpassword($id){
         $this->id = $id;
-        echo $id."new password";
+        echo "- ".$id." new password -";
         require_once('views/login/newlogin.php');
     }
 
     public function addpassword(){
-        
+        $id = $_GET['id'];
+        $password = $_GET['password'];
+        $confirm = $_GET['confirm'];
+
+        echo "- ".$id." , ".$password."add password -";
+
+        //$check = 0;
+        if($password == $confirm){
+            loginModel::add($id,$password);
+            require_once('views/login/succeess.php');
+        }
+        else{
+            echo "- Password Don't Match -";
+            require_once('views/login/newlogin.php');
+        }
     }
 
+    public function login(){
+        $logList = loginModel::getAll();
+        $id = $_GET['username'];
+        $pass = $_GET['password'];
+        
+        
+        echo " - LOG IN CHECK ".$id." , ".$pass." - ";
+        $c = 0;
 
+        foreach($logList as $log){
+            if($log->uid == $id){
+                $c=1;
+                break;
+            }
+        }
 
-    
-
-    
+        if($c == 1){
+            echo $c;
+            $loginList = loginModel::get($id);
+            echo "<br> - ".$loginList->uid. " , ".$id." - ";
+            echo "<br> - ".$loginList->pw." , ".$pass." -";
+        }
+        else{
+            echo "<br> DON'T HAVE";
+            userController::indexlogin();
+        }
+        
+      
+    }  
 }
 
 ?>
