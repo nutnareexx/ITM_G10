@@ -9,6 +9,7 @@
     <td>เวลาเปิดทำการ</td>
     <td>เวลาปิดทำการ</td>
     <td>จำนวนที่รับได้ต่อวัน</td>
+    <td>จอง</td>
 </tr>
     
 
@@ -19,7 +20,7 @@
     <td>$booking->max_topen</td>
     <td>$booking->max_tclose</td>
     <td>$booking->max_num</td>
-    
+    <td> <a href=?controller=booking&action=checkbook&max_id=$booking->max_id>จอง</a></td>
     </tr>";
 }
 
