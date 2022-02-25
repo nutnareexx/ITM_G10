@@ -22,6 +22,14 @@ class bookingController
         require_once('views/booking/index_datebook.php');
     }
 
+    public function checkbook()
+    {
+        $max_id = $_GET['max_id'];
+        $booking = MaxperdayModel::get($max_id);
+        require_once('views/booking/checkbook.php');
+    }
+
+
      /*public function newMaxperday()
     {
         $maxperday_list = MaxperdayModel::getAll();
