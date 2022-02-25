@@ -83,9 +83,6 @@ class userController
         $logList = loginModel::getAll();
         $id = $_GET['username'];
         $pass = $_GET['password'];
-        
-        
-        echo " - LOG IN CHECK ".$id." , ".$pass." - ";
         $c = 0;
 
         foreach($logList as $log){
@@ -98,8 +95,14 @@ class userController
         if($c == 1){
             echo $c;
             $loginList = loginModel::get($id);
-            echo "<br> - ".$loginList->uid. " , ".$id." - ";
-            echo "<br> - ".$loginList->pw." , ".$pass." -";
+            if($loginList->pw == $pass){
+                require_once('views/pages/home.php');
+            }
+            else{
+                echo "<br> WRONG PASSWORD ";
+                userController::indexlogin();
+            }
+            
         }
         else{
             echo "<br> DON'T HAVE";

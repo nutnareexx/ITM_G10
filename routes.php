@@ -6,7 +6,7 @@ $controllers = array('pages'=>['home','error'],
                     'user'=>['index','signin','adduser','indexlogin','login','newpassword','addpassword','error'],
                     'login'=>[],
                     'prename'=>['index'],
-                    'booking'=>['index','search']);
+                    'booking'=>['index','search','bookdate','checkbook']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
@@ -44,6 +44,7 @@ function call($controller,$action){
         break;
 
         case"booking": require_once("models/maxperdayModel.php");
+                       require_once("models/hospitalModel.php");
                     $controller = new bookingController();
         break;
 
