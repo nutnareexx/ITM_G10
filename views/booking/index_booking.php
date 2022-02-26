@@ -23,12 +23,16 @@
 </head>
 
 <style>
-    p.try1{
-        font-family: "Sofia", sans-serif;
+    .try1{
+        font-family: 'Prompt', sans-serif;
+        text-align: center;
+        
     }
 
     p.try2{
         font-family: 'Prompt', sans-serif;
+        padding: 20px;
+        text-align: center;
     }
 </style>
 
@@ -37,15 +41,21 @@
     <h1> <p class="try2"> การจองการตรวจ RT-PCR </p> </h1>
 
 
+    
     <form method="get" action="">
+    <div class="try1">
     <input type="text" name="key">
+    
+
     <input type="hidden" name="controller" value="booking"/>
     <button type="submit" name="action" value="search"> 
 Search </button>
+
 </form>
+</div>
 
     
-    
+    <div class="try1">
     <?php foreach($hospitalmodelList as $hospital)
     {
     echo "<tr> 
@@ -60,6 +70,7 @@ Search </button>
     }
 echo "</table> "
 ?>
+</div>
 <input type="hidden" name="Hid" value="<?php echo $hospital->Hid;?>"/>
 
 </body>
