@@ -43,22 +43,28 @@
                 color: black;
             }
 
-            .card {
+            .cardright {
                 text-align:right;
                 font-family: 'Prompt', sans-serif;
-                /*font-size: 16px;*/
                 background-color: #f1f1f1;
-                /*padding: 10px;
-                margin-top: 10px;*/
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .cardleft {
+                text-align:left;
+                font-family: 'Prompt', sans-serif;
+                background-color: #f1f1f1;
+                padding: 10px;
+                margin-top: 10px;
             }
 
             .cardin {
         
-                font-family: 'Prompt', sans-serif;
-                /*font-size: 16px;
-                background-color: #f1f1f1;*/
-                /*padding: 10px;*/
-                margin-top: 10px;
+                /*font-family: 'Prompt', sans-serif;
+                font-size: 16px;*/
+                background-color: black;
+                padding: 20px;
+                margin-top: 20px;
             }
             
 
@@ -148,15 +154,18 @@
                     <br>
                     <label> E-mail <input  type="text" name="umail"/> </label>
                     <br>
-                    <div class="card">
-                    <div class="btn-group">
-                        <input type="hidden" name="controller" value="user"/>
+                    
+                        <div class="cardleft">
+                            <div class="btn-group">
+                                <button class="button" type="submit" name="action" value="indexlogin"> BACK </button>
+                                <button class="button" type="submit" name="action" value="adduser"> NEXT </button>
+                            </div>
+                        </div>
+                      
                         
-                        <button class="button" type="submit" name="action" value="adduser"> NEXT </button>
-                    </div>
-                    </div>
-                </form>
-            <!--<button class="button" type="submit" name="action" value="indexlogin"> BACK </button>-->
+            </div>   
+            </form>
+            
             </div>
         </div>
 
