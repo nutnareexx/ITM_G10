@@ -52,6 +52,30 @@
         margin-top: 10px;
     }
 
+    input[type=text], select {
+        font-family: 'Prompt', sans-serif;
+        width: 15%;
+        padding: 12px 10px;
+        margin: 8px 0;
+        font-size: 16px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=password], select {
+        font-family: 'Prompt', sans-serif;
+        width: 15%;
+        padding: 12px 10px;
+        margin: 8px 0;
+        font-size: 16px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
 
 </style>
 
@@ -66,8 +90,7 @@
             <label> USERNAME <input type="text" name="username"/> </label>
             <br><br>
             <label> PASSWORD <input type="password" name="password"/> </label>
-            <br>
-            
+            <br> 
         </div>
 
 
