@@ -2,11 +2,13 @@
 class loginModel{
     public $uid;
     public $pw;
+    public $permission;
 
-    public function __construct($id,$p)
+    public function __construct($id,$p,$permission)
     {
         $this->uid = $id;
         $this->pw = $p;
+        $this->permission = $permission;
         
     }
 
@@ -17,9 +19,10 @@ class loginModel{
         $my_row = $result->fetch_assoc();
         $uid = $my_row['user_id'];
         $pw = $my_row['password'];
+        $permission = $my_row['permision'];
         require("connection_close.php");
 
-        return new loginModel($uid,$pw);
+        return new loginModel($uid,$pw,$permission);
 
     }
 
@@ -31,7 +34,8 @@ class loginModel{
         while($my_row = $result->fetch_assoc()){
             $uid = $my_row['user_id'];
             $pw = $my_row['password'];
-            $loginList[] = new loginModel($uid,$pw);
+            $permission = $my_row['permision'];
+            $loginList[] = new loginModel($uid,$pw,$permission);
         }
         require("connection_close.php");
         return $loginList;
