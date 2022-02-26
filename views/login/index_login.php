@@ -36,6 +36,9 @@
 
         <br><br>
         <div class="try2">
+            username : 12345 password : 12345 General
+            <br>
+            username : 888 password : 999 Admin
             
         </div>
         
