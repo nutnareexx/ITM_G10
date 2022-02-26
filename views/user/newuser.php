@@ -46,9 +46,9 @@
             .cardright {
                 text-align:right;
                 font-family: 'Prompt', sans-serif;
-                background-color: #f1f1f1;
+                background-color: blueviolet;
                 padding: 10px;
-                margin-top: 10px;
+                /*margin-top: 10px;*/
             }
             .cardleft {
                 text-align:left;
@@ -63,33 +63,32 @@
                 /*font-family: 'Prompt', sans-serif;
                 font-size: 16px;*/
                 background-color: black;
-                padding: 20px;
-                margin-top: 20px;
+                padding: 1px;
+                margin-top: 1px;
             }
             
 
             .card2 {
-                
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 padding: 20px;
-                margin-top: 30px;
+                margin-top: 20px;
             }
 
             /* Create two unequal columns that floats next to each other */
             /* Left column */
             .leftcolumn {   
                 float: left;
-                width: 73%;
+                width: 70%;
             }
 
             /* Right column */
             .rightcolumn {
                 float: right;
-                width: 25%;
+                width: 28%;
                 background-color: #f1f1f1;
                 padding-left: 20px;
-                margin-top: 30px;
+                margin-top: 20px;
             }
 
             /* Clear floats after the columns */
@@ -154,23 +153,24 @@
                     <br>
                     <label> E-mail <input  type="text" name="umail"/> </label>
                     <br>
-                    
+                   
                         <div class="cardleft">
                             <div class="btn-group">
                                 <button class="button" type="submit" name="action" value="indexlogin"> BACK </button>
                                 <button class="button" type="submit" name="action" value="adduser"> NEXT </button>
                             </div>
                         </div>
-                      
+                    
                         
             </div>   
             </form>
             
             </div>
-        </div>
+        
 
         <div class="rightcolumn">
             <div class="card2">
+                <p> right </p>
             
             </div>
         </div>
