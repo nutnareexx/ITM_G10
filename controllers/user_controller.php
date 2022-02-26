@@ -93,7 +93,6 @@ class userController
         }
 
         if($c == 1){
-            echo $c;
             $loginList = loginModel::get($id);
             if($loginList->pw == $pass){
                 if($loginList->permission == 'N'){
