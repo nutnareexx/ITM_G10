@@ -29,26 +29,35 @@ class userController
         $mail = $_GET['umail'];
         $check = 0;
 
-        foreach ($userList as $u){
-            if($u->uid==$id){
-                echo "".$u->uid. ", ".$id;
-                echo " have user ";
-                $check = 1;
-                break;
+        echo strlen($id);
+        if(strlen($id)>=3&&strlen($id)<=5){
+            foreach ($userList as $u){
+                if($u->uid==$id){
+                    echo "".$u->uid. ", ".$id;
+                    echo " have user ";
+                    $check = 1;
+                    break;
+                }
+                else{
+                    $check = 0;
+                }  
+            }
+
+            if($check == 1){
+                userController::error();
             }
             else{
-                $check = 0;
-            }  
-        }
-
-        if($check == 1){
-            userController::error();
+                echo " suceess ";
+                userModel::add($id,$preid,$name,$surname,$dob,$phone,$mail);
+                userController::newpassword($id);
+            }
         }
         else{
-            echo " suceess ";
-            userModel::add($id,$preid,$name,$surname,$dob,$phone,$mail);
-            userController::newpassword($id);
+            echo "Under 3 or Upper 5";
         }
+        
+
+        
     }
 
     public function error(){
