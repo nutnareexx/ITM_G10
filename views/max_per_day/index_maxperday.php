@@ -1,4 +1,22 @@
 <br>
+
+
+<html>
+<head> 
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> 
+</head>
+
+<style>
+    .try1{
+        font-family: 'Prompt', sans-serif;
+        text-align: center;
+        
+    }
+
+</style>
+
+<div class="try1">
 <h3>new max per day <a href="?controller=maxperday&action=newMaxperday"> click!!! </a> </h3>
 
 
@@ -32,3 +50,5 @@ Search </button>
 
 echo "</table> "
 ?>
+
+</div>
