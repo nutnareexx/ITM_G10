@@ -6,25 +6,41 @@
 </head>
 
 <style>
+    
 
-    p.try2{
+    .try2{
+        text-align:center;
         font-family: 'Prompt', sans-serif;
     }
+
+
 </style>
 
 <body>
-    <h1> <p class="try2" > LOG IN </p> </h1>
+    <div class="try2">
+        <h2> LOG IN </h2>
+    </div>
 
     <form method="get" action="">
         <br><br>
-        <label>  USERNAME <input type="text" name="username"/> </label>
-        <br><br>
-        <label> PASSWORD <input type="text" name="password"/> </label>
-        <br><br>
+        <div class="try2">
+            <label> USERNAME <input type="text" name="username"/> </label>
+            <br>
+            <label> PASSWORD <input type="password" name="password"/> </label>
+            <br>
+            
+        </div>
         <input type="hidden" name="controller" value="user"/>
         <button type="submit" name="action" value="login"> LOG IN </button>
-        <br><br>
         <button type="submit" name="action" value="signin"> SIGN IN </button>
+
+        <br><br>
+        <div class="try2">
+            
+        </div>
+        
+        <br><br>
+        
     </form>
 </body>
 </html>
