@@ -81,7 +81,7 @@
 
 <body>
     <div class="header">
-        <h2> LOG IN </h2>
+        <h2> ลงชื่อเข้าใช้งาน <br> ( LOG IN ) </h2>
     </div>
 
     <form method="get" action="">
@@ -107,7 +107,7 @@
         <div class="card">
             username : 12345 password : 12345 General
             <br>
-            username : 888 password : 999 Admin
+            username : 888 password : admin Admin
             
         </div>
         
