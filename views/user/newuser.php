@@ -46,7 +46,7 @@
             .cardright {
                 text-align:right;
                 font-family: 'Prompt', sans-serif;
-                background-color: blueviolet;
+                background-color: #f1f1f1;
                 padding: 10px;
                 /*margin-top: 10px;*/
             }
@@ -123,7 +123,7 @@
   
 
     <div class="header">
-        <h2> SIGN IN </h2>
+        <h2> สมัครสมาชิก <br> ( SIGN IN ) </h2>
     </div>
 
     <div class="row">
@@ -154,14 +154,13 @@
                     <label> E-mail <input  type="text" name="umail"/> </label>
                     <br>
                    
-                        <div class="cardleft">
-                            <div class="btn-group">
-                                <button class="button" type="submit" name="action" value="indexlogin"> BACK </button>
-                                <button class="button" type="submit" name="action" value="adduser"> NEXT </button>
-                            </div>
+                    <div class="cardright">
+                        <div class="btn-group">
+                            <input type="hidden" name="controller" value="user"/>
+                            <button class="button" type="submit" name="action" value="indexlogin"> BACK </button>
+                            <button class="button" type="submit" name="action" value="adduser"> NEXT </button>
                         </div>
-                    
-                        
+                    </div>
             </div>   
             </form>
             
