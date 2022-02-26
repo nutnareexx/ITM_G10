@@ -96,7 +96,13 @@ class userController
             echo $c;
             $loginList = loginModel::get($id);
             if($loginList->pw == $pass){
-                require_once('views/pages/home.php');
+                if($loginList->permission == 'N'){
+                    require_once('views/pages/home_n.php');
+                }
+                else if($loginList->permission == 'G'){
+                    require_once('views/pages/home.php');
+                }
+                
             }
             else{
                 echo "<br> WRONG PASSWORD ";
