@@ -18,7 +18,10 @@ class bookingController
     }
 
     public function bookdate(){
-        $booking_list = MaxperdayModel::getAll();
+        $id = $_GET['Hid'];
+        
+        $date = MaxperdayModel::s($id);
+        $name = hospitalModel::get($id);
         require_once('views/booking/index_datebook.php');
     }
 
