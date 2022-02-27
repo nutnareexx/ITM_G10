@@ -1,7 +1,11 @@
 <br>
-<form method="get"action="">
-<?php echo "$booking_list->H_name ";?> <br>
-</form> 
+
+    <?php 
+      
+        echo $name->H_name ;
+    ?>
+
+
 
 <table border = 1 >
     <tr> 
@@ -13,7 +17,7 @@
 </tr>
     
 
-    <?php foreach($booking_list as $booking)
+    <?php foreach($date as $booking)
 {
     echo "<tr> 
     <td>$booking->max_date</td>
