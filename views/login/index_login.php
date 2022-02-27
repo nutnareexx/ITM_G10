@@ -98,7 +98,7 @@
                 <div class="btn-group">
                     <input type="hidden" name="controller" value="user"/>
                     <button class="button" type="submit" name="action" value="login"> LOG IN </button>
-                    <button class="button" type="submit" name="action" value="signin"> SIGN IN </button>
+                    <button class="button" type="submit" name="action" value="signin"> SIGN UP </button>
                 </div>
             </div>
 
