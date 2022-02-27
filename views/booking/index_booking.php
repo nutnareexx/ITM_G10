@@ -60,7 +60,8 @@ Search </button>
     {
     echo "<tr> 
     
-    <td> <a href=?controller=booking&action=bookdate&Hid=$hospital->Hid>$hospital->H_name</a></td>
+    <td> 
+    <a href=?controller=booking&action=bookdate&Hid=$hospital->Hid>$hospital->H_name</a></td>
     
     </tr>";
     
@@ -71,7 +72,7 @@ Search </button>
 echo "</table> "
 ?>
 </div>
-<input type="hidden" name="Hid" value="<?php echo $hospital->Hid;?>"/>
+    <!--<input type="hidden" name="Hid" value="<?php echo $hospital->Hid;?>"/>-->
 
 </body>
 
