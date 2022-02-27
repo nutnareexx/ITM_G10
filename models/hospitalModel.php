@@ -19,8 +19,8 @@ class hospitalModel{
     public static function get($Hid)
     {
         require("connection_connect.php");
-        $sql = "SELECT * FROM `hostpital` WHERE Hid = $Hid";
-        $result = $result->query($sql);
+        $sql = "SELECT * FROM `hostpital` WHERE Hid = '$Hid'";
+        $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $Hid = $my_row['Hid'];
         $H_name = $my_row['H_name'];
