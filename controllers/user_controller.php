@@ -76,6 +76,7 @@ class userController
         $confirm = $_GET['confirm'];
 
         echo "- ".$id." , ".$password."add password -";
+        echo "- ".$confirm." , ".$password."-";
 
         //$check = 0;
         if($password == $confirm){
