@@ -123,7 +123,7 @@
   
 
     <div class="header">
-        <h2> สมัครสมาชิก <br> ( SIGN IN ) </h2>
+        <h2> สมัครสมาชิก <br> ( SIGN UP ) </h2>
     </div>
 
     <div class="row">
