@@ -21,6 +21,7 @@
     }
 
     .btn-group .button {
+        /*border-radius: 5%;*/
         position: relative;
         background-color: #333 ; /* Green */
         border: 1px black;
@@ -98,6 +99,7 @@
                 <div class="btn-group">
                     <input type="hidden" name="controller" value="user"/>
                     <button class="button" type="submit" name="action" value="login"> LOG IN </button>
+                    <br><br>
                     <button class="button" type="submit" name="action" value="signin"> SIGN UP </button>
                 </div>
             </div>
