@@ -33,7 +33,31 @@ public static function get($id)
     $sql = "SELECT u.user_id,names_title.name_nt,u.user_name,u.user_surname,u.user_phone, 
     u.user_mail,h.H_name,r.results,r.r_id,h.Hid FROM user AS u NATURAL JOIN names_title 
     LEFT OUTER JOIN results AS r ON u.user_id=r.user_id LEFT OUTER JOIN hostpital AS h ON r.Hid=h.Hid 
-    WHERE u.user_id=$id";
+    WHERE u.user_id='$id'";
+    $result = $conn->query($sql);
+    $my_row = $result->fetch_assoc();
+    $id = $my_row['r_id'];
+    $rs = $my_row['results'];
+    $uid = $my_row['user_id'];
+    $hid = $my_row['Hid'];
+    $nt = $my_row['name_nt'];
+    $name = $my_row['user_name'];
+    $sname = $my_row['user_surname'];
+    $phone = $my_row['user_phone'];
+    $mail = $my_row['user_mail'];
+    $hname = $my_row['H_name'];
+    require("connection_close.php");
+
+    return new Results($id,$rs,$uid,$hid,$nt,$name,$sname,$hname,$phone,$mail);
+}
+
+public static function getresult($id)
+{
+    require("connection_connect.php");
+    $sql = "SELECT u.user_id,names_title.name_nt,u.user_name,u.user_surname,u.user_phone, 
+    u.user_mail,h.H_name,r.results,r.r_id,h.Hid FROM user AS u NATURAL JOIN names_title 
+    LEFT OUTER JOIN results AS r ON u.user_id=r.user_id LEFT OUTER JOIN hostpital AS h ON r.Hid=h.Hid 
+    WHERE u.r_id='$id'";
     $result = $conn->query($sql);
     $my_row = $result->fetch_assoc();
     $id = $my_row['r_id'];
