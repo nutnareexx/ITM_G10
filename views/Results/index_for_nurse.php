@@ -1,10 +1,10 @@
 <table border=1><br>
 
-<br>new Results <a href="?controller=results&action=newResults"> CLICK!!! </a> <br>
+<br>new Results <a href="?controller=results&action=newResultsNurse"> CLICK!!! </a> <br>
 <br><form method="get" action="">
     <input type="text" name="key">
     <input type="hidden" name="controller" value="results"/>
-    <button type="submit" name="action" value="search"> 
+    <button type="submit" name="action" value="searchNurse"> 
 Search </button>
 </form><br>
 <br>
@@ -33,12 +33,12 @@ Search </button>
     <td>$r->hname</td>
     <td>$r->rs</td>
     <td><a href=?controller=results&action=upload> upload </a> </td>
-    <td><a href=?controller=results&action=updateForm&id=$r->uid> update </a></td>
-    <td><a href=?controller=results&action=deleteConfirm&id=$r->uid> delete </a></td></tr>";
+    <td><a href=?controller=results&action=updateFormNurse&id=$r->uid> update </a></td>
+    <td><a href=?controller=results&action=deleteConfirmNurse&id=$r->uid> delete </a></td></tr>";
 }
 echo "</table> "
 ?>
-<form action="/action_page.php">
+<!--<form action="/action_page.php">
        
         <input type="file" id="myfile" name="myfile"><br><br>
         <input type="submit" value="Submit">
@@ -48,4 +48,4 @@ echo "</table> "
 <form action="upload_file.php" method="POST" enctype="multipart/form-data">
     <input type="file" name="FileID"/>
     <input type="submit" type="submit" id="submit" value="Submit"/>
-</form>
+</form>-->
