@@ -6,7 +6,7 @@ $controllers = array('pages'=>['home','error'],
                     
                     'results'=>['index','indexNurse','newResultsNurse','addResultsNurse','updateFormNurse','updateNurse',
                                 'deleteConfirmNurse','deleteNurse','uploadNurse','searchNurse','indexUser','upload',
-                                'upResult','Submit'],
+                                'upResult','Submit','download'],
                     'user'=>['index','signin','adduser','indexlogin','login','addpassword'],
                     'login'=>[],
                     'prename'=>['index'],
@@ -27,6 +27,7 @@ function call($controller,$action){
         case"results":  require_once("models/resultsModel.php");
                         require_once("models/hospitalModel.php");
                         require_once("upload2/upload_file.php");
+                        require_once("models/fileModel.php");
                         $controller = new ResultsController();
 
         break;
