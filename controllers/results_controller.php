@@ -71,13 +71,19 @@ class ResultsController
 
     public function upload()
     {
-        //$FileID = $_GET['FileID'];
-        //$FileList = UploadFile::upload($FileID);
-        //UploadFile::upload($FileID);
-       // require_once('views/Results/uploadResults.php');
-        //require_once('upload.php');
+        $id = $_GET['id'];
+        echo $id;
         require_once('views/Results/uploadResults.php');
         
+    }
+
+    public function upResult()
+    {
+        $id = $_GET['id'];
+        echo $id;
+        $re = Results::getresult($id);
+        require_once('test.php');
+        //require_once('add_file_db.php');
     }
 
     public function searchNurse()
