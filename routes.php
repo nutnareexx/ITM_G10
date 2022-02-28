@@ -6,7 +6,7 @@ $controllers = array('pages'=>['home','error'],
                     
                     'results'=>['index','indexNurse','newResultsNurse','addResultsNurse','updateFormNurse','updateNurse',
                                 'deleteConfirmNurse','deleteNurse','uploadNurse','searchNurse','indexUser','upload',
-                                'Submit'],
+                                'upResult','Submit'],
                     'user'=>['index','signin','adduser','indexlogin','login','addpassword'],
                     'login'=>[],
                     'prename'=>['index'],
