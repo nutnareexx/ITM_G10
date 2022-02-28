@@ -8,7 +8,7 @@ class ResultsController
     {
         $resultsList = Results::getAll();
         require_once('views/Results/index_for_nurse.php');
-        require_once('views/Results/index_for_user.php');
+        //require_once('views/Results/index_for_user.php');
     }
     public function indexNurse()
     {
@@ -73,6 +73,7 @@ class ResultsController
     {
         $id = $_GET['id'];
         echo $id;
+        $re = Results::getresult($id);
         require_once('views/Results/uploadResults.php');
         
     }
@@ -81,7 +82,7 @@ class ResultsController
     {
         $id = $_GET['id'];
         echo $id;
-        $re = Results::getresult($id);
+        
         require_once('test.php');
         //require_once('add_file_db.php');
     }
@@ -95,18 +96,17 @@ class ResultsController
 
     public function indexUser()
     {
-        $resultsList = Results::getAll();
+        $userid = $_GET['userid'];
+        $resultsList = Results::get($userid);
+        $fileList = fileModel::get($resultsList->id);
         //require_once('views/Results/index_for_nurse.php');
         require_once('views/Results/index_for_user.php');
     } 
 
     public function download()
     {
-        //$FileID = $_GET['FileID'];
-        //$FileList = UploadFile::upload($FileID);
-        //UploadFile::upload($FileID);
-       // require_once('views/Results/uploadResults.php');
-        require_once('views/Results/uploadResults.php');
+        $name = $_GET['name'];
+        require_once('up/$name');
         
     }
 
