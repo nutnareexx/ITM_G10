@@ -1,6 +1,6 @@
 <form method="get" action="">
     <br>
-    <label>รหัสโรงพยาบาล<input type="text" name="H_name"/> </label><br>
+    <label>รหัสโรงพยาบาล<input type="text" name="Hid"/> </label><br>
     <label>ชื่อโรงพยาบาล<input type="text" name="H_name"/> </label><br>
     <label>เวลาเปิดทำการ<input type="time" name="H_time_open"/> </label><br>
     <label>เวลาปิดทำการ<input type="time" name="H_time_close"/> </label><br>
