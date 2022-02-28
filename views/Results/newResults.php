@@ -14,6 +14,6 @@
     </label><br>
     
     <input type="hidden" name="controller" value="results"/>
-    <button type="submit" name="action" value="index">Back</button>
-    <button type="submit" name="action" value="addResults">Save</button>
+    <button type="submit" name="action" value="indexNurse">Back</button>
+    <button type="submit" name="action" value="addResultsNurse">Save</button>
 </form>

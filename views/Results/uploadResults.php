@@ -1,8 +1,29 @@
-<form action="get">
-    <input type="file" name="FileID"/>
 
-    <input type="hidden" name="controller" value="results"/>
-    <button type="submit" name="action" value="index">Back</button>
-    <button type="submit" name="action" value="upload">Submit</button>
-    <!--<input type="submit" type="submit" id="submit" value="Submit"/>-->
+<?php 
+include('connect.php');
+$query = "SELECT * FROM uploadfile ORDER BY fileID asc" or die("Error:" . mysqli_error($con));
+$result = mysqli_query($con, $query); 
+
+//5. close connection
+mysqli_close($con);
+?>
+<br/>
+<form action="add_file_db.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
+  <!--<p>&nbsp;</p>-->
+ 
+    
+    <tr>
+    <label>
+        <input type="file" name="fileupload" id="fileupload"  required="required"/><br>
+      </label></td>
+    </tr>
+    <tr>
+    <br>
+    <td><input type="submit" name="button" id="button" value="Upload" /></td>
+    </tr>
+
+  </table>
+  <!--<p>&nbsp;</p>-->
 </form>
+
+    

@@ -3,6 +3,10 @@ $controllers = array('pages'=>['home','error'],
                     'maxperday'=>['index','search','newMaxperday','addMaxperday','updateForm','update','deleteConfirm','delete'],
                     'hospital'=>['index','search','newhospital','addhospital','updateforms','update','deleteconfirm','delete'],
                     'results'=>['index','newResults','addResults','updateForm','update','deleteConfirm','delete','upload','search','Submit'],
+                    'hospital'=>['index','search'],
+                    'results'=>['index','indexNurse','newResultsNurse','addResultsNurse','updateFormNurse','updateNurse',
+                                'deleteConfirmNurse','deleteNurse','uploadNurse','searchNurse','indexUser','upload',
+                                'Submit'],
                     'user'=>['index','signin','adduser','indexlogin','login','addpassword'],
                     'login'=>[],
                     'prename'=>['index'],
@@ -24,6 +28,7 @@ function call($controller,$action){
                         require_once("models/hospitalModel.php");
                         require_once("upload2/upload_file.php");
                         $controller = new ResultsController();
+
         break;
 
         case"hospital": require_once("models/hospitalModel.php");
