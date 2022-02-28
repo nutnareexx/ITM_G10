@@ -8,6 +8,21 @@ class hospital
         require_once('views/hospital/indexhospitalAdmin.php');
     }
     
+    public function indexUser()
+    {
+        $hospitalmodelList = hospitalModel::getAll();
+        require_once('views/hospital/indexhospital.php');
+        //require_once('views/hospital/indexhospitalAdmin.php');
+    }
+    
+    public function indexAdmin()
+    {
+        $hospitalmodelList = hospitalModel::getAll();
+        //require_once('views/hospital/indexhospital.php');
+        require_once('views/hospital/indexhospitalAdmin.php');
+    }
+    
+
     public function search()
     {
         $key = $_GET['key'];
@@ -15,6 +30,7 @@ class hospital
         require_once('views/hospital/indexhospital.php');
         require_once('views/hospital/indexhospitalAdmin.php');
     }
+
 
     public function newhospital()
     {
