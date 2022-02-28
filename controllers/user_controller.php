@@ -66,7 +66,6 @@ class userController
 
     public function newpassword($id){
         $this->id = $id;
-        echo "- ".$id." new password -";
         require_once('views/login/newlogin.php');
     }
 
@@ -75,13 +74,10 @@ class userController
         $password = $_GET['password'];
         $confirm = $_GET['confirm'];
 
-        echo "- ".$id." , ".$password."add password -";
-        echo "- ".$confirm." , ".$password."-";
-
         //$check = 0;
         if($password == $confirm){
             loginModel::add($id,$password);
-            require_once('views/login/succeess.php');
+            require_once('views/login/index_login.php');
         }
         else{
             echo "- Password Don't Match -";
