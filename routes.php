@@ -3,7 +3,7 @@ $controllers = array('pages'=>['home','error'],
                     'maxperday'=>['index','search','newMaxperday','addMaxperday','updateForm','update','deleteConfirm','delete'],
                     'hospital'=>['index','search','newhospital','addhospital','updateforms','update','deleteconfirm','delete'],
                     'results'=>['index','newResults','addResults','updateForm','update','deleteConfirm','delete','upload','search','Submit'],
-                    'hospital'=>['index','search'],
+                    
                     'results'=>['index','indexNurse','newResultsNurse','addResultsNurse','updateFormNurse','updateNurse',
                                 'deleteConfirmNurse','deleteNurse','uploadNurse','searchNurse','indexUser','upload',
                                 'Submit'],
