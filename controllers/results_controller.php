@@ -4,6 +4,12 @@ use LDAP\Result;
 
 class ResultsController
 {
+    public function index()
+    {
+        $resultsList = Results::getAll();
+        require_once('views/Results/index_for_nurse.php');
+        require_once('views/Results/index_for_user.php');
+    }
     public function indexNurse()
     {
         $resultsList = Results::getAll();
@@ -69,6 +75,7 @@ class ResultsController
         //$FileList = UploadFile::upload($FileID);
         //UploadFile::upload($FileID);
        // require_once('views/Results/uploadResults.php');
+        //require_once('upload.php');
         require_once('views/Results/uploadResults.php');
         
     }
