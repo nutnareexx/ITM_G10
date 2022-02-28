@@ -4,16 +4,33 @@
     </head>
 
     <style>
-        
+        #customers {
+            font-family: 'Prompt', sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
 
-            .center {
-                text-align: center;
-                border: none;
-                }
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #333;
+            color: white;
+            }
+            
     </style>
 
-    <div class="center">
-            <table border=1><br>
+ <div class="center">
+            <table border=1 id="customers"><br>
 
             <br>new Results <a href="?controller=results&action=newResultsNurse"> CLICK!!! </a> <br>
             <br><form method="get" action="">
@@ -22,19 +39,22 @@
                 <button type="submit" name="action" value="searchNurse"> 
             Search </button>
             </form><br>
+
+
+   
             <br>
-                <tr> <td>ลำดับที่</td>
-                <td>เลขบัตรประชาชน</td>
-                <td>คำนำหน้า</td>
-                <td>ชื่อ</td>
-                <td>นามสกุล</td>
-                <td>เบอร์โทรศัพท์</td>
-                <td>อีเมลล์</td>
-                <td>โรงพยาบาล</td>
-                <td>ผลการตรวจ</td>
-                <td>upload file</td>
-                <td>update</td>
-                <td>delete</td></tr>
+                <tr> <th>ลำดับที่</th>
+                <th>เลขบัตรประชาชน</th>
+                <th>คำนำหน้า</th>
+                <th>ชื่อ</th>
+                <th>นามสกุล</th>
+                <th>เบอร์โทรศัพท์</th>
+                <th>อีเมลล์</th>
+                <th>โรงพยาบาล</th>
+                <th>ผลการตรวจ</th>
+                <th>upload file</th>
+                <th>update</th>
+                <th>delete</th></tr>
 
             <?php foreach($resultsList as $r)
             {
@@ -65,6 +85,8 @@
                 <input type="submit" type="submit" id="submit" value="Submit"/>
             </form>-->
         </div>
+
+    
 
 </html>
     
