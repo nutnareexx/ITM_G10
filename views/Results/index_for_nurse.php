@@ -32,7 +32,7 @@ Search </button>
     <td>$r->mail</td>
     <td>$r->hname</td>
     <td>$r->rs</td>
-    <td><a href=?controller=results&action=upload> upload </a> </td>
+    <td><a href=?controller=results&action=upload&id=$r->id> clik to upload </a> </td>
     <td><a href=?controller=results&action=updateFormNurse&id=$r->uid> update </a></td>
     <td><a href=?controller=results&action=deleteConfirmNurse&id=$r->uid> delete </a></td></tr>";
 }
