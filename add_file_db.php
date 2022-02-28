@@ -40,13 +40,13 @@ if($upload != '') {   //not select file มีการอัพโหลดไ�
 	if($result){
 		echo "<script type='text/javascript'>";
 		echo "alert('Upload File Succesfuly');";
-		echo "window.location = 'form.php'; ";
+		echo "window.location = 'views/Results/index_for_nurse.php'; ";
 		echo "</script>";
 	}
 	else{
 		echo "<script type='text/javascript'>";
 		echo "alert('Error back to upload again');";
-		echo "window.location = 'form.php'; ";
+		echo "window.location = 'index.php'; ";
 		echo "</script>";
 }
 ?>
