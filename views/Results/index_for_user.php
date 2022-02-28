@@ -1,7 +1,8 @@
 <table border=1>
 
 <br>
-    <tr> <td>ลำดับที่</td>
+    <tr> 
+    <td>ลำดับที่</td>
     <td>เลขบัตรประชาชน</td>
     <td>คำนำหน้า</td>
     <td>ชื่อ</td>
@@ -12,18 +13,19 @@
     <td>ผลการตรวจ</td>
     <td>Download File</td>
     </tr>
-<?php foreach($resultsList as $r)
+<?php
 {
-    echo "<tr> <td>$r->id</td>
-    <td>$r->uid</td>
-    <td>$r->nt</td>
-    <td>$r->name</td>
-    <td>$r->sname</td>
-    <td>$r->phone</td>
-    <td>$r->mail</td>
-    <td>$r->hname</td>
-    <td>$r->rs</td>
-    <td> dow</td>
+    echo "<tr> 
+    <td>$resultsList->id</td>
+    <td>$resultsList->uid</td>
+    <td>$resultsList->pname</td>
+    <td>$resultsList->name</td>
+    <td>$resultsList->sname</td>
+    <td>$resultsList->phone</td>
+    <td>$resultsList->mail</td>
+    <td>$resultsList->hname</td>
+    <td>$resultsList->rs</td>
+    <td> <a href='up/$fileList->fname'> $fileList->fname </a>  </td>
     </tr>";
 }
 echo "</table> "
