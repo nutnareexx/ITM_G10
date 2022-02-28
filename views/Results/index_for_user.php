@@ -32,7 +32,6 @@
 <table border=1 id="customers">
 
 <br>
-<<<<<<< Updated upstream
     <tr> 
     <td>ลำดับที่</td>
     <td>เลขบัตรประชาชน</td>
@@ -44,18 +43,6 @@
     <td>โรงพยาบาล</td>
     <td>ผลการตรวจ</td>
     <td>Download File</td>
-=======
-    <tr> <th>ลำดับที่</th>
-    <th>เลขบัตรประชาชน</th>
-    <th>คำนำหน้า</th>
-    <th>ชื่อ</th>
-    <th>นามสกุล</th>
-    <th>เบอร์โทรศัพท์</th>
-    <th>อีเมลล์</th>
-    <th>โรงพยาบาล</th>
-    <th>ผลการตรวจ</th>
-    <th>Download File</th>
->>>>>>> Stashed changes
     </tr>
 <?php
 {
