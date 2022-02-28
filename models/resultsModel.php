@@ -7,7 +7,7 @@ class Results{
     public $rs;
     public $uid;
     public $hid;
-    public $nt;
+    public $pname;
     public $name;
     public $sname;
     public $hname;
@@ -19,7 +19,7 @@ public function __construct($id,$rs,$uid,$hid,$nt,$name,$sname,$hname,$phone,$ma
     $this->rs = $rs;
     $this->uid = $uid;
     $this->hid = $hid;
-    $this->nt = $nt;
+    $this->pname = $nt;
     $this->name = $name;
     $this->sname = $sname;
     $this->hname = $hname;
@@ -30,8 +30,8 @@ public function __construct($id,$rs,$uid,$hid,$nt,$name,$sname,$hname,$phone,$ma
 public static function get($id)
 {
     require("connection_connect.php");
-    $sql = "SELECT u.user_id,names_title.name_nt,u.user_name,u.user_surname,u.user_phone, 
-    u.user_mail,h.H_name,r.results,r.r_id,h.Hid FROM user AS u NATURAL JOIN names_title 
+    $sql = "SELECT u.user_id,n.name_nt,u.user_name,u.user_surname,u.user_phone, 
+    u.user_mail,h.H_name,r.results,r.r_id,h.Hid FROM user AS u NATURAL JOIN names_title AS n
     LEFT OUTER JOIN results AS r ON u.user_id=r.user_id LEFT OUTER JOIN hostpital AS h ON r.Hid=h.Hid 
     WHERE u.user_id='$id'";
     $result = $conn->query($sql);
@@ -40,7 +40,7 @@ public static function get($id)
     $rs = $my_row['results'];
     $uid = $my_row['user_id'];
     $hid = $my_row['Hid'];
-    $nt = $my_row['name_nt'];
+    $pname = $my_row['name_nt'];
     $name = $my_row['user_name'];
     $sname = $my_row['user_surname'];
     $phone = $my_row['user_phone'];
@@ -48,18 +48,21 @@ public static function get($id)
     $hname = $my_row['H_name'];
     require("connection_close.php");
 
-    return new Results($id,$rs,$uid,$hid,$nt,$name,$sname,$hname,$phone,$mail);
+    return new Results($id,$rs,$uid,$hid,$pname,$name,$sname,$hname,$phone,$mail);
 }
 
 public static function getresult($id)
 {
     require("connection_connect.php");
     $sql = "SELECT u.user_id,names_title.name_nt,u.user_name,u.user_surname,u.user_phone, 
-    u.user_mail,h.H_name,r.results,r.r_id,h.Hid FROM user AS u NATURAL JOIN names_title 
+    u.user_mail,h.H_name,r.results,r.r_id,h.Hid 
+    FROM user AS u NATURAL JOIN names_title 
     LEFT OUTER JOIN results AS r ON u.user_id=r.user_id LEFT OUTER JOIN hostpital AS h ON r.Hid=h.Hid 
-    WHERE u.r_id='$id'";
+    WHERE r.r_id='$id'";
+
     $result = $conn->query($sql);
     $my_row = $result->fetch_assoc();
+
     $id = $my_row['r_id'];
     $rs = $my_row['results'];
     $uid = $my_row['user_id'];
