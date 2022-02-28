@@ -23,7 +23,9 @@ function call($controller,$action){
         case"results":  require_once("models/resultsModel.php");
                         require_once("models/hospitalModel.php");
                         require_once("upload2/upload_file.php");
-                        $controller = new ResultsController();
+                        $controller = new ResultsNurseController();
+                        $controller = new ResultsUserController();
+
         break;
 
         case"hospital": require_once("models/hospitalModel.php");
