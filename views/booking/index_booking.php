@@ -34,6 +34,19 @@
         padding: 20px;
         text-align: center;
     }
+
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
 </style>
 
 <body>
@@ -46,10 +59,12 @@
     <div class="try1">
     <input type="text" name="key">
     
-
-    <input type="hidden" name="controller" value="booking"/>
-    <button type="submit" name="action" value="search"> 
-Search </button>
+    <div class="button">
+        <input type="hidden" name="controller" value="booking"/>
+            <button type="submit" name="action" value="search"> 
+        Search </button>
+    </div>
+        
 
 </form>
 </div>
