@@ -84,7 +84,7 @@ class hospitalModel{
     public static function update($Hid,$H_name,$H_time_open,$H_time_close,$H_price,$Hidnew)
     {
         require("connection_connect.php");
-        $sql = "UPDATE `hostpital` SET `Hid`='[$Hid]',`H_name`='$H_name',
+        $sql = "UPDATE `hostpital` SET `Hid`='$Hid',`H_name`='$H_name',
         `H_time_open`='$H_time_open',`H_time_close`='$H_time_close',`H_price`='$H_price' WHERE Hid = '$Hidnew' ";
         $result = $conn->query($sql);
         require("connection_close.php");
@@ -94,7 +94,7 @@ class hospitalModel{
     public static function delete($Hid)
     {
         require("connection_connect.php");
-        $sql = "DELETE FROM `hostpital` WHERE Hid = $Hid";
+        $sql = "DELETE FROM `hostpital` WHERE Hid = '$Hid'";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "delete success $result row";
