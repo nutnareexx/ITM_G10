@@ -7,6 +7,6 @@
 <form method="get" action="">
     <input type="hidden" name="controller" value="results"/>
     <input type="hidden" name="id" value="<?php echo $resultss->id;?>"/>
-    <button type="submit" name="action" value="index"> Back </button>
-    <button type="submit" name="action" value="delete"> Delete </button>
+    <button type="submit" name="action" value="indexNurse"> Back </button>
+    <button type="submit" name="action" value="deleteNurse"> Delete </button>
 </form>
