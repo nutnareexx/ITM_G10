@@ -55,8 +55,8 @@
 
     <div class="topnav">
     <a href="?controller=booking&action=index"> จองตรวจ RT-PCR </a>
-    <a href="?controller=results&action=index"> ผลการตรวจ </a>
-    <a href="?controller=hospital&action=index"> โรงพยาบาล </a>
+    <a href="?controller=results&action=indexUser"> ผลการตรวจ </a>
+    <a href="?controller=hospital&action=indexUser"> โรงพยาบาล </a>
 
     </div>
 
