@@ -15,7 +15,7 @@
         /* Style the top navigation bar */
         .topnav {
             overflow: hidden;
-            background-color: #333;
+            background-color: #0974ba;
         }
 
         /* Style the topnav links */
@@ -46,15 +46,19 @@
             padding: 8px;
             }
 
-        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        #customers tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
 
-        #customers tr:hover {background-color: #ddd;}
+        #customers tr:hover {
+            background-color: #80b0cf;
+        }
 
         #customers th {
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: center;
-            background-color: #333;
+            background-color: #0974ba;
             color: white;
             }
 
@@ -74,7 +78,7 @@
         .btn-group .button {
             /*border-radius: 5%;*/
             position: relative;
-            background-color: #333 ; /* Green */
+            background-color: #0974ba ; /* Green */
             border: 1px black;
             color: white;
             padding: 15px 32px;
