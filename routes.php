@@ -1,7 +1,7 @@
 <?php 
 $controllers = array('pages'=>['home','error'],
                     'maxperday'=>['index','search','newMaxperday','addMaxperday','updateForm','update','deleteConfirm','delete'],
-                    'hospital'=>['index','indexUser','indexAdmin','search','newhospital','addhospital','updateforms','update',
+                    'hospital'=>['index','indexUser','indexAdmin','search','searchuser','newhospital','addhospital','updateforms','update',
                                 'deleteconfirm','delete','indexuser'],
 
                     
