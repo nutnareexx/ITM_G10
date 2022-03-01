@@ -16,7 +16,7 @@
             background-color: #333 ; /* Green */
             border: 1px black;
             color: white;
-            padding: 15px 32px;
+            padding: 10px 32px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -60,7 +60,7 @@
                     <br>เวลาเปิดทำการ:$hospitalmodels->H_time_open 
                     <br>เวลาปิดทำการ:$hospitalmodels->H_time_close  
                     <br>ราคาตรวจ RT-PCR:$hospitalmodels->H_price<br>";?>
-        <form method="get" action="">
+        <form method="get" action=""><br>
             <input type="hidden" name="controller" value="hospital"/>
             <input type="hidden" name="Hidnew" value="<?php echo $hospitalmodels->Hid;?>"/>
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
