@@ -13,7 +13,7 @@
         }
         .btn-group .button {
             position: relative;
-            background-color: #333 ; /* Green */
+            background-color: #0974ba ; /* Green */
             border: 1px black;
             color: white;
             padding: 10px 25px;
@@ -55,16 +55,16 @@
     <div class="card center">
         <form method="get" action="">
             <div class="btn-group">
-            <label>รหัสผลตรวจ<input type="text" name="id"/></label><br>
+            <label>รหัสผลตรวจ <input type="text" name="id"/></label><br>
             </div>
             
-            <label>ผู้ป่วย<select name="uid">
+            <label>ผู้ป่วย <select name="uid">
                 <option value=""> choose </option>
-                <?php foreach($resultsList as $r) {echo "<option value = $r->uid>$r->name $r->sname</option>";}?>
+                <?php foreach($user as $u) {echo "<option value = $u->uid>$u->uname $u->usurname</option>";}?>
                 </select>
             </label><br>
-            <label>ผลการตรวจ<input type="text" name="rs"/></label><br>
-            <label>โรงพยาบาล<select name="hid">
+            <label>ผลการตรวจ <input type="text" name="rs"/></label><br>
+            <label>โรงพยาบาล <select name="hid">
                 <option value=""> choose </option>
                 <?php foreach($h_List as $h) {echo "<option value = $h->Hid>$h->H_name</option>";}?>
                 </select>
@@ -72,6 +72,7 @@
             
             <div class="btn-group">
                 <input type="hidden" name="controller" value="results"/>
+                <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
                 <button class="button" type="submit" name="action" value="indexNurse">Back</button>
                 <button class="button" type="submit" name="action" value="addResultsNurse">Save</button>
             </div>
