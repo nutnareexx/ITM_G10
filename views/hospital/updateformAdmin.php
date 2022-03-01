@@ -74,7 +74,8 @@
         <div class="btn-group">
             <input type="hidden" name="controller" value="hospital"/>
             <input type="hidden" name="Hidnew" value="<?php echo $hospitalmodels->Hid;?>"/>
-            <button class="button" type="submit" name="action" value="index"> Back </button>
+            <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+            <button class="button" type="submit" name="action" value="indexAdmin"> Back </button>
             <button class="button" type="submit" name="action" value="update"> Update </button>
         </div>
         
