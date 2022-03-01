@@ -16,7 +16,7 @@
             background-color: #333 ; /* Green */
             border: 1px black;
             color: white;
-            padding: 15px 32px;
+            padding: 10px 25px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -34,10 +34,10 @@
             color: black;
         }
 
-        input[type=password], select {
+        input[type=text], select {
             font-family: 'Prompt', sans-serif;
             width: 15%;
-            padding: 10px 10px;
+            padding: 5px 5px;
             margin: 8px 0;
             font-size: 16px;
             display: inline-block;
@@ -54,7 +54,9 @@
 
     <div class="card center">
         <form method="get" action="">
+            <div class="btn-group">
             <label>รหัสผลตรวจ<input type="text" name="id"/></label><br>
+            </div>
             
             <label>ผู้ป่วย<select name="uid">
                 <option value=""> choose </option>
@@ -70,8 +72,8 @@
             
             <div class="btn-group">
                 <input type="hidden" name="controller" value="results"/>
-                <button type="submit" name="action" value="indexNurse">Back</button>
-                <button type="submit" name="action" value="addResultsNurse">Save</button>
+                <button class="button" type="submit" name="action" value="indexNurse">Back</button>
+                <button class="button" type="submit" name="action" value="addResultsNurse">Save</button>
             </div>
         </form>
     </div>
