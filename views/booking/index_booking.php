@@ -16,7 +16,7 @@
     /* Style the top navigation bar */
     .topnav {
             overflow: hidden;
-            background-color: #333;
+            background-color: #0974ba;
         }
 
         /* Style the topnav links */
@@ -95,7 +95,7 @@
     .table {
         text-align: center;
         border-collapse: collapse;
-        width: 100%;
+        width: 50%;
         float: center;
     }
 
@@ -104,9 +104,34 @@
         padding: 8px;
         float: center;
     }
-    tr:nth-child(even) {background-color: #f2f2f2;}
+    /*tr:nth-child(odd) {background-color: #f2f2f2;}*/
 
+    table {
+    border-collapse: collapse;
+    width: 30%;
+    }
 
+    th, td {
+    padding: 8px;
+    text-align: center;
+    /*border-bottom: 1px solid #ddd;*/
+    
+    }
+
+    tr:hover {
+        background-color: #80b0cf;
+        color: red;
+    }
+
+    a :link{
+        color: #0974ba;
+    }
+
+    a:hover {
+        color:#f1f1f1;
+    }
+
+  
     
     
 </style>
@@ -125,51 +150,40 @@
         <?php echo $userid?>
     </div><br>
             
-
-
-    <div class="try1">
-        <div class="btn-group">
-        <form method="get" action="">
-            <input type="text" name="key">
-            <input type="hidden" name="controller" value="booking"/>
-            <input type="hidden" name="userid" value="<?php echo $userid?>"/>
-            <button class="button" type="submit" name="action" value="search"> Search </button>
-        </form> 
-      </div>
-    </div><br>  
-
-
-        
-        
     <div class="try1">
         
+            <div class="btn-group">
+            <form method="get" action="">
+                <input type="text" name="key">
+                <input type="hidden" name="controller" value="booking"/>
+                <input type="hidden" name="userid" value="<?php echo $userid?>"/>
+                <button class="button" type="submit" name="action" value="search"> Search </button>
+            </form> 
+        </div>
+        </div><br>
+
+    
+        <div class="try1">
+            
+            <table  id="customers" align="center">
             <?php 
             foreach($hospitalmodelList as $hospital)
             { 
-                /*<input type="hidden" name="controller" value="booking"/>
-                //<input type="hidden" name="Hid" value="<?php echo $hospital->Hid?>"/>
-                <input type="hidden" name="userid" value="<?php echo $userid?>"/>
-                <button class="button" type="submit" name="action" value="bookdate"/> $hospital->H_name </button>*/
-                echo "<a href=?controller=booking&action=bookdate&Hid=$hospital->Hid&userid=$userid>$hospital->H_name</a><br>";
+                echo "<tr> <td><a href=?controller=booking&action=bookdate&Hid=$hospital->Hid&userid=$userid >$hospital->H_name</a> </td>
+                </tr>";
             }
+
+            echo "</table>"
             ?>
-        <p> -----------------------------</p>
-    </div>
+        </div>
+            
+  
+      
 
-    <div class="try1">
-        
-        <table border = 1 id="customers >
-        <?php 
-        foreach($hospitalmodelList as $hospital)
-        { 
-            echo "<tr> <td><a href=?controller=booking&action=bookdate&Hid=$hospital->Hid&userid=$userid>$hospital->H_name</a> </td>
-            </tr>";
-        }
 
-        echo "</table>"
-        ?>
-    </div>
         
+        
+    
     
 
 
