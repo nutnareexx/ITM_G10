@@ -4,9 +4,9 @@ class maxperdayController
     public function index()
     {
         $userid = $_GET['userid'];
-        $maxList = MaxperdayModel::get($userid);
+        //$maxList = MaxperdayModel::get($userid);
 
-        //$maxperday_list = MaxperdayModel::getAll();
+        $maxperday_list = MaxperdayModel::getAll();
         $hospitalmodelList = hospitalModel::getAll();
         require_once('views/max_per_day/index_maxperday.php');
 
@@ -15,7 +15,9 @@ class maxperdayController
     public function search()
     {
         $key = $_GET['key'];
+        $userid = $_GET['userid'];
         $maxperday_list = MaxperdayModel::search($key);
+        
         require_once('views/max_per_day/index_maxperday.php');
     }
 
@@ -42,6 +44,7 @@ class maxperdayController
 
     public function updateForm()
     {
+        //$userid = $_GET['userid'];
         $max_id = $_GET['max_id'];
         $m = MaxperdayModel::get($max_id);
         $hospitalmodelList = hospitalModel::getAll();
