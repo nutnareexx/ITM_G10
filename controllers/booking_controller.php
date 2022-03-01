@@ -13,14 +13,14 @@ class bookingController
     public function search()
     {
         $key = $_GET['key'];
+        $userid = $_GET['userid'];
         $booking_list = MaxperdayModel::search($key);
-        
-        require_once('views/booking/index_datebook.php');
+        $hospitalmodelList = hospitalModel::search($key);
+        require_once('views/booking/index_booking.php');
     }
 
     public function bookdate(){
         $id = $_GET['Hid'];
-        
         $date = MaxperdayModel::s($id);
         $name = hospitalModel::get($id);
         require_once('views/booking/index_datebook.php');
