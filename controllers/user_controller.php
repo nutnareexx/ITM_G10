@@ -12,6 +12,11 @@ class userController
         require_once('views/login/index_login.php');
     }
 
+    public function indexuser(){
+        $userid = $_GET['userid'];
+        require_once('views/pages/home.php');
+    }
+
 
     public function signin(){
         $prenameList = prenameModel::getAll();
@@ -87,19 +92,19 @@ class userController
 
     public function login(){
         $logList = loginModel::getAll();
-        $id = $_GET['username'];
+        $userid = $_GET['username'];
         $pass = $_GET['password'];
         $c = 0;
 
         foreach($logList as $log){
-            if($log->uid == $id){
+            if($log->uid == $userid){
                 $c=1;
                 break;
             }
         }
 
         if($c == 1){
-            $loginList = loginModel::get($id);
+            $loginList = loginModel::get($userid);
             if($loginList->pw == $pass){
                 if($loginList->permission == 'N'){
                     require_once('views/pages/home_n.php');
