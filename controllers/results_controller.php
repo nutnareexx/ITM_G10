@@ -13,15 +13,14 @@ class ResultsController
     public function indexNurse()
     {
         $userid = $_GET['userid'];
-        //$resultsList = Results::get($userid);
-        //$fileList = fileModel::get($resultsList->id);
         $resultsList = Results::getAll();
         require_once('views/Results/index_for_nurse.php');
-        //require_once('views/Results/index_for_user.php');
     }
 
     public function newResultsNurse()
     {
+        $userid = $_GET['userid'];
+        $user = userModel::getAll();
         $resultsList = Results::getAll();
         $h_List = hospitalModel::getAll();
         require_once('views/Results/newResults.php');
@@ -34,6 +33,7 @@ class ResultsController
         $uid = $_GET['uid'];
         $hid = $_GET['hid'];
         $h_List = hospitalModel::getAll();
+        
         Results::add($id,$rs,$uid,$hid);
 
         ResultsController::indexNurse();
@@ -41,6 +41,7 @@ class ResultsController
 
     public function updateFormNurse()
     {
+        $userid = $_GET['userid'];
         $id = $_GET['id'];
         $resultss = Results::get($id);
         $resultsList = Results::getAll();
@@ -50,16 +51,18 @@ class ResultsController
 
     public function updateNurse()
     {
+        $userid = $_GET['userid'];
         $id = $_GET['id'];
-        $uid = $_GET['uid'];
+        //$uid = $_GET['uid'];
         $hid = $_GET['hid'];
         $rs = $_GET['rs'];
-        Results::update($id,$uid,$hid,$rs);
+        Results::update($id,$hid,$rs);
         ResultsController::indexNurse();
     }
 
     public function deleteConfirmNurse()
     {
+        $userid = $_GET['userid'];
         $id = $_GET['id'];
         $resultss = Results::get($id);
         require_once('views/Results/deleteConfirm.php');
@@ -67,6 +70,7 @@ class ResultsController
 
     public function deleteNurse()
     {
+        $userid = $_GET['userid'];
         $id = $_GET['id'];
         Results::delete($id);
         ResultsController::indexNurse();
@@ -74,6 +78,7 @@ class ResultsController
 
     public function upload()
     {
+        $userid = $_GET['userid'];
         $id = $_GET['id'];
         echo $id;
         $re = Results::getresult($id);
@@ -92,6 +97,7 @@ class ResultsController
 
     public function searchNurse()
     {
+        $userid = $_GET['userid'];
         $key = $_GET['key'];
         $resultsList = Results::search($key);
         require_once('views/Results/index_for_nurse.php');
@@ -108,6 +114,7 @@ class ResultsController
 
     public function download()
     {
+        
         $name = $_GET['name'];
         require_once('up/$name');
         
