@@ -34,7 +34,7 @@
             color: black;
         }
 
-        input[type=password], select {
+        input[type=text], select {
             font-family: 'Prompt', sans-serif;
             width: 15%;
             padding: 10px 10px;
