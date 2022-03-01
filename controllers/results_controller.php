@@ -13,9 +13,9 @@ class ResultsController
     public function indexNurse()
     {
         $userid = $_GET['userid'];
-        $resultsList = Results::get($userid);
-        $fileList = fileModel::get($resultsList->id);
-        //$resultsList = Results::getAll();
+        //$resultsList = Results::get($userid);
+        //$fileList = fileModel::get($resultsList->id);
+        $resultsList = Results::getAll();
         require_once('views/Results/index_for_nurse.php');
         //require_once('views/Results/index_for_user.php');
     }
