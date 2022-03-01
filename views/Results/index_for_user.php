@@ -49,6 +49,7 @@
     echo "<tr> 
     <td>$resultsList->id</td>
     <td>$resultsList->uid</td>
+    <td>$resultsList->nt</td>
     <td>$resultsList->pname</td>
     <td>$resultsList->name</td>
     <td>$resultsList->sname</td>
