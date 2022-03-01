@@ -131,24 +131,43 @@
                 display: table;
                 clear: both;
             }
+
+        .try2{
+            text-align:center;
+            font-family: 'Prompt', sans-serif;
+        }
         
             
     </style>
+
         <br>
 
         <div class="header">
-            <h1><?php echo $name->H_name ;?></h1>
+            <h1> จองการตรวจ RT-PCR </h1>
+        </div>
+
+            <div class="topnav">
+            <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
+            <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
+            <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+
+        <?php echo $userid?>
+
         </div>
         
 
 
 <center>
+    <div class="try2">
+        <br>
+        <h2><?php echo $name->H_name ;?></h2>
+    </div>
+    
     <table border = 1 id="customers">
         
             <tr> 
                         <th>วันที่</th>
-                        <th>เวลาเปิดทำการ</th>
-                        <th>เวลาปิดทำการ</th>
+                        <th>เวลานัด</th>
                         <th>จำนวนที่รับได้ต่อวัน</th>
                         <th>จอง</th>
                     </tr>
@@ -158,8 +177,7 @@
                         {
                             echo "<tr> 
                             <td>$booking->max_date</td>
-                            <td>$booking->max_topen</td>
-                            <td>$booking->max_tclose</td>
+                            <td>$booking->max_topen - $booking->max_tclose</td>
                             <td>$booking->max_num</td>
                             <td> <a href=?controller=booking&action=checkbook&max_id=$booking->max_id>จอง</a></td>
                             </tr>";
