@@ -12,6 +12,7 @@ class bookingController
 
     public function search()
     {
+        $userid = $_GET['userid'];
         $key = $_GET['key'];
         $userid = $_GET['userid'];
         $booking_list = MaxperdayModel::search($key);
