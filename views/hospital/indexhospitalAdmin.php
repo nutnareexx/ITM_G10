@@ -27,7 +27,7 @@
         /* Style the top navigation bar */
         .topnav {
             overflow: hidden;
-            background-color: #333;
+            background-color: #0974ba;
         }
 
         /* Style the topnav links */
@@ -66,14 +66,14 @@
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: #333;
+            background-color: #0974ba;
             color: white;
         }
 
         .btn-group .button {
             /*border-radius: 5%;*/
             position: relative;
-            background-color: #333 ; /* Green */
+            background-color: #0974ba ; /* Green */
             border: 1px black;
             color: white;
             padding: 15px 32px;
@@ -126,7 +126,7 @@
 </div>
 
 <div class="topnav">
-        <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
+        <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
         <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
         <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
 
