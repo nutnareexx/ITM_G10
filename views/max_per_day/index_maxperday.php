@@ -18,7 +18,7 @@
         /* Style the top navigation bar */
         .topnav {
             overflow: hidden;
-            background-color: #333;
+            background-color:#0974ba;
         }
 
         /* Style the topnav links */
@@ -57,7 +57,7 @@
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: center;
-            background-color: #333;
+            background-color: #0974ba;
             color: white;
             }
         .try1{
@@ -74,7 +74,7 @@
             .btn-group .button {
             /*border-radius: 5%;*/
             position: relative;
-            background-color: #333 ; /* Green */
+            background-color: #0974ba ; /* Green */
             border: 1px black;
             color: white;
             padding: 15px 32px;
@@ -125,7 +125,7 @@
     <body>
             
         <div class="try1">
-            <h3>new max per day <a href="?controller=maxperday&action=newMaxperday"> click!!! </a> </h3>
+            <h3>new max per day <a href="?controller=maxperday&action=newMaxperday&userid=<?php echo $userid?>"> click!!! </a> </h3>
 
 
             <form method="get" action="">
@@ -154,8 +154,8 @@
                 <td>$m->max_topen</td>
                 <td>$m->max_tclose</td>
                 <td>$m->max_num</td>
-                <td> <a href=?controller=maxperday&action=updateForm&max_id=$m->max_id>update</a></td>
-                <td> <a href=?controller=maxperday&action=deleteConfirm&max_id=$m->max_id>delete</td>
+                <td> <a href=?controller=maxperday&action=updateForm&max_id=$m->max_id&userid=$userid>update</a></td>
+                <td> <a href=?controller=maxperday&action=deleteConfirm&max_id=$m->max_id&userid=$userid>delete</td>
                 </tr>";
             }
 
