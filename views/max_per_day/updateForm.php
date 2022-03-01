@@ -13,7 +13,7 @@
         }
         .btn-group .button {
             position: relative;
-            background-color: #333 ; /* Green */
+            background-color: #0974ba ; /* Green */
             border: 1px black;
             color: white;
             padding: 15px 32px;
@@ -35,6 +35,30 @@
         }
 
         input[type=text], select {
+            font-family: 'Prompt', sans-serif;
+            width: 15%;
+            padding: 10px 10px;
+            margin: 8px 0;
+            font-size: 16px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=time], select {
+            font-family: 'Prompt', sans-serif;
+            width: 15%;
+            padding: 10px 10px;
+            margin: 8px 0;
+            font-size: 16px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=date], select {
             font-family: 'Prompt', sans-serif;
             width: 15%;
             padding: 10px 10px;
@@ -72,8 +96,8 @@
         <input type="hidden" name="controller" value="maxperday"/>
         <input type="hidden" name="max_id" value="<?php echo $m->max_id;?>"/>
         <input type="hidden" name="Hid" value="<?php echo $m->Hid;?>"/>
-
-        <button class="button" type="submit" name="action" value="index">Back</button>
+        <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+        <button class="button" type="submit" name="action" value="indexNurse">Back</button>
         <button class="button" type="submit" name="action" value="update"> update </button>
 
     </div>
