@@ -41,7 +41,7 @@
         #customers {
             font-family: 'Prompt', sans-serif;
             border-collapse: collapse;
-            width: 80%;
+            width: 70%;
             }
 
         #customers td, #customers th {
@@ -70,6 +70,42 @@
             text-align: center;
             border: none;
             }
+        
+            .btn-group .button {
+            /*border-radius: 5%;*/
+            position: relative;
+            background-color: #333 ; /* Green */
+            border: 1px black;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*float: center;*/
+        }
+
+        .btn-group .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .btn-group .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        input[type=text], select {
+            font-family: 'Prompt', sans-serif;
+            width: 25%;
+            padding: 12px 10px;
+            margin: 8px 0;
+            font-size: 16px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
 
     </style>
 
@@ -77,27 +113,39 @@
         <h1> จำนวนที่รับได้ต่อวัน </h1>
     </div>
 
+    <div class="topnav">
+    <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
+                <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
+                <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+
+                <?php echo $userid?>
+            </div>
+            <br>
+
     <body>
-            <div class="try1">
+            
+        <div class="try1">
             <h3>new max per day <a href="?controller=maxperday&action=newMaxperday"> click!!! </a> </h3>
 
 
             <form method="get" action="">
+                <div class="btn-group">
                 <input type="text" name="key">
                 <input type="hidden" name="controller" value="maxperday"/>
-                <button type="submit" name="action" value="search"> 
+                <button class="button" type="submit" name="action" value="search"> 
             Search </button>
+                </div>
             </form>
             
         <center>
-            <table border = 1 >
-                <tr> <td>โรงพยาบาล</td> 
-                <td>วันที่</td>
-                <td>เวลาเปิดทำการ</td>
-                <td>เวลาปิดทำการ</td>
-                <td>จำนวนที่รับได้ต่อวัน</td>
-                <td>update</td>
-                <td>delete</td></tr>
+            <table border = 1 id="customers">
+                <tr> <th>โรงพยาบาล</th> 
+                <th>วันที่</th>
+                <th>เวลาเปิดทำการ</th>
+                <th>เวลาปิดทำการ</th>
+                <th>จำนวนที่รับได้ต่อวัน</th>
+                <th>update</th>
+                <th>delete</th></tr>
                 <?php foreach($maxperday_list as $m)
             {
                 echo "<tr> <td>$m->H_name</td>
