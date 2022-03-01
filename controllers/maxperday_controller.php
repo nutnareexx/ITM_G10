@@ -3,7 +3,10 @@ class maxperdayController
 {
     public function index()
     {
-        $maxperday_list = MaxperdayModel::getAll();
+        $userid = $_GET['userid'];
+        $maxList = MaxperdayModel::get($userid);
+
+        //$maxperday_list = MaxperdayModel::getAll();
         $hospitalmodelList = hospitalModel::getAll();
         require_once('views/max_per_day/index_maxperday.php');
 

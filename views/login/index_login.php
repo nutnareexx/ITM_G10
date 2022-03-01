@@ -100,7 +100,8 @@
                     <input type="hidden" name="controller" value="user"/>
                     <button class="button" type="submit" name="action" value="login"> LOG IN </button>
                     <br><br>
-                    <button type="submit" name="action" value="signin"> SIGN UP </button>
+                    หากยังไม่มี User คลิกที่นี่->
+                    <?php echo "<a href=?controller=user&action=signin> SIGN UP </a> ";?>
                     
                 </div>
             </div>

@@ -43,7 +43,7 @@ class loginModel{
     }
 
     public static function add($id,$pass){
-        echo "Add ".$id.$pass." -";
+    
         require("connection_connect.php");
         $sql = "INSERT INTO `userlogin`(`user_id`, `password`) 
         VALUES ('$id','$pass')";
