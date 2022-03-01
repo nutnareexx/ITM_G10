@@ -56,7 +56,7 @@
         <div class="btn-group">
             <?php echo "<br><br>Are you Sure to delete this id?<br>
             <br>ลำดับที่ : $resultss->id
-            <br>ชื่อ : $resultss->nt$resultss->name   $resultss->sname
+            <br>ชื่อ : $resultss->pname$resultss->name   $resultss->sname
             <br>เบอร์โทรศัพท์ : $resultss->phone
             <br>โรงพยาบาล : $resultss->hname
             <br>ผลการตรวจ : $resultss->rs";?>
