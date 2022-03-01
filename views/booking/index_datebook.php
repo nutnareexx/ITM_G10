@@ -71,7 +71,7 @@
             display: inline-block;
             font-size: 16px;
             cursor: pointer;
-            float: center;
+            /*float: center;*/
         }
 
         .btn-group .button:not(:last-child) {
