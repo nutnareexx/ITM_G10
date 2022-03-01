@@ -26,7 +26,7 @@
         /* Style the top navigation bar */
         .topnav {
             overflow: hidden;
-            background-color: #333;
+            background-color: #0974ba;
         }
 
         /* Style the topnav links */
@@ -65,14 +65,14 @@
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: #333;
+            background-color: #0974ba;
             color: white;
         }
 
         .btn-group .button {
             /*border-radius: 5%;*/
             position: relative;
-            background-color: #333 ; /* Green */
+            background-color: #0974ba ; /* Green */
             border: 1px black;
             color: white;
             padding: 15px 32px;
@@ -112,9 +112,9 @@
 </div>
 
 <div class="topnav">
-        <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
-        <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
-        <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+        <a href="?controller=booking&action=index&userid=<?php echo $userid;?>"> วันเวลาที่รับตรวจ </a>
+        <a href="?controller=results&action=indexNurse&userid=<?php echo $userid;?>"> ผลการตรวจ </a>
+        <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid;?>"> โรงพยาบาล </a>
 
         <?php echo $userid?>
 </div><br>
@@ -122,19 +122,20 @@
  <div class="center">
      <center>
          <div class="try1">
-            <table border=1 id="customers">
+            
 
-            <br>new Results <a href="?controller=results&action=newResultsNurse"> CLICK!!! </a> <br>
+            <br>new Results <a href="?controller=results&action=newResultsNurse&userid=<?php echo $userid;?>"> CLICK!!! </a> <br>
             <br><form method="get" action="">
             <div class="btn-group">
                 <input type="text" name="key">
                 <input type="hidden" name="controller" value="results"/>
+                <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
                 <button class="button" type="submit" name="action" value="searchNurse"> 
             Search </button>
             </div>
             </form><br>
 
-
+            <table border=1 id="customers">
    
             <br>
                 <tr> <th>ลำดับที่</th>
@@ -161,9 +162,9 @@
                 <td>$r->mail</td>
                 <td>$r->hname</td>
                 <td>$r->rs</td>
-                <td><a href=?controller=results&action=upload&id=$r->id> clik to upload </a> </td>
-                <td><a href=?controller=results&action=updateFormNurse&id=$r->uid> update </a></td>
-                <td><a href=?controller=results&action=deleteConfirmNurse&id=$r->uid> delete </a></td></tr>";
+                <td><a href=?controller=results&action=upload&id=$r->id&userid=$userid> clik to upload </a> </td>
+                <td><a href=?controller=results&action=updateFormNurse&id=$r->uid&userid=$userid> update </a></td>
+                <td><a href=?controller=results&action=deleteConfirmNurse&id=$r->uid&userid=$userid> delete </a></td></tr>";
             }
             echo "</table> "
             ?>
