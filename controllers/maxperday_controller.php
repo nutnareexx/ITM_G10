@@ -25,14 +25,14 @@ class maxperdayController
 
     public function addMaxperday()
     {
-        $max_id = $_GET['max_id'];
+        //$max_id = $_GET['max_id'];
         $Hid = $_GET['H_name'];
         $max_date = $_GET['max_date'];
         $max_topen = $_GET['max_topen'];
         $max_tclose = $_GET['max_tclose'];
         $max_num = $_GET['max_num'];
         $hospitalmodelList = hospitalModel::getAll();
-        MaxperdayModel::add($max_id,$Hid,$max_date,$max_topen,$max_tclose,$max_num);
+        MaxperdayModel::add($Hid,$max_date,$max_topen,$max_tclose,$max_num);
         maxperdayController::index();
 
     }
