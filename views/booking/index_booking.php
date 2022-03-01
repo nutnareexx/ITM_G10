@@ -83,6 +83,30 @@
         border-radius: 4px;
         box-sizing: border-box;
     }
+
+    .card2 {
+        font-family: 'Prompt', sans-serif;
+        background-color: #f1f1f1;
+        padding: 10px 10px 10px 10px;
+        margin: 10px 10px 10px 10px;
+            
+               
+    }
+    .table {
+        text-align: center;
+        border-collapse: collapse;
+        width: 100%;
+        float: center;
+    }
+
+    .th, td {
+        text-align: center;
+        padding: 8px;
+        float: center;
+    }
+    tr:nth-child(even) {background-color: #f2f2f2;}
+
+
     
     
 </style>
@@ -118,23 +142,36 @@
         
         
     <div class="try1">
-        <?php foreach($hospitalmodelList as $hospital)
-        {
-        echo "<tr> 
         
-        <td> 
-        <a href=?controller=booking&action=bookdate&Hid=$hospital->Hid&userid=$userid>$hospital->H_name</a></td>
+            <?php 
+            foreach($hospitalmodelList as $hospital)
+            { 
+                /*<input type="hidden" name="controller" value="booking"/>
+                //<input type="hidden" name="Hid" value="<?php echo $hospital->Hid?>"/>
+                <input type="hidden" name="userid" value="<?php echo $userid?>"/>
+                <button class="button" type="submit" name="action" value="bookdate"/> $hospital->H_name </button>*/
+                echo "<a href=?controller=booking&action=bookdate&Hid=$hospital->Hid&userid=$userid>$hospital->H_name</a><br>";
+            }
+            ?>
+        <p> -----------------------------</p>
+    </div>
+
+    <div class="try1">
         
-        </tr>";
-        
-        echo "<br>";
-        
-        
+        <table border = 1 id="customers >
+        <?php 
+        foreach($hospitalmodelList as $hospital)
+        { 
+            echo "<tr> <td><a href=?controller=booking&action=bookdate&Hid=$hospital->Hid&userid=$userid>$hospital->H_name</a> </td>
+            </tr>";
         }
-        echo "</table> "
+
+        echo "</table>"
         ?>
-        </div>
+    </div>
         
+    
+
 
     </body>
 
