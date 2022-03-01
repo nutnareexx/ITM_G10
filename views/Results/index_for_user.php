@@ -14,7 +14,7 @@
         /* Style the top navigation bar */
         .topnav {
             overflow: hidden;
-            background-color: #333;
+            background-color: #0974ba;
         }
 
         /* Style the topnav links */
@@ -53,14 +53,14 @@
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: center;
-            background-color: #333;
+            background-color: #0974ba;
             color: white;
             }
 
         .btn-group .button {
             /*border-radius: 5%;*/
             position: relative;
-            background-color: #333 ; /* Green */
+            background-color: #0974ba ; /* Green */
             border: 1px black;
             color: white;
             padding: 15px 32px;
@@ -149,9 +149,9 @@
             
 
     <div class="row">        
-        <div class="leftcolumn">
-            <center>
-                <table border=1 id="customers">
+        <!--<div class="leftcolumn">-->
+            
+                <table border=1 id="customers" align="center">
                 <tr> 
                         <!--<th>ลำดับที่</th>
                         <th>เลขบัตรประชาชน</th>
@@ -182,11 +182,11 @@
                         <button class="button" type="submit" name="action" value="indexuser">Back</button>
                         </div>
                 </form> -->    
-            </center>
+          
             
-        </div>
+        <!--</div>-->
         
-        <div class="rightcolumn">
+        <!--<div class="rightcolumn">
             <div class="circle">
                 <img src="pic/account.png" width="150" height="150">
             </div>
@@ -204,7 +204,7 @@
                 ?>
             </div>
             
-        </div>
+        </div>-->
             
     </div>
     
