@@ -179,7 +179,7 @@
                             <td>$booking->max_date</td>
                             <td>$booking->max_topen - $booking->max_tclose</td>
                             <td>$booking->max_num</td>
-                            <td> <a href=?controller=booking&action=checkbook&max_id=$booking->max_id>จอง</a></td>
+                            <td> <a href=?controller=booking&action=checkbook&max_id=$booking->max_id&userid=$userid> จอง </a></td>
                             </tr>";
                         }
 
