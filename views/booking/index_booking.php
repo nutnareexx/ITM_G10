@@ -1,6 +1,6 @@
 
 
-<html>
+<!--<html>
     <head> 
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         
@@ -60,7 +60,7 @@
 
     <body>
         <br>
-        <div class="try2"><h1>  การจองการตรวจ RT-PCR </h1></div>
+        <div class="try2"><h1>  การจองการตรวจ RT-PCR </h1></div>-->
         
 
 <html>
@@ -163,24 +163,14 @@
         <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
 
         <?php echo $userid?>
-    </div><br>
-            
-
-
-    <div class="try1">
-        <form method="get" action=""><div class="btn-group">
-            <input type="text" name="key">
-                <input type="hidden" name="controller" value="booking"/>
-                <button class="button" type="submit" name="action" value="search"> Search </button>
-                
-            </div>
-        </form>   
+    </div><br>  
 
 
         <div class="try1">
             <form method="get" action="">
-                <input type="text" name="key">
                 <div class="btn-group">
+                <input type="text" name="key">
+                
                     <input type="hidden" name="controller" value="booking"/>
                     
                     <button class="button" type="submit" name="action" value="search"> Search </button>
