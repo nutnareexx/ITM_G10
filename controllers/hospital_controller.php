@@ -19,6 +19,7 @@ class hospital
     
     public function indexAdmin()
     {
+        
         $userid = $_GET['userid'];
         $hospitalmodelList = hospitalModel::getAll();
         //require_once('views/hospital/indexhospital.php');
