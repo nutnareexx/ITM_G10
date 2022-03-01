@@ -50,7 +50,7 @@ class bookingController
         $userid = $_GET['userid'];
         $maxid = $_GET['maxid'];
         bookingModel::add($maxid,$userid);
-        require_once('views/login/succeess.php');
+        require_once('views/pages/home.php');
     }
 
 
