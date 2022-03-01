@@ -127,8 +127,7 @@ class MaxperdayModel{
         require("connection_connect.php");
         $sql = "SELECT h.H_name,m.Hid,m.max_id,m.date,m.time_open, m.time_close,m.max
         FROM max_per_day AS m NATURAL JOIN hostpital AS h WHERE 
-        (  h.Hid like '%$key%')
-        and m.Hid=h.Hid";
+        (  h.Hid like '%$key%') and m.Hid=h.Hid";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
