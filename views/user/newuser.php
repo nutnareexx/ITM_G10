@@ -150,7 +150,7 @@
     </div>
 
     <div class="row">
-        <div class="leftcolumn">
+        <!--<div class="leftcolumn">-->
             <div class="card2">
             <form method="get" action="">
                     <label> เลขบัตรประชาชน ( ไม่ต้องใส่ขีด )<input  type="text" name="uid"/> </label>
@@ -187,10 +187,10 @@
             </div>   
             </form>
             
-            </div>
+            <!--</div>-->
         
 
-        <div class="rightcolumn">
+        <!--<div class="rightcolumn">
             <div class="circle">
                 <img src="pic/account.png" width="150" height="150">
             </div>
@@ -205,7 +205,7 @@
                 <br><br>
                 E-mail :
             </div>
-        </div>
+        </div>-->
     
 
     </div>
