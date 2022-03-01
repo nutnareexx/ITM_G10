@@ -23,6 +23,36 @@
 </head>
 
 <style>
+    .header {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f1f1f1;
+            padding: 40px;
+            text-align: center;
+        }
+
+    /* Style the top navigation bar */
+    .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Style the topnav links */
+    .topnav a {
+            font-family: 'Prompt', sans-serif;
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change color on hover */
+    .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
     .try1{
         font-family: 'Prompt', sans-serif;
         text-align: center;
@@ -76,17 +106,24 @@
 
 <body>
     <br>
-    <div class="try2"><h1>  การจองการตรวจ RT-PCR </h1></div>
+    <div class="header">
+        <h1>  การจองการตรวจ RT-PCR </h1>
+    </div>
     
+    <div class="topnav">
+        <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
+        <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
+        <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
 
+        <?php echo $userid?>
+    </div><br>
+            
 
 
     <div class="try1">
-        <form method="get" action="">
+        <form method="get" action=""><div class="btn-group">
             <input type="text" name="key">
-            <div class="btn-group">
                 <input type="hidden" name="controller" value="booking"/>
-                
                 <button class="button" type="submit" name="action" value="search"> Search </button>
                 
             </div>
