@@ -29,6 +29,7 @@ function call($controller,$action){
                         require_once("models/hospitalModel.php");
                         require_once("upload2/upload_file.php");
                         require_once("models/fileModel.php");
+                        require_once("models/userModel.php");
                         $controller = new ResultsController();
 
         break;
