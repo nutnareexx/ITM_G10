@@ -137,7 +137,7 @@
     <center>
         <div class="try1">
             
-            <br>new Hospital <a href=?controller=hospital&action=newhospital>Click</a><br>
+            <br>new Hospital <a href="?controller=hospital&action=newhospital">Click</a><br>
             <form method="get" action="">
                 <div class="btn-group">
                     <input type="text" name="key">
