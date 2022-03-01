@@ -129,7 +129,8 @@
                 <div class="btn-group">
                 <input type="text" name="key">
                     <input type="hidden" name="controller" value="hospital"/>
-                    <button class="button" type="submit" name="action" value="search"> Search </button>
+                    <input type="hidden" name="userid" value="<?php echo $userid?>"/>
+                    <button class="button" type="submit" name="action" value="searchuser"> Search </button>
                 </div>    
             </form>
             <table border = 1 id="customers">
