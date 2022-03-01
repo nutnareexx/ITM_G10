@@ -60,7 +60,7 @@
             {
                 echo "<tr> <td>$r->id</td>
                 <td>$r->uid</td>
-                <td>$r->nt</td>
+                <td>$r->pname</td>
                 <td>$r->name</td>
                 <td>$r->sname</td>
                 <td>$r->phone</td>
