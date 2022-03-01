@@ -1,6 +1,4 @@
 
-        
-
 <html>
 <head> 
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
@@ -119,7 +117,7 @@
 
         
         
-        <div class="try1">
+    <div class="try1">
         <?php foreach($hospitalmodelList as $hospital)
         {
         echo "<tr> 
@@ -136,7 +134,6 @@
         echo "</table> "
         ?>
         </div>
-    </div>
         
 
     </body>
