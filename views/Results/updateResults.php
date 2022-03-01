@@ -13,7 +13,7 @@
         }
         .btn-group .button {
             position: relative;
-            background-color: #333 ; /* Green */
+            background-color: #0974ba ; /* Green */
             border: 1px black;
             color: white;
             padding: 15px 32px;
@@ -56,18 +56,9 @@
             <form method="get" action="">
             <label> ลำดับที่ <input type="text" name="id" 
                 value="<?php echo $resultss->id;?>"/></label><br>
-            <label>เลขบัตรประชาชน<select name="uid">
-            <?php foreach($resultsList as $r)
-            {
-                echo "<option value= $r->uid";
-                if($r->uid==$resultss->uid) 
-                {
-                    echo " selected='selected'";
-                }
-                echo "> $r->uid</option>";
-            }?>
-            </select></label><br>
-            <?php echo "ชื่อ $resultss->pname$resultss->name   $resultss->sname<br>
+            <label>เลขบัตรประชาชน : <?php echo $resultss->uid?> </label>
+            <br>
+            <?php echo "ชื่อ $resultss->pname $resultss->name   $resultss->sname<br>
             เบอร์โทรศัพท์ $resultss->phone<br>
             อีเมลล์ $resultss->mail";?><br>
 
@@ -88,8 +79,9 @@
         <div class="btn-group">
             <br><input type="hidden" name="controller" value="results"/>
             <input type="hidden" name="id" value="<?php echo $resultss->id;?>"/>
+            <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
             <button class="button" type="submit" name="action" value="indexNurse">Back</button>
-            <button class="button" type="submit" name="action" value="update"> update </button>
+            <button class="button" type="submit" name="action" value="updateNurse"> update </button>
             </form>
         </div>
         
