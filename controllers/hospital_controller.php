@@ -29,6 +29,7 @@ class hospital
     public function search()
     {
         $key = $_GET['key'];
+        $userid = $_GET['userid'];
         $hospitalmodelList = hospitalModel::search($key);
         //require_once('views/hospital/indexhospital.php');
         require_once('views/hospital/indexhospitalAdmin.php');
@@ -36,6 +37,7 @@ class hospital
     public function searchuser()
     {
         $key = $_GET['key'];
+        $userid = $_GET['userid'];
         $hospitalmodelList = hospitalModel::search($key);
         require_once('views/hospital/indexhospital.php');
         //require_once('views/hospital/indexhospitalAdmin.php');
@@ -62,6 +64,7 @@ class hospital
      public function updateforms()
      {
          $ht = $_GET['Hid'];
+         $userid = $_GET['userid'];
          $hospitalmodels = hospitalModel::get($ht);
          require_once('views/hospital/updateformAdmin.php');
      }
