@@ -13,7 +13,7 @@
         }
         .btn-group .button {
             position: relative;
-            background-color: #333 ; /* Green */
+            background-color: #0974ba ; /* Green */
             border: 1px black;
             color: white;
             padding: 15px 32px;
@@ -63,6 +63,7 @@
             <form method="get" action="">
                 <input type="hidden" name="controller" value="results"/>
                 <input type="hidden" name="id" value="<?php echo $resultss->id;?>"/>
+                <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
                 <button class="button" type="submit" name="action" value="indexNurse"> Back </button>
                 <button class="button" type="submit" name="action" value="deleteNurse"> Delete </button>
             </form>
