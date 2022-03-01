@@ -1,5 +1,5 @@
 <form method="get" action = "">
-    <label> max_id <input type = "text" name = "max_id" /> </label><br>
+    <!--<label> max_id <input type = "text" name = "max_id" /> </label><br>-->
     <label> โรงพยาบาล <select name="H_name">
         <option value=""> choose </option>
         <?php foreach($hospitalmodelList as $hos) {echo "<option value = $hos->Hid>$hos->H_name</option>";}?>

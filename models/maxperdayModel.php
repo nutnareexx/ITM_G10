@@ -88,11 +88,11 @@ class MaxperdayModel{
         return $maxperday_list;
     }
 
-    public static function add($max_id,$Hid,$max_date,$max_topen,$max_tclose,$max_num)
+    public static function add($Hid,$max_date,$max_topen,$max_tclose,$max_num)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO `max_per_day`(`max_id`, `Hid`, `date`, `time_open`, `time_close`, `max`) 
-        VALUES ('$max_id','$Hid','$max_date','$max_topen','$max_tclose','$max_num')";
+        $sql = "INSERT INTO `max_per_day`( `Hid`, `date`, `time_open`, `time_close`, `max`) 
+        VALUES ('$Hid','$max_date','$max_topen','$max_tclose','$max_num')";
         $result = $conn->query($sql);
         require("connection_close.php");
         //echo $max_id,$max_date,$max_topen,$max_tclose,$max_num,$Hid;
