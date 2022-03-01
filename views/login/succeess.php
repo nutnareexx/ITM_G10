@@ -1,1 +1,3 @@
-- SIGN IN SUCEESS - 
+<?php
+echo $userid." - ".$maxid;
+?>
