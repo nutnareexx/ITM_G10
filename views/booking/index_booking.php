@@ -1,13 +1,11 @@
 
+        
 
 <html>
-    <head> 
-        <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-        
-    </head>
-`
-    
-
+<head> 
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> 
+</head>
 
 <style>
     .header {
@@ -116,6 +114,8 @@
             <button class="button" type="submit" name="action" value="search"> Search </button>
         </form> 
       </div>
+    </div><br>  
+
 
         
         
