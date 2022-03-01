@@ -88,8 +88,8 @@
         <div class="btn-group">
             <br><input type="hidden" name="controller" value="results"/>
             <input type="hidden" name="id" value="<?php echo $resultss->id;?>"/>
-            <button type="submit" name="action" value="indexNurse">Back</button>
-            <button type="submit" name="action" value="update"> update </button>
+            <button class="button" type="submit" name="action" value="indexNurse">Back</button>
+            <button class="button" type="submit" name="action" value="update"> update </button>
             </form>
         </div>
         
