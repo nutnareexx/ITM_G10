@@ -92,7 +92,7 @@
 <body>
     <br>
     <div class="header">
-        <h1>  การจองการตรวจ RT-PCR </h1>
+        <h1>  จองการตรวจ RT-PCR </h1>
     </div>
     
     <div class="topnav">
@@ -125,7 +125,7 @@
         echo "<tr> 
         
         <td> 
-        <a href=?controller=booking&action=bookdate&Hid=$hospital->Hid>$hospital->H_name</a></td>
+        <a href=?controller=booking&action=bookdate&Hid=$hospital->Hid&userid=$userid>$hospital->H_name</a></td>
         
         </tr>";
         
