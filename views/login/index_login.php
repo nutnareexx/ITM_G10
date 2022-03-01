@@ -100,7 +100,8 @@
                     <input type="hidden" name="controller" value="user"/>
                     <button class="button" type="submit" name="action" value="login"> LOG IN </button>
                     <br><br>
-                    <button class="button" type="submit" name="action" value="signin"> SIGN UP </button>
+                    <button type="submit" name="action" value="signin"> SIGN UP </button>
+                    
                 </div>
             </div>
 
