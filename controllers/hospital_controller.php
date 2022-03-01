@@ -3,6 +3,7 @@ class hospital
 {
     public function index()
     {
+        $userid=$_GET['userid'];
         $hospitalmodelList = hospitalModel::getAll();
         require_once('views/hospital/indexhospital.php');
         require_once('views/hospital/indexhospitalAdmin.php');
@@ -10,6 +11,7 @@ class hospital
     
     public function indexUser()
     {
+        $userid = $_GET['userid'];
         $hospitalmodelList = hospitalModel::getAll();
         require_once('views/hospital/indexhospital.php');
         //require_once('views/hospital/indexhospitalAdmin.php');
@@ -21,7 +23,7 @@ class hospital
         //require_once('views/hospital/indexhospital.php');
         require_once('views/hospital/indexhospitalAdmin.php');
     }
-    
+
 
     public function search()
     {
