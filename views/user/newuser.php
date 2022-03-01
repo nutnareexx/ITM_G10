@@ -73,7 +73,7 @@
                 background-color: #f1f1f1;
                 padding: 20px;
                 margin-top: 20px;
-                text-align: center;
+               
             }
 
             .card3 {
