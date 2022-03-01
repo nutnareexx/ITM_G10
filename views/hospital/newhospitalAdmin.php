@@ -76,7 +76,7 @@
             
             <div class="btn-group">
                 <input type="hidden" name="controller" value="hospital"/>
-                <input type="hidden" name="userid" value="<?php echo $userid?>"/>
+                <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
                 <button class="button" type="submit" name="action" value="indexAdmin">Back</button>
                 <button class="button" type="submit" name="action" value="addhospital">Save</button>
 
