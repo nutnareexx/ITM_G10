@@ -12,6 +12,17 @@ class maxperdayController
 
     }
 
+    public function indexNurse()
+    {
+        $userid = $_GET['userid'];
+        //$maxList = MaxperdayModel::get($userid);
+
+        $maxperday_list = MaxperdayModel::getAll();
+        $hospitalmodelList = hospitalModel::getAll();
+        require_once('views/max_per_day/index_maxperday.php');
+
+    }
+
     public function search()
     {
         $key = $_GET['key'];
