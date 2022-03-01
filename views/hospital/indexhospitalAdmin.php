@@ -126,23 +126,24 @@
 </div>
 
 <div class="topnav">
-        <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
-        <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
-        <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+                <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
+                <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
+                <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
 
-        <?php echo $userid?>
-</div><br>
+                <?php echo $userid?>
+            </div><br>
 
 
 <body>
     <center>
         <div class="try1">
             
-            <br>new Hospital <a href="?controller=hospital&action=newhospital">Click</a><br>
+            <br>new Hospital <a href="?controller=hospital&action=newhospital&userid=<?php echo $userid;?>">Click</a><br>
             <form method="get" action="">
                 <div class="btn-group">
                     <input type="text" name="key">
                     <input type="hidden" name="controller" value="hospital"/>
+                    <input type="hidden" name="userid" value="<?php echo $userid ;?>"/>
                     <button class="button" type="submit" name="action" value="search"> Search </button>
                 </div>
                 </form>
@@ -162,8 +163,8 @@
                 <td>$hospitallist->H_time_open</td>
                 <td>$hospitallist->H_time_close</td> 
                 <td>$hospitallist->H_price</td> 
-                <td>  <a href=?controller=hospital&action=updateforms&Hid=$hospitallist->Hid> update </a> </td>
-                <td>  <a href=?controller=hospital&action=deleteconfirm&Hid=$hospitallist->Hid> delete</a> </td></tr>";
+                <td>  <a href=?controller=hospital&action=updateforms&Hid=$hospitallist->Hid&userid=$userid> update </a> </td>
+                <td>  <a href=?controller=hospital&action=deleteconfirm&Hid=$hospitallist->Hid&userid=$userid> delete</a> </td></tr>";
             }
             echo "</table>";
             ?>
