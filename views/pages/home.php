@@ -38,6 +38,7 @@
             background-color: #ddd;
             color: black;
         }
+        
 
     </style>
 </head>
@@ -54,11 +55,11 @@
     </div>
 
     <div class="topnav">
-    <a href="?controller=booking&action=index"> จองตรวจ RT-PCR </a>
-    <a href="?controller=results&action=indexUser&userid=<?php echo $id?>"> ผลการตรวจ </a>
-    <a href="?controller=hospital&action=indexUser"> โรงพยาบาล </a>
+    <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
+    <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
+    <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
 
-    <?php echo $id?>
+    <?php echo $userid?>
 
     </div>
 
