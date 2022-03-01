@@ -3,6 +3,7 @@ class bookingController
 {
     public function index()
     {
+        $userid = $_GET['userid'];
         $booking_list = MaxperdayModel::getAll();
         $hospitalmodelList = hospitalModel::getAll();
         require_once('views/booking/index_booking.php');
