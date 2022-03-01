@@ -29,8 +29,15 @@ class hospital
     {
         $key = $_GET['key'];
         $hospitalmodelList = hospitalModel::search($key);
-        require_once('views/hospital/indexhospital.php');
+        //require_once('views/hospital/indexhospital.php');
         require_once('views/hospital/indexhospitalAdmin.php');
+    }
+    public function searchuser()
+    {
+        $key = $_GET['key'];
+        $hospitalmodelList = hospitalModel::search($key);
+        require_once('views/hospital/indexhospital.php');
+        //require_once('views/hospital/indexhospitalAdmin.php');
     }
 
 
