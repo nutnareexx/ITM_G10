@@ -12,8 +12,9 @@
             margin-top: 20px;
         }
         .btn-group .button {
+            font-family: 'Prompt', sans-serif;
             position: relative;
-            background-color: #333 ; /* Green */
+            background-color: #0974ba ; /* Green */
             border: 1px black;
             color: white;
             padding: 10px 32px;
