@@ -19,7 +19,7 @@
         /* Style the top navigation bar */
         .topnav {
             overflow: hidden;
-            background-color: #333;
+            background-color: #0974ba;
         }
 
         /* Style the topnav links */
