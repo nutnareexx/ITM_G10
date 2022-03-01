@@ -47,19 +47,21 @@ class hospital
 
     public function newhospital()
     {
+        $userid=$_GET['userid'];
         $hospitalmodellist = hospitalModel::getAll();
         require_once('views/hospital/newhospitalAdmin.php');
     }
 
     public function addhospital()
     {
+        $userid=$_GET['userid'];
         $Hid = $_GET['Hid'];
         $H_name = $_GET['H_name'];
         $H_time_open = $_GET['H_time_open'];
         $H_time_close = $_GET['H_time_close'];
         $H_price = $_GET['H_price'];
         hospitalModel::Add($Hid,$H_name,$H_time_open,$H_time_close,$H_price);
-        hospital::index();
+        hospital::indexAdmin();
      }
 
      public function updateforms()
@@ -72,6 +74,7 @@ class hospital
 
      public function update()
      {
+        $userid=$_GET['userid'];
         $Hid = $_GET['Hid'];
         $H_name = $_GET['H_name'];
         $H_time_open = $_GET['H_time_open'];
@@ -79,11 +82,12 @@ class hospital
         $H_price = $_GET['H_price'];
         $Hidnew = $_GET['Hidnew'];
         hospitalModel::update($Hid,$H_name,$H_time_open,$H_time_close,$H_price,$Hidnew);
-        hospital::index();
+        hospital::indexAdmin();
      }
 
      public function deleteconfirm()
      {
+        $userid=$_GET['userid'];
         $Hid = $_GET['Hid'];
         $hospitalmodels =  hospitalModel::get($Hid);
         require_once('./views/hospital/deleteconfirmAdmin.php');
@@ -91,9 +95,10 @@ class hospital
 
      public function delete()
      {
+        $userid=$_GET['userid'];
          $Hidnew = $_GET['Hidnew'];
          hospitalModel::delete($Hidnew);
-         hospital::index();
+         hospital::indexAdmin();
      }
 
 
