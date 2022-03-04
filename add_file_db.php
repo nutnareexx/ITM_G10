@@ -36,8 +36,8 @@
 	}
 		// เพิ่มไฟล์เข้าไปในตาราง uploadfile
 		
-			$sql = "INSERT INTO `uploadfile`(`fileID`, `fileupload`, `r_id`) 
-			VALUES ('$id','$newname','$id')";
+			$sql = "INSERT INTO `uploadfile`( `fileupload`, `r_id`) 
+			VALUES ('$newname','$id')";
 			
 			$result = $conn->query($sql);
 		
