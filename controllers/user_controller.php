@@ -4,6 +4,8 @@ class userController
 {
     public function index()
     {
+        $userid = $_GET['userid'];
+        $user_List = userModel::get($userid);
         $userList = userModel::getAll();
         require_once('views/user/index_user.php');
     }
@@ -14,6 +16,8 @@ class userController
 
     public function indexuser(){
         $userid = $_GET['userid'];
+        $user_List = userModel::get($userid);
+        $userList = userModel::getAll();
         require_once('views/pages/home.php');
     }
 
@@ -99,6 +103,7 @@ class userController
         foreach($logList as $log){
             if($log->uid == $userid){
                 $c=1;
+                //require_once("views/login/index_login.php");
                 break;
             }
         }
@@ -120,9 +125,10 @@ class userController
             }
             
         }
-        else{
+        if($c == 0){
             echo "<br> DON'T HAVE";
-            userController::indexlogin();
+            //userController::indexlogin();
+            require_once("views/user/newuser.php");
         }
         
       
