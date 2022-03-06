@@ -163,12 +163,13 @@
 <div class="row">
     <div class="leftcolumn">
             <div class="card">
+                <form method="get" action="">
                 <div class="btn-group" align="center">  
                     <label> USERNAME <input type="text" placeholder="Username" name="username"/> </label>
                     <br><br>
                     <label> PASSWORD <input type="password" placeholder="Password" name="password"/> </label>
                     <br> <br>
-                <form method="get" action="">
+                
                     <input type="hidden" name="controller" value="user"/>
                         <button class="button" type="submit" name="action" value="login"> LOG IN </button><br><br>
                             <!--<button type="submit" class="btn">Login</button>-->
