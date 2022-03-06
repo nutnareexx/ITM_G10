@@ -6,6 +6,11 @@
 </head>
 
 <style>
+    html { 
+        background: url("pic/bg3.png") ; 
+        background-size: cover;
+
+    }
     img {
         text-align: center;
         background-color: none;
@@ -61,6 +66,7 @@
         font-size: 16px;
         cursor: pointer;
         /*float: center;*/
+        box-shadow: 3px 2px 8px gray;
     }
 
     .btn-group .button:not(:last-child) {
@@ -76,7 +82,7 @@
         text-align: left;
         font-family: 'Prompt', sans-serif;
         /*font-size: 16px;*/
-        background-color: white;
+       /* background-color: white;*/
         /*padding: 0px;*/
         margin-top: 10px;
         margin-left: 100px;
@@ -99,7 +105,8 @@
                 width: 48%;
                 margin-top: 100px;
                 text-align: center;
-                text-shadow: 2px 2px 5px green;
+                /*text-shadow: 3px 2px 6px black;*/
+                
             }
 
     /* Right column */
@@ -129,6 +136,7 @@
         border: 1px solid #ccc;
         border-radius: 50px;
         box-sizing: border-box;
+        box-shadow: 3px 2px 8px #837d7d;
     }
 
     input[type=password], select {
@@ -141,6 +149,7 @@
         border: 1px solid #ccc;
         border-radius: 50px;
         box-sizing: border-box;
+        box-shadow: 3px 2px 8px #837d7d;
     }
     
 
