@@ -6,7 +6,35 @@
 </head>
 
 <style>
-    
+    img {
+        text-align: center;
+        background-color: none;
+        padding: 10px 10px 10px 10px;
+        margin: 10px 10px 10px 10px;
+    }
+
+    /* Style the top navigation bar */
+    .topnav {
+            overflow: hidden;
+            background-color: #0974ba;
+        }
+
+        /* Style the topnav links */
+    .topnav a {
+            font-family: 'Prompt', sans-serif;
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change color on hover */
+    .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
     .try2{
         text-align:center;
@@ -45,77 +73,130 @@
     }
 
     .card {
-        text-align:center;
+        text-align: left;
         font-family: 'Prompt', sans-serif;
         /*font-size: 16px;*/
         background-color: white;
-        padding: 10px;
+        /*padding: 0px;*/
         margin-top: 10px;
+        margin-left: 100px;
+        
     }
+
+    .card2 {
+        font-family: 'Prompt', sans-serif;
+        background-color: #f1f1f1;
+        padding: 20px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+       
+    }
+
+    .leftcolumn {
+        font-family: 'Prompt', sans-serif;
+                float: left;
+                width: 48%;
+                margin-top: 100px;
+                text-align: center;
+                text-shadow: 2px 2px 5px green;
+            }
+
+    /* Right column */
+    .rightcolumn {
+                float: right;
+                margin-top: 50px;
+                width: 48%;
+                
+                /*padding-left: 20px;
+                margin-top: 20px;*/
+            }
+
+    /* Clear floats after the columns */
+    .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
 
     input[type=text], select {
         font-family: 'Prompt', sans-serif;
-        width: 15%;
+        width: 40%;
         padding: 12px 10px;
         margin: 8px 0;
         font-size: 16px;
         display: inline-block;
         border: 1px solid #ccc;
-        border-radius: 4px;
+        border-radius: 50px;
         box-sizing: border-box;
     }
 
     input[type=password], select {
         font-family: 'Prompt', sans-serif;
-        width: 15%;
+        width: 40%;
         padding: 12px 10px;
         margin: 8px 0;
         font-size: 16px;
         display: inline-block;
         border: 1px solid #ccc;
-        border-radius: 4px;
+        border-radius: 50px;
         box-sizing: border-box;
     }
+    
 
 
 </style>
 
 <body>
-    <div class="header">
-        <h2> ลงชื่อเข้าใช้งาน <br> ( LOG IN ) </h2>
+    
+
+    <div class="topnav">
+        <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
+        <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
+        <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+        <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
+            <i class='fas fa-user-alt' style='font-size:24px'></i></a>
+
+        <!--<?php echo $userid?>-->
     </div>
 
-    <form method="get" action="">
-        <br><br>
-        <div class="card">
-            <label> USERNAME <input type="text" name="username"/> </label>
-            <br><br>
-            <label> PASSWORD <input type="password" name="password"/> </label>
-            <br> 
-        </div>
-
-
+<div class="row">
+    <div class="leftcolumn">
             <div class="card">
-                <div class="btn-group">
-                    <input type="hidden" name="controller" value="user"/>
-                    <button class="button" type="submit" name="action" value="login"> LOG IN </button>
+                <div class="btn-group" align="center">  
+                    <label> USERNAME <input type="text" placeholder="Username" name="username"/> </label>
                     <br><br>
-                    หากยังไม่มี User คลิกที่นี่->
-                    <?php echo "<a href=?controller=user&action=signin> SIGN UP </a> ";?>
+                    <label> PASSWORD <input type="password" placeholder="Password" name="password"/> </label>
+                    <br> <br>
+                <form method="get" action="">
+                    <input type="hidden" name="controller" value="user"/>
+                        <button class="button" type="submit" name="action" value="login"> LOG IN </button><br><br>
+                            <!--<button type="submit" class="btn">Login</button>-->
+                            <!--<button class="button" type="button" class="btn cancel" onclick="closeForm()">Close</button>-->
+                            <?php echo "<a href=?controller=user&action=signin> SIGN UP </a> ";?>
+                </form>
+                </div>         
+            </div>
+    </div>    
+
+    <div class="rightcolumn">
+        <div class="img">
+            <img src="pic/amico.png" width="500" height="500">
+        </div>
+    </div>
+
+    <br><br>
+                <div class="card">
+                    username : 12345 password : 12345 General
+                    <br>
+                    username : 888 password : admin Admin
                     
                 </div>
-            </div>
+</div>                
+                <br><br>
+    
 
-
-        <br><br>
-        <div class="card">
-            username : 12345 password : 12345 General
-            <br>
-            username : 888 password : admin Admin
-            
-        </div>
         
-        <br><br>
         
     </form>
 </body>
