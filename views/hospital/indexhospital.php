@@ -2,6 +2,7 @@
     <head> 
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> 
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     </head>
 
     <style>
@@ -122,6 +123,8 @@
                 <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
                 <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
                 <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+                <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
+                <i class='fas fa-user-alt' style='font-size:24px'></i></a>
 
                 <?php echo $userid?>
             </div>
