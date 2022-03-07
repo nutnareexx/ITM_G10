@@ -25,7 +25,8 @@ class perdayModel {
     {
         $perList = [];
         require("connection_connect.php");
-        $sql = "SELECT m.max_id,DAY(m.date) AS dday ,MONTH(m.date) AS mm,YEAR(m.date) AS yy,m.time_open,m.time_close,m.max,m.Hid 
+        $sql = "SELECT m.max_id,DAY(m.date) AS dday ,MONTH(m.date) AS mm,YEAR(m.date) AS yy,
+        TIME_FORMAT(m.time_open,'%H : %i') AS op,TIME_FORMAT(m.time_close,'%H:%i') AS cl,m.max,m.Hid 
         FROM `max_per_day`AS m 
         WHERE m.Hid='$id'
         GROUP BY DAY(m.date),MONTH(m.date),YEAR(m.date);";
@@ -35,8 +36,8 @@ class perdayModel {
             $d = $my_row['dday'];
             $month = $my_row['mm'];
             $year = $my_row['yy'];
-            $start = $my_row['time_open'];
-            $end = $my_row['time_close'];
+            $start = $my_row['op'];
+            $end = $my_row['cl'];
             $num = $my_row['max'];
             $hid = $my_row['Hid'];
             $perList[] = new perdayModel($mid,$d,$month,$year,$start,$end,$num,$hid);
