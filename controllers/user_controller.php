@@ -10,6 +10,14 @@ class userController
         require_once('views/user/index_user.php');
     }
 
+    public function indexAdmin()
+    {
+        $userid = $_GET['userid'];
+        $user_List = userModel::get($userid);
+        $userList = userModel::getAll();
+        require_once('views/user/index_admin.php');
+    }
+
     public function indexlogin(){
         require_once('views/login/index_login.php');
     }
