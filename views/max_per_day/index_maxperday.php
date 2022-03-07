@@ -179,9 +179,10 @@
                 <th>delete</th></tr>
                 <?php foreach($maxperday_list as $m)
             {
+
                 echo "<tr> <td>$m->H_name</td>
                 <td>$m->max_date</td>
-                <td>$m->max_topen-$m->max_tclose</td>
+                <td>$m->max_topen - $m->max_tclose</td>
                 <td>$m->max_num</td>
                 <td align=center> <a href=?controller=maxperday&action=updateForm&max_id=$m->max_id&userid=$userid>
                 <i class='fas fa-edit' style='font-size: 24px;'></i></a></td>
@@ -200,3 +201,4 @@
     </body>
     
 </html>
+
