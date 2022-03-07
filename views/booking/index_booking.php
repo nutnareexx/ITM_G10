@@ -73,16 +73,41 @@
         color: black;
     }
 
+    .btn-group2 .button {
+            /*border-radius: 5%;*/
+            position: sticky ;
+            background-color: #0974ba ; /* Green */
+            border: 1px black;
+            color: white;
+            padding: 14px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .btn-group2 .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .btn-group2 .button:hover {
+            /*background-color: #ddd;*/
+            color: black;
+        }
+
     input[type=text], select {
         font-family: 'Prompt', sans-serif;
-        width: 25%;
-        padding: 12px 10px;
+        width: 30%;
+        padding: 5px 10px;
         margin: 8px 0;
         font-size: 16px;
-        display: inline-block;
+        /*display: inline-block;*/
         border: 1px solid #ccc;
-        border-radius: 4px;
+        border-radius: 50px;
         box-sizing: border-box;
+        float: right;
     }
 
     .card2 {
@@ -138,10 +163,6 @@
 </style>
 
 <body>
-    <br>
-    <div class="header">
-        <h1>  จองการตรวจ RT-PCR </h1>
-    </div>
     
     <div class="topnav">
         <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
@@ -149,21 +170,21 @@
         <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
         <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
             <i class='fas fa-user-alt' style='font-size:24px'></i></a>
+        
+            <form method="get" action="">
+                <div class="btn-group2">
+                <input type="text" name="key">
+                <input type="hidden" name="controller" value="booking"/>
+                <input type="hidden" name="userid" value="<?php echo $userid?>"/>
+                <button class="button" type="submit" name="action" value="search">
+                <i class='fas fa-search' style='font-size: 24px'></i> </button>
+            </form> 
+        </div>
 
         <?php echo $userid?>
     </div><br>
             
-    <div class="try1">
-        
-            <div class="btn-group">
-            <form method="get" action="">
-                <input type="text" name="key">
-                <input type="hidden" name="controller" value="booking"/>
-                <input type="hidden" name="userid" value="<?php echo $userid?>"/>
-                <button class="button" type="submit" name="action" value="search"> Search </button>
-            </form> 
-        </div>
-        </div><br>
+    
 
     
         <div class="try1">
@@ -179,6 +200,8 @@
             echo "</table>"
             ?>
         </div>
+
+        
             
   
       
