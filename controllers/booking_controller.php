@@ -41,6 +41,7 @@ class bookingController
     {
         $max_id = $_GET['max_id'];
         $userid = $_GET['userid'];
+        //$id = $_GET['Hid'];
         echo $max_id;
         $booking = MaxperdayModel::get($max_id);
         require_once('views/booking/checkbook.php');
