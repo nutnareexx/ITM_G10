@@ -8,7 +8,7 @@ $controllers = array('pages'=>['home','error'],
                     'results'=>['index','indexNurse','newResultsNurse','addResultsNurse','updateFormNurse','updateNurse',
                                 'deleteConfirmNurse','deleteNurse','uploadNurse','searchNurse','indexUser','upload',
                                 'upResult','Submit','download'],
-                    'user'=>['index','signin','adduser','indexlogin','login','addpassword','indexuser'],
+                    'user'=>['index','signin','adduser','indexlogin','login','addpassword','indexuser','indexAdmin'],
                     'login'=>[],
                     'prename'=>['index'],
                     'booking'=>['index','indexafter','search','bookdate','checkbook','addBooking']);
