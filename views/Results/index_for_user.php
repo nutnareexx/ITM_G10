@@ -133,12 +133,6 @@
         
             
     </style>
-<br>
-
-
-    <div class="header">
-        <h1> ผลการตรวจ RT-PCR </h1>
-    </div>
     
     <div class="topnav">
         <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
