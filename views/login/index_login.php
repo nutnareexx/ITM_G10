@@ -14,8 +14,8 @@
     img {
         text-align: center;
         background-color: none;
-        padding: 10px 10px 10px 10px;
-        margin: 10px 10px 10px 10px;
+        /*padding: 10px 10px 10px 10px;
+        margin: 10px 10px 10px 10px;*/
     }
 
     /* Style the top navigation bar */
@@ -67,6 +67,7 @@
         cursor: pointer;
         /*float: center;*/
         box-shadow: 3px 2px 8px gray;
+        border-radius: 50px;
     }
 
     .btn-group .button:not(:last-child) {
@@ -183,7 +184,7 @@
                         <button class="button" type="submit" name="action" value="login"> LOG IN </button><br><br>
                             <!--<button type="submit" class="btn">Login</button>-->
                             <!--<button class="button" type="button" class="btn cancel" onclick="closeForm()">Close</button>-->
-                            <?php echo "<a href=?controller=user&action=signin> SIGN UP </a> ";?>
+                            สมัครสมาชิกใหม่ <?php echo "<a href=?controller=user&action=signin> SIGN UP </a> ";?>
                 </form>
                 </div>         
             </div>
