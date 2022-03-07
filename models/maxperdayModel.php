@@ -23,14 +23,15 @@ class MaxperdayModel{
     public static function get($max_id)
     {
         require("connection_connect.php");
-        $sql = "SELECT h.H_name,m.Hid,m.max_id, m.date,m.time_open, m.time_close,m.max
-        FROM max_per_day AS m NATURAL JOIN hostpital AS h WHERE m.Hid=h.Hid AND m.max_id = '$max_id';";
+        $sql = "SELECT h.H_name,m.Hid,m.max_id,DATE_FORMAT(date,'%d / %m / %Y') AS dt,TIME_FORMAT(m.time_open,'%H : %i') AS timeop, 
+        TIME_FORMAT(m.time_close,'%H : %i') AS timecl,m.max FROM max_per_day AS m NATURAL JOIN hostpital AS h 
+        WHERE m.Hid=h.Hid AND m.max_id = '$max_id';";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $max_id = $my_row['max_id'];
-        $max_date = $my_row['date'];
-        $max_topen = $my_row['time_open'];
-        $max_tclose = $my_row['time_close'];
+        $max_date = $my_row['dt'];
+        $max_topen = $my_row['timeop'];
+        $max_tclose = $my_row['timecl'];
         $max_num = $my_row['max'];
         $Hid = $my_row['Hid'];
         $H_name = $my_row['H_name'];
@@ -45,15 +46,17 @@ class MaxperdayModel{
         //echo "1";
         $maxperday_list = [];
         require("connection_connect.php");
-        $sql = "SELECT h.H_name,m.Hid,m.max_id, m.date,m.time_open, m.time_close,m.max
+        $sql = "SELECT h.H_name,m.Hid,m.max_id, DATE_FORMAT(date,'%d / %m / %Y') AS dt,
+        TIME_FORMAT(m.time_open,'%H:%i') AS timeop, 
+        TIME_FORMAT(m.time_close,'%H:%i') AS timecl,m.max
         FROM max_per_day AS m NATURAL JOIN hostpital AS h WHERE m.Hid=h.Hid;";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
             $max_id = $my_row['max_id'];
-            $max_date = $my_row['date'];
-            $max_topen = $my_row['time_open'];
-            $max_tclose = $my_row['time_close'];
+            $max_date = $my_row['dt'];
+            $max_topen = $my_row['timeop'];
+            $max_tclose = $my_row['timecl'];
             $max_num = $my_row['max'];
             $Hid = $my_row['Hid'];
             $H_name = $my_row['H_name'];
@@ -67,7 +70,8 @@ class MaxperdayModel{
     {
         $maxperday_list = [];
         require("connection_connect.php");
-        $sql = "SELECT h.H_name,m.Hid,m.max_id,m.date,m.time_open, m.time_close,m.max
+        $sql = "SELECT h.H_name,m.Hid,m.max_id,DATE_FORMAT(date,'%d / %m / %Y') AS dt,TIME_FORMAT(m.time_open,'%H : %i') AS timeop, 
+        TIME_FORMAT(m.time_close,'%H : %i') AS timecl,m.max
         FROM max_per_day AS m NATURAL JOIN hostpital AS h WHERE 
         ( m.date like '%$key%' or m.time_open like '%$key%' 
         or m.time_close like '%$key%' or m.max like '%$key%' or h.Hid like '%$key%' or h.H_name like '%$key%')
@@ -76,9 +80,9 @@ class MaxperdayModel{
         while($my_row = $result->fetch_assoc())
         {
             $max_id = $my_row['max_id'];
-            $max_date = $my_row['date'];
-            $max_topen = $my_row['time_open'];
-            $max_tclose = $my_row['time_close'];
+            $max_date = $my_row['dt'];
+            $max_topen = $my_row['timeop'];
+            $max_tclose = $my_row['timecl'];
             $max_num = $my_row['max'];
             $Hid = $my_row['Hid'];
             $H_name = $my_row['H_name'];
@@ -125,16 +129,17 @@ class MaxperdayModel{
     {
         $maxperday_list = [];
         require("connection_connect.php");
-        $sql = "SELECT h.H_name,m.Hid,m.max_id,m.date,m.time_open, m.time_close,m.max
+        $sql = "SELECT h.H_name,m.Hid,m.max_id,DATE_FORMAT(date,'%d / %m / %Y') AS dt,TIME_FORMAT(m.time_open,'%H : %i') AS timeop, 
+        TIME_FORMAT(m.time_close,'%H : %i') AS timecl,m.max
         FROM max_per_day AS m NATURAL JOIN hostpital AS h WHERE 
         (  h.Hid like '%$key%') and m.Hid=h.Hid";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
             $max_id = $my_row['max_id'];
-            $max_date = $my_row['date'];
-            $max_topen = $my_row['time_open'];
-            $max_tclose = $my_row['time_close'];
+            $max_date = $my_row['dt'];
+            $max_topen = $my_row['timeop'];
+            $max_tclose = $my_row['timecl'];
             $max_num = $my_row['max'];
             $Hid = $my_row['Hid'];
             $H_name = $my_row['H_name'];
@@ -147,14 +152,15 @@ class MaxperdayModel{
     public static function getname($hid)
     {
         require("connection_connect.php");
-        $sql = "SELECT h.H_name,m.Hid,m.max_id, m.date,m.time_open, m.time_close,m.max
+        $sql = "SELECT h.H_name,m.Hid,m.max_id, m.date,TIME_FORMAT(m.time_open,'%H : %i') AS timeop, 
+        TIME_FORMAT(m.time_close,'%H : %i') AS timecl,m.max
         FROM max_per_day AS m NATURAL JOIN hostpital AS h WHERE m.Hid=h.Hid AND m.Hid = '$hid';";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $max_id = $my_row['max_id'];
         $max_date = $my_row['date'];
-        $max_topen = $my_row['time_open'];
-        $max_tclose = $my_row['time_close'];
+        $max_topen = $my_row['timeop'];
+        $max_tclose = $my_row['timecl'];
         $max_num = $my_row['max'];
         $Hid = $my_row['Hid'];
         $H_name = $my_row['H_name'];
