@@ -50,15 +50,11 @@
 <body>
     <br>
 
-    <div class="header">
-        <h1>  การจองการตรวจ RT-PCR </h1>
-    </div>
-
     <div class="topnav">
     <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
     <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
     <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
-    <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
+    <a href="?controller=user&action=indexAdmin&userid=<?php echo $userid?>" style="float:right">
         <i class='fas fa-user-alt' style='font-size:24px'></i></a>
 
     </div>
