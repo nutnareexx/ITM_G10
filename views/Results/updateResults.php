@@ -1,28 +1,70 @@
 <html>
     <head> 
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> 
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
     </head>
 
     <style>
+         /* Style the top navigation bar */
+         .topnav {
+            overflow: hidden;
+            background-color:#0974ba;
+        }
+
+        /* Style the topnav links */
+        .topnav a {
+            font-family: 'Prompt', sans-serif;
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change color on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
         .card {
             font-family: 'Prompt', sans-serif;
             background-color: #f1f1f1;
             padding: 20px;
-            margin-top: 20px;
+            
         }
+
+        .card2 {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f1f1f1;
+            padding: 20px;
+            width: 99%;
+            
+        }
+        .card3 {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f1f1f1;
+            padding: 10px;
+            width: 100%;
+            
+        }
+
         .btn-group .button {
             position: relative;
             background-color: #0974ba ; /* Green */
             border: 1px black;
             color: white;
-            padding: 15px 32px;
+            padding: 10px 32px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
             cursor: pointer;
             /*float: center;*/
+            border-radius: 50px;
         }
 
         .btn-group .button:not(:last-child) {
@@ -36,13 +78,13 @@
 
         input[type=text], select {
             font-family: 'Prompt', sans-serif;
-            width: 15%;
+            width: 100%;
             padding: 10px 10px;
             margin: 8px 0;
             font-size: 16px;
             display: inline-block;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 50px;
             box-sizing: border-box;
         }
 
@@ -50,41 +92,85 @@
             text-align: center;
             border: none;
             }
+
+        table, td {
+            height: 40px;
+        }
+
+        
     </style>
 
-    <div class="card center">
-            <form method="get" action="">
-            <label> ลำดับที่ <input type="text" name="id" 
-                value="<?php echo $resultss->id;?>"/></label><br>
-            <label>เลขบัตรประชาชน : <?php echo $resultss->uid?> </label>
-            <br>
-            <?php echo "ชื่อ $resultss->pname $resultss->name   $resultss->sname<br>
-            เบอร์โทรศัพท์ $resultss->phone<br>
-            อีเมลล์ $resultss->mail";?><br>
+<div class="topnav">
+                <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
+                <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
+                <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+                <a href="?controller=user&action=indexAdmin&userid=<?php echo $userid?>" style="float:right">
+                <i class='fas fa-user-alt' style='font-size:24px'></i></a>
 
-            <label>โรงพยาบาล<select name="hid">
-            <?php foreach($h_List as $h)
-            {
-                echo "<option value= $h->Hid";
-                if($h->Hid==$resultss->hid) 
-                {
-                    echo " selected='selected'";
-                }
-                echo "> $h->H_name</option>";
-            }?>
-            </select></label><br>
-            <label> ผลการตรวจ <input type="text" name="rs" 
-                value="<?php echo $resultss->rs;?>"/></label><br>
+                <?php echo $userid?>
+</div>            
 
-        <div class="btn-group">
+<div class="card">
+
+
+        <form method="get" action="">
+        <table align="center" >
+                <tr>  
+                
+                        <td align ="right">ลำดับที่ : </td>
+                        <td><label>  <input type="text" name="id" 
+                    value="<?php echo $resultss->id;?>"/></label></td>
+                        
+                        </tr>
+                        <tr>
+                            <td align ="right">เลขบัตรประชาชน : </td>
+                        <td><label> <?php echo $resultss->uid?><br> </label> </td>
+                        </tr>
+                        <tr>
+                            <td align ="right">ชื่อ : </td>
+                            <td><?php echo "$resultss->pname $resultss->name   $resultss->sname";?></td>
+                        </tr>
+                        <tr>
+                            <td align ="right">เบอร์โทรศัพท์ : </td>
+                            <td><?php echo"$resultss->phone";?></td>
+                        </tr>
+                        <tr>
+                            <td align ="right">อีเมลล์ : </td>
+                            <td><?php echo "$resultss->mail";?></td>
+                            
+                        </tr>
+                        <tr>
+                            <td align ="right">โรงพยาบาล : </td>
+                            <td>
+                                    <label> <select name="hid">
+                            <?php foreach($h_List as $h)
+                            {
+                                echo "<option value= $h->Hid";
+                                if($h->Hid==$resultss->hid) 
+                                {
+                                    echo " selected='selected'";
+                                }
+                                echo "> $h->H_name</option>";
+                            }?>
+                            </select></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align ="right">ผลการตรวจ : </td>
+                            <td><label>  <input type="text" name="rs" 
+                            value="<?php echo $resultss->rs;?>"/></label></td>
+                        </tr>
+                       </form> 
+                        </table> 
+              
+    <div class="btn-group" align="center">
             <br><input type="hidden" name="controller" value="results"/>
             <input type="hidden" name="id" value="<?php echo $resultss->id;?>"/>
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
             <button class="button" type="submit" name="action" value="indexNurse">Back</button>
             <button class="button" type="submit" name="action" value="updateNurse"> update </button>
-            </form>
-        </div>
-        
+           
     </div>
-        
+
+</div>
 </html>
