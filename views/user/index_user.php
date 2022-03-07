@@ -98,11 +98,7 @@
 
 
     <body>
-        <br>
 
-        <div class="header">
-            <h1> จองการตรวจ RT-PCR </h1>
-        </div>
 
         <div class="topnav">
             <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
