@@ -34,6 +34,7 @@ class bookingController
         $userid = $_GET['userid'];
         $date = MaxperdayModel::s($id);
         $name = hospitalModel::get($id);
+        $perList = perdayModel::getdate($id);
         require_once('views/booking/index_datebook.php');
     }
 
@@ -47,12 +48,23 @@ class bookingController
         require_once('views/booking/checkbook.php');
     }
 
+    public function time(){
+        //$max_id = $_GET['max_id'];
+        $userid = $_GET['userid'];
+        $hid = $_GET['Hid'];
+        echo $hid;
+        //$booking = MaxperdayModel::get($max_id);
+        $perList = perdayModel::getdate($hid);
+        require_once('views/booking/timebook.php');
+    }
+
     public function addBooking(){
         $userid = $_GET['userid'];
         $maxid = $_GET['maxid'];
         bookingModel::add($maxid,$userid);
         require_once('views/pages/home.php');
     }
+    
 
 
 
