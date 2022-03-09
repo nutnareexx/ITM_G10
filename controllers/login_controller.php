@@ -9,5 +9,7 @@ class loginController{
     public function addpassword(){
         
     }
+
+    
 }
 ?>
