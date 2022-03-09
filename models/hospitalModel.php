@@ -19,13 +19,15 @@ class hospitalModel{
     public static function get($Hid)
     {
         require("connection_connect.php");
-        $sql = "SELECT * FROM `hostpital` WHERE Hid = '$Hid'";
+        $sql = "SELECT h.Hid, h.H_name, TIME_FORMAT(h.H_time_open,'%H:%i') AS Ho, 
+        TIME_FORMAT(h.H_time_close,'%H:%i') AS Hcl, h.H_price FROM `hostpital` AS h
+        WHERE h.Hid = '$Hid'";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $Hid = $my_row['Hid'];
         $H_name = $my_row['H_name'];
-        $H_time_open = $my_row['H_time_open'];
-        $H_time_close = $my_row['H_time_close'];
+        $H_time_open = $my_row['Ho'];
+        $H_time_close = $my_row['Hcl'];
         $H_price = $my_row['H_price'];
         require("connection_close.php");
 
@@ -36,14 +38,15 @@ class hospitalModel{
     {
         $hospitalmodelList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `hostpital`";
+        $sql = "SELECT h.Hid, h.H_name,  TIME_FORMAT(h.H_time_open,'%H:%i') AS Ho, 
+        TIME_FORMAT(h.H_time_close,'%H:%i') AS Hcl, h.H_price FROM `hostpital` AS h";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
             $Hid = $my_row['Hid'];
             $H_name = $my_row['H_name'];
-            $H_time_open = $my_row['H_time_open'];
-            $H_time_close = $my_row['H_time_close'];
+            $H_time_open = $my_row['Ho'];
+            $H_time_close = $my_row['Hcl'];
             $H_price = $my_row['H_price'];
             $hospitalmodelList[] = new hospitalModel($Hid,$H_name,$H_time_open,$H_time_close,$H_price);
         }
@@ -55,15 +58,16 @@ class hospitalModel{
     {
         $hospitalmodelList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `hostpital` WHERE (Hid like '%$key%' or H_name like '%$key%' or H_time_open like '%$key%' 
+        $sql = "SELECT h.Hid, h.H_name,  TIME_FORMAT(h.H_time_open,'%H:%i') AS Ho, 
+        TIME_FORMAT(h.H_time_close,'%H:%i') AS Hcl, h.H_price FROM `hostpital` AS h WHERE (Hid like '%$key%' or H_name like '%$key%' or H_time_open like '%$key%' 
         or H_time_close like '%$key%' or H_price like '%$key%')";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
             $Hid = $my_row['Hid'];
             $H_name = $my_row['H_name'];
-            $H_time_open = $my_row['H_time_open'];
-            $H_time_close = $my_row['H_time_close'];
+            $H_time_open = $my_row['Ho'];
+            $H_time_close = $my_row['Hcl'];
             $H_price = $my_row['H_price'];
             $hospitalmodelList[] = new hospitalModel($Hid,$H_name,$H_time_open,$H_time_close,$H_price);
         }
