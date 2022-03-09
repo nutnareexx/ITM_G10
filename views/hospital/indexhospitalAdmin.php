@@ -151,19 +151,24 @@
                 <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
                 <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
                 <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+                <a href="?controller=user&action=logout&userid=<?php echo $userid?>" style="float:right">
+                    <i class='fas fa-door-open' style='font-size:24px'></i></a>
                 <a href="?controller=user&action=indexAdmin&userid=<?php echo $userid?>" style="float:right">
                 <i class='fas fa-user-alt' style='font-size:24px'></i></a>
                 <form method="get" action="">
-                <div class="btn-group2">
-                    <input type="text" name="key">
+                <input type="text" name="key">
                     <input type="hidden" name="controller" value="hospital"/>
                     <input type="hidden" name="userid" value="<?php echo $userid ;?>"/>
+                <div class="btn-group2">
+                    
                     <button class="button" type="submit" name="action" value="search">
                     <i class='fas fa-search' style='font-size: 24px'></i> </button>
                 </div>
                 </form>
 
                 <?php echo $userid?>
+
+                
             </div>
 
             <br>
@@ -185,7 +190,7 @@
             <?php foreach( $hospitalmodelList as $hospitallist)
             {
                 echo "<tr> <td>$hospitallist->H_name</td>
-                <td>$hospitallist->H_time_open-$hospitallist->H_time_close</td>
+                <td>$hospitallist->H_time_open - $hospitallist->H_time_close</td>
                 <td>$hospitallist->H_price</td> 
                 <td align=center>  <a href=?controller=hospital&action=updateforms&Hid=$hospitallist->Hid&userid=$userid>
                 <i class='fas fa-edit' style='font-size: 24px;'></i> </a> </td>
@@ -204,9 +209,6 @@
     
 </html>
 
-<?
-$date = date("วันที่ j เดือนที่ n ปี ค.ศ. Y") ;
-echo $date ;
-?>
+
 
 
