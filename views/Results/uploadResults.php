@@ -86,10 +86,12 @@
   <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
   <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
   <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+  <a href="?controller=user&action=logout&userid=<?php echo $userid?>" style="float:right">
+                    <i class='fas fa-door-open' style='font-size:24px'></i></a>
   <a href="?controller=user&action=indexAdmin&userid=<?php echo $userid?>" style="float:right">
   <i class='fas fa-user-alt' style='font-size:24px'></i></a>
 
-                <?php echo $userid?>
+  <?php echo $userid?>
 </div>
 
 
@@ -106,6 +108,7 @@
       <input type="hidden" name="id" value="<?php echo $re->id;?>"/>
       <input type="hidden" name="uid" value="<?php echo $re->uid;?>"/>
       <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+      <input type="hidden" name="resultsList[]" value="<?php echo $resultsList;?>"/>
       <button class="button" type="submit" name="button" id="button" value="upResult"> SUBMIT </button>
       </div>
       <br>
