@@ -80,20 +80,21 @@ class ResultsController
     {
         $userid = $_GET['userid'];
         $id = $_GET['id'];
-        echo $id;
+        //echo $id;
         $re = Results::getresult($id);
+        $resultsList = Results::getAll();
         require_once('views/Results/uploadResults.php');
         
     }
 
-    public function upResult()
+   /* public function upResult()
     {
         $id = $_GET['id'];
         echo $id;
         
         require_once('test.php');
         //require_once('add_file_db.php');
-    }
+    }*/
 
     public function searchNurse()
     {
