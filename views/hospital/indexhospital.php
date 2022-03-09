@@ -126,7 +126,7 @@
 
         input[type=text], select {
             font-family: 'Prompt', sans-serif;
-            width: 25%;
+            width: 30%;
             padding: 5px 10px;
             margin: 8px 0;
             font-size: 16px;
@@ -145,6 +145,8 @@
                 <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
                 <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
                 <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+                <a href="?controller=user&action=logout&userid=<?php echo $userid?>" style="float:right">
+                    <i class='fas fa-door-open' style='font-size:24px'></i></a>
                 <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
                 <i class='fas fa-user-alt' style='font-size:24px'></i></a>
                 <form method="get" action="">
@@ -171,7 +173,7 @@
             <?php foreach( $hospitalmodelList as $hospitallist)
             {
                 echo "<tr> <td>$hospitallist->H_name</td>
-                <td>$hospitallist->H_time_open-$hospitallist->H_time_close</td>
+                <td>$hospitallist->H_time_open - $hospitallist->H_time_close</td>
                 <td>$hospitallist->H_price</td> 
                 </td></tr>";
             }
