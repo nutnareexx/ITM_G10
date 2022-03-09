@@ -141,6 +141,14 @@ class userController
         
       
     }  
+
+    public function logout() 
+    {
+        $userid = $_GET['userid'];
+        $user_List = userModel::get($userid);
+        $userList = userModel::getAll();
+        require_once("views/login/index_logout.php");
+    }
 }
 
 ?>
