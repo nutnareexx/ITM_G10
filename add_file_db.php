@@ -1,6 +1,9 @@
 
 <?php
 	//1. เชื่อมต่อ database: 
+
+use LDAP\Result;
+
 	require("connection_connect.php"); //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้านี้
 
 	//$fileupload = $_POST['fileupload']; //รับค่าไฟล์จากฟอร์ม	
@@ -25,6 +28,8 @@
 			
 		$id = $_POST['id'];
 		$uid = $_POST['uid'];
+		$userid = $_POST['userid'];
+		$resultsList = $_POST['resultsList'];
 		//ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
 		//$id=$_GET['id'];
 		$newname = "result_".$uid.$type;
@@ -45,10 +50,12 @@
 		// javascript แสดงการ upload file
 		
 		if($result){
+			$userid;
 			echo "<script type='text/javascript'>";
 			echo "alert('Upload File Succesfuly');";
-			echo "window.location = 'views/Results/index_for_nurse.php'; ";
+			echo "window.location.assign('http://localhost/ITM_G10/index.php?controller=results&action=indexNurse&userid=$userid')";
 			echo "</script>";
+
 		}
 		else{
 			echo "<script type='text/javascript'>";
