@@ -2,7 +2,7 @@
 
 <head> 
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-    
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <style>
@@ -152,8 +152,8 @@
         box-sizing: border-box;
         box-shadow: 3px 2px 8px #837d7d;
     }
-    
 
+    
 
 </style>
 
@@ -163,11 +163,10 @@
     <div class="topnav">
         <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
         <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
-        <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
-        <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
-            <i class='fas fa-user-alt' style='font-size:24px'></i></a>
+        <a href="?controller=hospital&action=index"> โรงพยาบาล </a>
+        
 
-        <!--<?php echo $userid?>-->
+       
     </div>
 
 <div class="row">
@@ -189,10 +188,11 @@
         <br>
                 
                     <input type="hidden" name="controller" value="user"/>
-                        <button class="button" type="submit" name="action" value="login"> เข้าสู่ระบบ </button><br><br>
+                        <button class="button" type="submit" name="action" value="login" id="myBtn"> เข้าสู่ระบบ </button><br><br>
                             <!--<button type="submit" class="btn">Login</button>-->
                             <!--<button class="button" type="button" class="btn cancel" onclick="closeForm()">Close</button>-->
-                            สมัครสมาชิกใหม่ <?php echo "<a href=?controller=user&action=signin> SIGN UP </a> ";?>
+                            สมัครสมาชิกใหม่ <?php echo "<a href=?controller=user&action=signin> SIGN UP
+                            <i class='fas fa-sign-in-alt' style='font-size:18px'></i> </a> ";?>
                 </form>
                 </div>         
             </div>
@@ -218,5 +218,7 @@
         
         
     </form>
+
+           
 </body>
 </html>
