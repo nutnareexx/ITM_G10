@@ -97,6 +97,7 @@
             font-family: 'Prompt', sans-serif;
             border-collapse: collapse;
             width: 80%;
+            margin-top: 50px;
             background-color: #f2f2f2;
             }
 
