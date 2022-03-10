@@ -92,6 +92,43 @@
                 display: table;
                 clear: both;
             }
+            #customers {
+            font-family: 'Prompt', sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #f2f2f2;
+            margin-top: 50px;
+            }
+
+        #customers td, #customers th {
+            /* border: 1px solid #ddd; */
+            padding: 8px;
+            }
+
+        /* #customers tr:nth-child(even){background-color: #f2f2f2;} */
+
+        /* #customers tr:hover {background-color: #ddd;} */
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #0974ba;
+            color: white;
+        }
+
+        .center {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+            }
+            
+        img {
+            text-align: center;
+            background-color: none;
+            /*padding: 10px 10px 10px 10px;
+            margin: 10px 10px 10px 10px;*/
+        }
 
     </style>
 
@@ -113,35 +150,44 @@
 
         </div>
 
-        <div class="row">
-            <div class="rightcolumn">
-                <div class="card3">
-                    <?php echo "
-                                เลขบัตรประชาชน : $userid
-                                <br><br>
-                                ชื่อ-นามสกุล : $user_List->id_name$user_List->uname   $user_List->usurname
-                                <br><br>
-                                เบอร์โทรศัพท์ : $user_List->uphone
-                                <br><br>
-                                วัน/เดือน/ปีเกิด : $user_List->udob
-                                <br><br>
-                                E-mail : $user_List->umail<br>";
-                                
-                ?>
-                </div>
+       <table id="customers" class="center">
+                <tr>
+                    <th>ข้อมูลส่วนตัว</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="circle">
+                            <img src="pic/account.png" width="150" height="150">
+                        </div>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td align=right><b>เลขบัตรประชาชน : </b></td>
+                                <td><?php echo "$userid";?></td>
+                            </tr>
+                            <tr>
+                                <td align=right><b>ชื่อ-นามสกุล : </b></td>
+                                <td><?php echo "$user_List->id_name$user_List->uname   $user_List->usurname";?></td>
+                            </tr>
+                            <tr>
+                                <td align=right><b>เบอร์โทรศัพท์ : </b></td>
+                                <td><?php echo "$user_List->uphone";?></td>
+                            </tr>
+                            <tr>
+                                <td align=right><b>วัน/เดือน/ปีเกิด : </b></td>
+                                <td><?php echo "$user_List->udob";?></td>
+                            </tr>
+                            <tr>
+                                <td align=right><b>E-mail : </b></td>
+                                <td><?php echo "$user_List->umail";?></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
                 
-            </div>
-            
-            <div class="leftcolumn">
-                    <div class="circle">
-                        <img src="pic/account.png" width="150" height="150">
-                    </div>
-            </div> 
-            
-
-        </div>
-
-    
+        </table>
 
     
         
