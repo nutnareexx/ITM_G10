@@ -128,12 +128,16 @@ class userController
                 
             }
             else{
-                echo "<br> WRONG PASSWORD ";
-                echo "echo <script type='text/javascript'>";
-                echo "alert('รหัสผ่านผิดพลาด');";
-                echo "window.location.assign('http://localhost/ITM_G10/index.php?controller=user&action=indexlogin')";
-                echo "</script>";
-                userController::indexlogin();
+                // echo "<br> WRONG PASSWORD ";
+                // echo "<script type='text/javascript'>";
+                // echo "alert('รหัสผ่านผิดพลาด');";
+                // echo "window.location.assign('http://localhost/ITM_G10/index.php?controller=user&action=indexlogin')";
+                // echo "</script>";
+                
+
+               require_once("views/login/wrongpass.php");
+            
+            // userController::indexlogin();
             }
             
         }
