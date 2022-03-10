@@ -151,7 +151,7 @@
                 <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
                 <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
                 <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
-                <a href="?controller=user&action=logout&userid=<?php echo $userid?>" style="float:right">
+                <a href="?controller=user&action=logoutNurse&userid=<?php echo $userid?>" style="float:right">
                     <i class='fas fa-door-open' style='font-size:24px'></i></a>
                 <a href="?controller=user&action=indexAdmin&userid=<?php echo $userid?>" style="float:right">
                 <i class='fas fa-user-alt' style='font-size:24px'></i></a>
@@ -176,7 +176,7 @@
     <center>
         <div class="try1">
             
-            <h3>new Hospital <a href="?controller=hospital&action=newhospital&userid=<?php echo $userid;?>">click!!!</a></h3>
+            <h3>เพิ่มโรงพยาบาล <a href="?controller=hospital&action=newhospital&userid=<?php echo $userid;?>">คลิกที่นี่!!!</a></h3>
             
              </div>    
              
@@ -185,8 +185,8 @@
             <th><b>ชื่อโรงพยาบาล</th>
             <th><b>เวลาเปิด-ปิดทำการ</th>
             <th><b>ราคาตรวจ RT-PCR</th>
-            <th><b>Update</th>
-            <th><b>Delete</th> </tr>
+            <th><b>แก้ไข</th>
+            <th><b>ลบ</th> </tr>
             <?php foreach( $hospitalmodelList as $hospitallist)
             {
                 echo "<tr> <td>$hospitallist->H_name</td>
