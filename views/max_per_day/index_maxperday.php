@@ -180,7 +180,7 @@
     <body>
             
         <div class="try1">
-            <h3>new max per day <a href="?controller=maxperday&action=newMaxperday&userid=<?php echo $userid?>"> click!!! </a> </h3>
+            <h3> เพิ่มข้อมูล <a href="?controller=maxperday&action=newMaxperday&userid=<?php echo $userid?>"> คลิกที่นี่!!! </a> </h3>
         </div>
 
             
@@ -191,8 +191,8 @@
                 <th>วันที่</th>
                 <th>เวลาเปิด-ปิดทำการ</th>
                 <th>จำนวนที่รับได้ต่อวัน</th>
-                <th>update</th>
-                <th>delete</th></tr>
+                <th>แก้ไข</th>
+                <th>ลบ</th></tr>
                 <?php foreach($maxperday_list as $m)
             {
 
