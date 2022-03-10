@@ -100,8 +100,7 @@
         <table align="center">
             <tr>
                 <td align ="right">รหัสโรงพยาบาล : </td>
-                <td><label> <input type="text" name="Hid"
-                 value="<?php echo  $hospitalmodels->Hid;?>"/> </label></td>
+                <td><label> <?php echo  $hospitalmodels->Hid;?></label></td>
             </tr>
             <tr>
                 <td align ="right">ชื่อโรงพยาบาล : </td>
