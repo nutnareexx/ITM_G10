@@ -9,7 +9,7 @@ $controllers = array('pages'=>['home','error'],
                                 'deleteConfirmNurse','deleteNurse','uploadNurse','searchNurse','indexUser','upload',
                                 'upResult','Submit','download'],
                     'user'=>['index','signin','adduser','indexlogin','login','addpassword','indexuser','indexAdmin','logoutNurse','logoutUser'],
-                    'login'=>['index'],
+                    'login'=>[],
                     'prename'=>['index'],
                     'booking'=>['index','indexafter','search','bookdate','checkbook','addBooking','time']);
 
