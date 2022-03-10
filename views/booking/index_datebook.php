@@ -1,7 +1,6 @@
 <html>
     <head> 
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     </head>
 
@@ -228,26 +227,19 @@
     </style>
 
             <div class="topnav">
-<<<<<<< Updated upstream
-            <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
-            <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
-            <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
-            <a href="?controller=user&action=logoutUser&userid=<?php echo $userid?>" style="float:right">
-                    <i class='fas fa-door-open' style='font-size:24px'></i></a>
+            
             <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
-=======
             <a href="?controller=booking&action=index&userid=<?php echo $userid;?>"> จองตรวจ RT-PCR </a>
             <a href="?controller=results&action=indexUser&userid=<?php echo $userid;?>"> ผลการตรวจ </a>
             <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid;?>"> โรงพยาบาล </a>
             <a href="?controller=user&action=index&userid=<?php echo $userid;?>" style="float:right">
->>>>>>> Stashed changes
             <i class='fas fa-user-alt' style='font-size:24px'></i></a>
 
-        <?php echo $userid;?>
+        <!-- <?php echo $userid;?> -->
 
         </div>
         
-        <a href="?controller=booking&action=time&userid=<?php echo $userid;?>&Hid=<?php echo $name->Hid ;?>">try</a>
+        <!-- <a href="?controller=booking&action=time&userid=<?php echo $userid;?>&Hid=<?php echo $name->Hid ;?>">try</a> -->
 
 
     <div class="try2">
@@ -255,36 +247,7 @@
         <h2><?php echo $name->H_name ;?></h2>
     </div>
     
-    <table  id="customers" align="center">
-        
-        <tr> 
-            <th>วันที่</th>
-            <th>เวลานัด</th>
-            <th>จำนวนที่รับได้ต่อวัน</th>
-            <th>จอง</th>
-        </tr>
-        <?php foreach($date as $booking)
-        {
-            echo "<tr> 
-            <td>$booking->max_date</td>
-            <td>$booking->max_topen - $booking->max_tclose</td>
-            <td>$booking->max_num</td>
-            <td> <a href=?controller=booking&action=checkbook&max_id=$booking->max_id&userid=$userid> จอง </a></td>
-            </tr>";
-        }
-        echo "</table> ";
-
-        $data = [];
-        foreach ($dayList as $d) {
-            $data[] = $d->x;
-        }
-        echo json_encode($data);
-
-        $mon = [];
-        foreach ($monthList as $m) {
-            $mon[] = $m->x;
-        }
-        echo json_encode($mon);
+    <?php
 
         $dmy = [];
             foreach ($dmyList as $dm) {
@@ -302,15 +265,6 @@
         var now = new Date();
         var month_array = new Array("มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม");
         
-        var da = [];
-        da = <?=json_encode($data);?>;
-        sum = da.length;
-        // document.write(sum);
-
-        var mon = [];
-        mon = <?=json_encode($mon);?>;
-        m_sum = mon.length;
-        // document.write(m_sum);
 
         var dy= [];
         dy = <?=json_encode($dmy);?>;
@@ -391,6 +345,8 @@
                 i=begin;
             }
 
+            m=day.getMonth()+1;
+            y=day.getFullYear();
             var t=[];
             for( z=0; z<dy.length; z++ ) {
                 c1 = dy[z].substr(0,2);
@@ -398,7 +354,7 @@
                 c3 = dy[z].substr(6);
 
                 if(c2 == day.getMonth()+1 && c3 == day.getFullYear()){
-                    //document.write(c1+" ||");
+                    // document.write(c1+" ||");
                     t.push(c1);
                 }
             }
@@ -423,10 +379,12 @@
                     {
                         colum_name = eval("d"+i+"r"+j);
                         for(k=0;k<t.length;k++){
-                            // document.write("cm");
+                            // document.write(t[k]+"||");
                             if(c == t[k]){
                                 // res = "<a href=?controller=booking&action=time&userid=<?php echo $userid;?>&Hid=<?php echo $name->Hid ;?>&post=>"+c+"</a>";
-                                res = "<button  class='button' onclick='out()'>"+c+"</button>";
+                                //  res = "<input type='hidden' name='controller' value='booking'/> <button  type='submit' onclick='outs()'>"+c+"</button>";
+                                // res = <button  type='submit' onclick='outs()'>"+c+"</button>;
+                                res = "<input type='button' class='button' value='"+c+"' onclick='outs("+t[k]+","+m+","+y+")'>";
                                 colum_name.innerHTML = res ;
                                 break;
                             }
@@ -469,8 +427,28 @@
             set_cal(show_date);
         }
 
-        function out(m){
-            return m;
+        function outs(d,m,y){
+            if( (d/10)>=1 && (m/10)>=1){
+                // document.write()
+                x = y+"-"+m+"-"+d;
+                z = d+" / "+m+" / "+y;
+            }
+            else if( (d/10)>=1 && (m/10)<1){
+                x = y+"-0"+m+"-"+d;
+                z = d+" / 0"+m+" / "+y;
+            }
+            else if( (d/10)<1 && (m/10)>=1){
+                x = y+"-"+m+"-0"+d;
+                z = d+" / "+m+" / "+y;
+            }
+            else if( (d/10)<1 && (m/10)<1){
+                x = y+"-0"+m+"-0"+d;
+                z = "0"+d+" / 0"+m+" / "+y;
+            }
+            window.location.assign("http://localhost/ITM_G10/index.php?controller=booking&action=time"+
+            "&userid=<?php echo $userid;?>&Hid=<?php echo $name->Hid ;?>&post="+x+"&show="+z);
+            
+             
         }
 
 
