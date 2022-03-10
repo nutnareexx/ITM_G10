@@ -82,7 +82,7 @@
     <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
     <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
     <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
-    <a href="?controller=user&action=logout&userid=<?php echo $userid?>" style="float:right">
+    <a href="?controller=user&action=logoutNurse&userid=<?php echo $userid?>" style="float:right">
                     <i class='fas fa-door-open' style='font-size:24px'></i></a>
     <a href="?controller=user&action=indexAdmin&userid=<?php echo $userid?>" style="float:right">
     <i class='fas fa-user-alt' style='font-size:24px'></i></a>
@@ -100,7 +100,7 @@
                 <tr>
                     <td align="right">ผู้ป่วย : </td>
                     <td><label> <select name="uid">
-                    <option value=""> choose </option>
+                    <option value=""> เลือกผู้ป่วย </option>
                     <?php foreach($user as $u) {echo "<option value = $u->uid>$u->uname $u->usurname</option>";}?>
                     </select>
                     </label></td>
@@ -125,8 +125,8 @@
         <div class="btn-group center">
                 <input type="hidden" name="controller" value="results"/>
                 <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-                <button class="button" type="submit" name="action" value="indexNurse">Back</button>
-                <button class="button" type="submit" name="action" value="addResultsNurse">Save</button>
+                <button class="button" type="submit" name="action" value="indexNurse"> กลับ </button>
+                <button class="button" type="submit" name="action" value="addResultsNurse"> บันทึก </button>
             </div>
     </div>
  </form>     
