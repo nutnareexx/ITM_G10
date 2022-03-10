@@ -129,6 +129,10 @@ class userController
             }
             else{
                 echo "<br> WRONG PASSWORD ";
+                echo "echo <script type='text/javascript'>";
+                echo "alert('รหัสผ่านผิดพลาด');";
+                echo "window.location.assign('http://localhost/ITM_G10/index.php?controller=user&action=indexlogin')";
+                echo "</script>";
                 userController::indexlogin();
             }
             
@@ -136,18 +140,40 @@ class userController
         if($c == 0){
             echo "<br> DON'T HAVE";
             //userController::indexlogin();
+            echo "<script type='text/javascript'>";
+            echo "window.onload = function () {";
+            echo "var r = confirm('ไม่มีบัญชีผู้ใช้ กด OK เพื่อลงทะเบียนใหม่');";
+            echo " if (r == true) {";
+            echo "x = '';"; 
+            echo "}";   
+            echo " else {";
+            echo "window.location.assign('http://localhost/ITM_G10/index.php?controller=user&action=indexlogin');";
+            echo "}";
+            echo "document.getElementById('demo').innerHTML = x;";
+            echo "}";
+            echo "</script>";
+            echo "<p id='demo'></p>";
+
             require_once("views/user/newuser.php");
         }
         
       
     }  
 
-    public function logout() 
+    public function logoutNurse() 
     {
         $userid = $_GET['userid'];
         $user_List = userModel::get($userid);
         $userList = userModel::getAll();
-        require_once("views/login/index_logout.php");
+        require_once("views/login/index_logoutN.php");
+    }
+
+    public function logoutUser() 
+    {
+        $userid = $_GET['userid'];
+        $user_List = userModel::get($userid);
+        $userList = userModel::getAll();
+        require_once("views/login/index_logoutU.php");
     }
 }
 
