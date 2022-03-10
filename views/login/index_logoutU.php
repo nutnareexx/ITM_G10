@@ -220,9 +220,12 @@
                     <div class="btn-group">
                         <input type="hidden" name="controller" value="user"/>
                         <button class="button" type="submit" name="action" value="indexlogin"> ใช่ </button>
-                        <!-- <input type="hidden" name="controller" value="booking"/> -->
+                    </div>
+                </form>
+                <form method="get" action="" >
+                    <div class="btn-group">
+                        <input type="hidden" name="controller" value="booking"/>
                         <input type="hidden" name="userid" value="<?php echo $userid ;?>"/>
-                        
                         <button class="button" type="submit" name="action" value="index"> ไม่ </button>
                     </div>
                 </form>
