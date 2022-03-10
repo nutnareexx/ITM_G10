@@ -37,6 +37,7 @@
             
         }
         .btn-group .button {
+            font-family: 'Prompt', sans-serif;
             position: relative;
             background-color: #0974ba ; /* Green */
             border: 1px black;
