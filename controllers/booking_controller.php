@@ -32,9 +32,12 @@ class bookingController
     public function bookdate(){
         $id = $_GET['Hid'];
         $userid = $_GET['userid'];
+        $dmyList = maxModel::get($id);
         $date = MaxperdayModel::s($id);
         $name = hospitalModel::get($id);
-        $perList = perdayModel::getdate($id);
+        $dayList = perdayModel::getd($id);
+        $monthList = perdayModel::getm($id);
+        $yearList = perdayModel::gety($id);
         require_once('views/booking/index_datebook.php');
     }
 
@@ -52,9 +55,13 @@ class bookingController
         //$max_id = $_GET['max_id'];
         $userid = $_GET['userid'];
         $hid = $_GET['Hid'];
+        $g= $_GET['post'];
         echo $hid;
+        $dmyList = maxModel::get($hid);
         //$booking = MaxperdayModel::get($max_id);
-        $perList = perdayModel::getdate($hid);
+        $dayList = perdayModel::getd($hid);
+        $monthList = perdayModel::getm($hid);
+        $yearList = perdayModel::gety($hid);
         require_once('views/booking/timebook.php');
     }
 
