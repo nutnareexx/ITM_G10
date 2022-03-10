@@ -129,7 +129,7 @@
 
     input[type=text], select {
         font-family: 'Prompt', sans-serif;
-        width: 40%;
+        width: 100%;
         padding: 12px 10px;
         margin: 8px 0;
         font-size: 16px;
@@ -142,7 +142,7 @@
 
     input[type=password], select {
         font-family: 'Prompt', sans-serif;
-        width: 40%;
+        width: 100%;
         padding: 12px 10px;
         margin: 8px 0;
         font-size: 16px;
@@ -174,14 +174,22 @@
     <div class="leftcolumn">
             <div class="card">
                 <form method="get" action="">
-                <div class="btn-group" align="center">  
-                    <label> USERNAME <input type="text" placeholder="Username" name="username"/> </label>
-                    <br><br>
-                    <label> PASSWORD <input type="password" placeholder="Password" name="password"/> </label>
-                    <br> <br>
+                <div class="btn-group" align="center"> 
+                    <table>
+                        <tr>
+                             <td align="right">เลขบัตรประชาชน</td>
+                             <td> <label>  <input type="text"  name="username"/> </label></td>
+                        </tr>
+                        <tr>
+                            <td align="right">รหัสผ่าน</td>
+                            <td><label>  <input type="password" name="password"/> </label></td>
+                        </tr>
+                       
+                    </table> 
+        <br>
                 
                     <input type="hidden" name="controller" value="user"/>
-                        <button class="button" type="submit" name="action" value="login"> LOG IN </button><br><br>
+                        <button class="button" type="submit" name="action" value="login"> เข้าสู่ระบบ </button><br><br>
                             <!--<button type="submit" class="btn">Login</button>-->
                             <!--<button class="button" type="button" class="btn cancel" onclick="closeForm()">Close</button>-->
                             สมัครสมาชิกใหม่ <?php echo "<a href=?controller=user&action=signin> SIGN UP </a> ";?>
