@@ -1,169 +1,270 @@
-<html><table>
-    <tr>
-        
-        <td> Day </td>
-        <td> MONTH </td>
-        <td> YEAR </td>
-        <td> Hid </td>
-    </tr>
+<html>
+    <head> 
+        <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    </head>
 
-    <?php foreach($dmyList as $p){
-        echo "<tr>
-        <td> $p->d </td>
-        <td> $p->month </td>
-        <td> $p->year </td>
-        <td> $p->hid </td>
-        </tr>";
-    }
-    echo "</table>";
-
-    echo $g;
-
-    $dayy = [];
-    foreach ($dayList as $d) {
-        $dayy[] = $d->x;
-    }
-    echo "<br> DAY <br>";
-    foreach ($dayy as $d) {
-        echo $d." ";
-    }
-    
-    echo json_encode($dayy);
-
-    $mon = [];
-    foreach ($monthList as $m) {
-        $mon[] = $m->x;
-    }
-    echo "<br> MONTH <br>";
-    foreach ($mon as $m) {
-        echo $m." ";
-    }
-    
-    echo json_encode($mon);
-
-    $dmy = [];
-    foreach ($dmyList as $dm) {
-        $dmy[]=$dm->d."-".$dm->month."-".$dm->year;
-    }
-    echo "<br> DAY MONTH YEAR <br>";
-    foreach ($dmy as $dp) {
-        echo $dp." | ";
-    }
-
-    
-    
-
-    // $h[$dayy]=$mon;
-    // foreach ($h as $dayy=>$mon)
-    // {
-    //   echo "$dayy=$mon<br>\n";
-    // }
-
-   
-    
-    ?>
-
-    <!-- <p id ="demo"> -->
-
-    <script >
-        //alert(data);
-        document.write("<br> DAY <br>");
-        var a_js = [];
-        a_js = <?=json_encode($dayy);?>;
-        for( var i=0; i<a_js.length; i++ ) {
-            document.write( a_js[i]+"/");
+    <style>
+        .header {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f1f1f1;
+            padding: 40px;
+            text-align: center;
         }
 
-        document.write("<br> MONTH <br>");
-        var mon = [];
-        mon = <?=json_encode($mon);?>;
-        for( var i=0; i<mon.length; i++ ) {
-            document.write( mon[i]+"/");
+        /* Style the top navigation bar */
+        .topnav {
+            overflow: hidden;
+            background-color: #0974ba;
         }
 
-        document.write("<br> DAY MONTH YEAR  <br>");
-        var dy= [];
-        dy = <?=json_encode($dmy);?>;
-        for( var i=0; i<dy.length; i++ ) {
-            document.write( dy[i]+"/");
+        /* Style the topnav links */
+        .topnav a {
+            font-family: 'Prompt', sans-serif;
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
         }
 
-        document.write("<br> SPLIT  <br>");
-        var myArray =[];
-        var my =[];
-        for( var i=0; i<dy.length; i++ ) {
+        /* Change color on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #customers {
+            font-family: 'Prompt', sans-serif;
+            border-collapse: collapse;
+            width: 80%;
             
-            myArray.push(dy[i].split("-"));
-            sp(dy[i]);
-        }
-        
-        var w;
-
-        function sp(a){
-            w= a.split("-");
-            my.push(w);
-        }
-
-        document.write(myArray.length+"<br>");
-        for( var i=0; i<myArray.length; i++ ) {
-            document.write(myArray[i]+"|");
-        }
-
-        document.write(my.length+"<br>");
-        for( var i=0; i<my.length; i++ ) {
-                document.write(my[i]+"||");
-        }
-
-        document.write("<br> sub string  <br>");
-        var c;
-        // let result = dy[1].substr(0,1);
-        // document.write(result);
-
-        var t=[];
-        for( var i=0; i<dy.length; i++ ) {
-            c1 = dy[i].substr(0,2);
-            c2 = dy[i].substr(3,2);
-            c3 = dy[i].substr(6);
-            document.write(c1+c2+c3+"<br>");
-            if(c2 == 3){
-                document.write(c1+" ||");
-                t.push(c1);
             }
 
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            
+            }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #0974ba;
+            color: white;
+            }
+
+        .btn-group .button {
+            /*border-radius: 5%;*/
+            position: relative;
+            background-color: #0974ba ; /* Green */
+            border: 1px black;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*float: center;*/
         }
 
-        document.write("<br> T <br>");
-        for(i=0;i<t.length;i++){
-            document.write(t[i]+"|");
+        .btn-group .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
         }
 
+        .btn-group .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .card2 {
+                font-family: 'Prompt', sans-serif;
+                background-color: #f1f1f1;
+                padding: 20px;
+                margin-top: 50px;
+                margin-left: auto;
+                margin-right: auto;
+            }
         
+        .card3 {
+                font-family: 'Prompt', sans-serif;
+                background-color: #f1f1f1;
+                font-size: 15px;
+                padding: 10px 10px 10px 10px;
+                margin: 10px 10px 10px 10px;
+            }
 
-        document.write("<br> func <br>");
-        var show_date = new Date();
-        begin = new Date (show_date.getFullYear(),show_date.getMonth(),1);
-        //document.write(begin);
-       
-        function checkmonth(begin){
-            document.write("<br> in ");
-            for( x=0; x<=mon.length; x++ ) {
+        .circle{
+                text-align: center;
+                background-color: #f1f1f1;
+                padding: 10px 10px 10px 10px;
+                margin: 10px 10px 10px 10px;
+             
+            }
+        
+        
+        
+        .leftcolumn {   
+                float: left;
+                width: 65%;
                 
-                if(begin.getMonth()+1==mon[x]){
-                    document.write("1");
-                    return 1;
-                }
             }
-            return 0;
+
+            /* Right column */
+        .rightcolumn {
+                float: right;
+                width: 29%;
+                background-color: #f1f1f1;
+                /*padding-left: 20px;*/
+                /*margin-top: 20px;*/
+            }
+
+            /* Clear floats after the columns */
+        .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+        .try2{
+            text-align:center;
+            font-family: 'Prompt', sans-serif;
         }
 
-        if( checkmonth(begin)==1){
-            document.write("check");
-        }
-        else{
-            document.write("dont check");
+        table {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            padding: 20px 20px 20px 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+            width: 80%;
         }
 
+        th, td {
+            text-align: center;
+            padding: 8px;
+        }
+
+        th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #0974ba;
+            color: white;
+        }
+
+        /*td:hover {
+            background-color: #ddd;
+        }*/
+
+        #cus table {
+            font-family: 'Prompt', sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        /*#cus tr  {
+            border: 1px solid #ddd;
+            padding: 8px;
+            
+            }*/
+        
+        #cus td:hover {
+            background-color: #ddd;
+        }
+
+        .button {
+            position: relative;
+            background-color: #0974ba ; 
+            border: 1px black;
+            color: white;
+            width: 100%;
+            height: 100%;
+            /* padding: 10px; */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*float: center;*/
+            border-radius: 50px;
+        }
+
+        .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        
+        
+
+        input[type=text], select {
+                font-family: 'Prompt', sans-serif;
+                width: 95%;
+                padding: 20px 20px 20px 20px;
+                margin-top: 20px ;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 16;
+            }
+        
+            
+    </style>
+
+            <div class="topnav">
+            
+            <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
+            <a href="?controller=booking&action=index&userid=<?php echo $userid;?>"> จองตรวจ RT-PCR </a>
+            <a href="?controller=results&action=indexUser&userid=<?php echo $userid;?>"> ผลการตรวจ </a>
+            <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid;?>"> โรงพยาบาล </a>
+            <a href="?controller=user&action=index&userid=<?php echo $userid;?>" style="float:right">
+            <i class='fas fa-user-alt' style='font-size:24px'></i></a>
+
+        <?php echo $userid;?>
+
+        </div>
+        
+        <a href="?controller=booking&action=time&userid=<?php echo $userid;?>&Hid=<?php echo $name->Hid ;?>">try</a>
+
+
+    <div class="try2">
+        <br>
+        <h2><?php echo $name->H_name ;?></h2>
+        <h3>วันที่ : <?php echo $s ;?></h3>
+    </div>
     
-    </script>
+    <table  id="customers" align="center">
+        
+        <tr> 
+            <th>เวลานัด</th>
+            <th>จำนวนที่รับได้ต่อวัน</th>
+            <th>จอง</th>
+        </tr>
+        <?php foreach($timeList as $t)
+        {
+            echo "<tr> 
+        
+            <td>$t->start - $t->end</td>
+            <td>$t->num</td>
+            <td> <a href=?controller=booking&action=checkbook&max_id=$t->mid&userid=$userid> จอง </a></td>
+            </tr>";
+        }
+        echo "</table> ";
+    ?>
 
 </html>
