@@ -138,7 +138,7 @@
         <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
         <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
         <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
-        <a href="?controller=user&action=logout&userid=<?php echo $userid?>" style="float:right">
+        <a href="?controller=user&action=logoutUser&userid=<?php echo $userid?>" style="float:right">
                     <i class='fas fa-door-open' style='font-size:24px'></i></a>
         <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
             <i class='fas fa-user-alt' style='font-size:24px'></i></a>
@@ -161,7 +161,7 @@
                         <th>อีเมลล์</th>-->
                         <th><b>โรงพยาบาล</th>
                         <th><b>ผลการตรวจ</th>
-                        <th><b>Download File</th>
+                        <th><b>ดาวน์โหลด</th>
                         </tr>
                     <?php
                     {

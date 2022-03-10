@@ -138,10 +138,10 @@
     </style>
 
 <div class="topnav">
-        <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
+        <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
         <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
         <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
-        <a href="?controller=user&action=logout&userid=<?php echo $userid?>" style="float:right">
+        <a href="?controller=user&action=logoutNurse&userid=<?php echo $userid?>" style="float:right">
                     <i class='fas fa-door-open' style='font-size:24px'></i></a>
         <a href="?controller=user&action=indexAdmin&userid=<?php echo $userid?>" style="float:right">
             <i class='fas fa-user-alt' style='font-size:24px'></i></a>
@@ -163,7 +163,7 @@
          <div class="try1">
             
 
-            <h3>new Results <a href="?controller=results&action=newResultsNurse&userid=<?php echo $userid;?>"> click!!! </a> </h3>
+            <h3>เพิ่มผลตรวจ <a href="?controller=results&action=newResultsNurse&userid=<?php echo $userid;?>"> คลิกที่นี่!!! </a> </h3>
             
             
 
@@ -179,9 +179,9 @@
                 <th>อีเมลล์</th>
                 <th>โรงพยาบาล</th>
                 <th>ผลการตรวจ</th>
-                <th>upload file</th>
-                <th>update</th>
-                <th>delete</th></tr>
+                <th>อัปโหลดไฟล์</th>
+                <th>แก้ไข</th>
+                <th>ลบ</th></tr>
 
             <?php foreach($resultsList as $r)
             {

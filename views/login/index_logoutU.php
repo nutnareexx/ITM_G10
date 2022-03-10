@@ -1,6 +1,3 @@
-<br>
-
-
 <html>
     <head> 
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
@@ -135,86 +132,122 @@
             float: right;
         }
 
+    .card {
+        text-align: center;
+        font-family: 'Prompt', sans-serif;
+        font-size: 20px;
+       /* background-color: white;*/
+        /*padding: 0px;*/
+        margin-top: 10px;
+        margin-left: 100px;
+        
+    }
+
+    .card2 {
+        font-family: 'Prompt', sans-serif;
+        background-color: #f1f1f1;
+        padding: 20px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+       
+    }
+
+    .leftcolumn {
+        font-family: 'Prompt', sans-serif;
+                float: left;
+                width: 48%;
+                margin-top: 100px;
+                text-align: center;
+                /*text-shadow: 3px 2px 6px black;*/
+               
+            }
+
+    /* Right column */
+    .rightcolumn {
+                float: right;
+                margin-top: 50px;
+                width: 48%;
+                
+            }
+
+    /* Clear floats after the columns */
+    .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+    
+    img {
+        text-align: center;
+        /*background-color: none;
+        padding: 10px 10px 10px 10px;
+        margin: 10px 10px 10px 10px;*/
+    }
+
+    html { 
+        background: url("pic/bg3.png") ; 
+        background-size: cover;
+
+    }
     
         
 
     </style>
+   
 
     <div class="topnav">
-                <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
-                <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
-                <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+                <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
+                <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
+                <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
                 <a href="?controller=user&action=logout&userid=<?php echo $userid?>" style="float:right">
                     <i class='fas fa-door-open' style='font-size:24px'></i></a>
-                <a href="?controller=user&action=indexAdmin&userid=<?php echo $userid?>" style="float:right">
+             
+                <a href="?controller=user&action=indexuser&userid=<?php echo $userid?>" style="float:right">
                 <i class='fas fa-user-alt' style='font-size:24px'></i></a>
+               
                 
+    </div>
+            
+
+<body>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card" align="center">
+            <br><br>คุณแน่ใจใช่ไหมว่าต้องการลงชื่อออก?<br><br>
                 <form method="get" action="" >
-                    <label>
-                    <div class="btn-group2">
-                        <input type="text" name="key">
+                    <div class="btn-group">
+                        <input type="hidden" name="controller" value="user"/>
+                        <button class="button" type="submit" name="action" value="indexlogin"> ใช่ </button>
+                        <!-- <input type="hidden" name="controller" value="booking"/> -->
+                        <input type="hidden" name="userid" value="<?php echo $userid ;?>"/>
                         
-                        <input type="hidden" name="controller" value="maxperday"/>
-                        <input type="hidden" name="userid" value="<?php echo $userid?>"/>
-                    
-                        
-                        <button class="button" type="submit" name="action" value="search"> 
-                        <i class='fas fa-search' style='font-size: 24px'></i> </button>
-                    </label>    
+                        <button class="button" type="submit" name="action" value="index"> ไม่ </button>
                     </div>
                 </form>
-                
-                
-                
-               
-                 
-                
-                        
-                    
-                
+            </div>
 
-                <?php echo $userid?>
+        </div>
+        <div class="rightcolumn">
+                <div class="img">
+                    <img src="pic/Sanitizing mat-pana.png" width="500" height="500">
+                </div>
+            
+            
+        </div>
+
+            
+                
+                
+            
     </div>
-            <br>
+        
+</body>
 
-    <body>
-            
-        <div class="try1">
-            <h3> เพิ่มข้อมูล <a href="?controller=maxperday&action=newMaxperday&userid=<?php echo $userid?>"> คลิกที่นี่!!! </a> </h3>
-        </div>
-
-            
-            
-        <center>
-            <table border = 1 id="customers">
-                <tr> <th>โรงพยาบาล</th> 
-                <th>วันที่</th>
-                <th>เวลาเปิด-ปิดทำการ</th>
-                <th>จำนวนที่รับได้ต่อวัน</th>
-                <th>แก้ไข</th>
-                <th>ลบ</th></tr>
-                <?php foreach($maxperday_list as $m)
-            {
-
-                echo "<tr> <td>$m->H_name</td>
-                <td>$m->max_date</td>
-                <td>$m->max_topen - $m->max_tclose</td>
-                <td>$m->max_num</td>
-                <td align=center> <a href=?controller=maxperday&action=updateForm&max_id=$m->max_id&userid=$userid>
-                <i class='fas fa-edit' style='font-size: 24px;'></i></a></td>
-                <td align=center> <a href=?controller=maxperday&action=deleteConfirm&max_id=$m->max_id&userid=$userid>
-                <i class='fas fa-trash-alt' style='font-size: 24px;'></i></td>
-                </tr>";
-            }
-
-
-            echo "</table> "
-            ?>
-        </center>
-            
-
-        </div>
-    </body>
+    
+    
+ 
     
 </html>
 

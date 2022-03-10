@@ -135,7 +135,7 @@
     .card {
         text-align: center;
         font-family: 'Prompt', sans-serif;
-        /*font-size: 16px;*/
+        font-size: 20px;
        /* background-color: white;*/
         /*padding: 0px;*/
         margin-top: 10px;
@@ -205,17 +205,7 @@
              
                 <a href="?controller=user&action=indexAdmin&userid=<?php echo $userid?>" style="float:right">
                 <i class='fas fa-user-alt' style='font-size:24px'></i></a>
-                <form method="get" action="" >
-                    <div class="btn-group2">
-                        <input type="text" name="key" >
-                        
-                        <input type="hidden" name="controller" value="maxperday"/>
-                        <input type="hidden" name="userid" value="<?php echo $userid?>"/>
-                        
-                        <button class="button" type="submit" name="action" value="search"> 
-                        <i class='fas fa-search' style='font-size: 24px'></i> </button>
-                    </div>
-                </form>
+               
                 
     </div>
             
@@ -230,6 +220,10 @@
                     <div class="btn-group">
                         <input type="hidden" name="controller" value="user"/>
                         <button class="button" type="submit" name="action" value="indexlogin"> ใช่ </button>
+                        <!-- <input type="hidden" name="controller" value="maxperday"/> -->
+                        <input type="hidden" name="userid" value="<?php echo $userid ;?>"/>
+                        
+                        <button class="button" type="submit" name="action" value="index"> ไม่ </button>
                     </div>
                 </form>
             </div>
