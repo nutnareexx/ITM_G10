@@ -119,6 +119,7 @@
             color: black;
         }
 
+
         input[type=text], select {
             font-family: 'Prompt', sans-serif;
             width: 30%;
@@ -220,9 +221,17 @@
                     <div class="btn-group">
                         <input type="hidden" name="controller" value="user"/>
                         <button class="button" type="submit" name="action" value="indexlogin"> ใช่ </button>
-                        <!-- <input type="hidden" name="controller" value="maxperday"/> -->
-                        <input type="hidden" name="userid" value="<?php echo $userid ;?>"/>
+                        <!-- <input type="hidden" name="userid" value=""/>
+                        <input type="hidden" name="controller" value="maxperday"/> 
+                        <button class="button" type="submit" name="action" value="index"> ไม่ </button> -->
+                    </div>
+                </form>
+                <form method="get" action="" >
+                    <div class="btn-group">
+                        <!-- n class="button" type="submit" name="action" value="indexlogin"> ใช่ </button> -->
                         
+                        <input type="hidden" name="controller" value="maxperday"/> 
+                        <input type="hidden" name="userid" value="<?php echo $userid ;?>"/>
                         <button class="button" type="submit" name="action" value="index"> ไม่ </button>
                     </div>
                 </form>
