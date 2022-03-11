@@ -49,7 +49,6 @@ class bookingController
     }
 
     public function time(){
-        //$max_id = $_GET['max_id'];
         $userid = $_GET['userid'];
         $hid = $_GET['Hid'];
         
@@ -59,7 +58,7 @@ class bookingController
         $dmyList = maxModel::getd($hid);
         $timeList = perdayModel::get($hid,$d);
         $name = hospitalModel::get($hid);
-        //$booking = MaxperdayModel::get($max_id);
+        $countList = countModel::getsum();
         
         require_once('views/booking/timebook.php');
     }
