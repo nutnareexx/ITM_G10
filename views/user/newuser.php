@@ -167,6 +167,17 @@
                 box-sizing: border-box;
             
             }
+            input[type=email], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            
+            }
         </style>
   
 
@@ -204,11 +215,11 @@
                     <br>
                     <label> นามสกุล <input  type="text" name="usurname"/> </label>
                     <br>
-                    <label> วันเดือนปีเกิด <input  type="date" name="udob"/> </label>
+                    <label> วันเดือนปีเกิด (ex. 03/25/2022)<input  type="date" name="udob"/> </label>
                     <br>
                     <label> เบอร์โทรศัพท์ <input  type="text" name="uphone"/> </label>
                     <br>
-                    <label> E-mail <input  type="text" name="umail"/> </label>
+                    <label> E-mail <input  type="email" name="umail"/> </label>
                     <br>
                    
                     <div class="cardright">
