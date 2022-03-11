@@ -71,6 +71,7 @@
             }
         
         .btn-group .button {
+            font-family: 'Prompt', sans-serif;
             /*border-radius: 5%;*/
             position: relative;
             background-color: #0974ba ; /* Green */
@@ -96,6 +97,7 @@
         }
 
         .btn-group2 .button {
+            font-family: 'Prompt', sans-serif;
             /*border-radius: 5%;*/
             position: sticky ;
             background-color: #0974ba ; /* Green */
