@@ -208,6 +208,19 @@
             color: black;
         }
 
+         /* a:link, a:visited {
+            background-color: #f44336;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+         a:hover, a:active {
+            background-color: red;
+        } */
+
         
         
 
@@ -252,16 +265,52 @@
         
         <tr> 
             <th>เวลานัด</th>
-            <th>จำนวนที่รับได้ต่อวัน</th>
+            <th>จำนวนที่จองไปแล้ว / จำนวนที่รับได้ต่อวัน</th>
             <th>จอง</th>
         </tr>
-        <?php foreach($timeList as $t)
+        <?php 
+        
+        foreach($timeList as $t)
         {
+            $p=0;
+            $x=0;
             echo "<tr> 
         
-            <td>$t->start - $t->end</td>
-            <td>$t->num</td>
-            <td> <a href=?controller=booking&action=checkbook&max_id=$t->mid&userid=$userid> จอง </a></td>
+            <td>$t->start - $t->end</td>";
+            echo "<td>";
+            foreach($countList as $c){
+                if($c->mid == $t->mid){
+                    $p=1;
+                    echo $c->c." / ".$t->num;
+                    break;
+                }
+            }
+            if($p == 0){
+                echo "0 / ".$t->num ;
+            }
+            
+            echo"</td>";
+            
+            echo "<td>";
+            foreach($countList as $c){
+                if($c->mid == $t->mid){
+                    if($c->c == $t->num){
+                        $x=1;
+                        echo "<a  href=''>เต็ม</a>";
+                        break;
+                    }
+                    // else{
+                    //     $x=0;
+                    //     echo " <a  href=?controller=booking&action=checkbook&max_id=$t->mid&userid=$userid> จอง </a>" ; 
+                    // }
+
+                }
+            }
+            if($x == 0){
+                echo " <a  href=?controller=booking&action=checkbook&max_id=$t->mid&userid=$userid> จอง </a>" ;
+            }
+
+            echo "</td>
             </tr>";
         }
         echo "</table> ";
