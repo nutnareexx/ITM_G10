@@ -55,6 +55,7 @@
     <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
     <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
     <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+    <a href="?controller=history&action=index&userid=<?php echo $userid;?>"> ประวัติการจอง </a>
     <a href="?controller=user&action=logoutNurse&userid=<?php echo $userid?>" style="float:right">
                     <i class='fas fa-door-open' style='font-size:24px'></i></a>
     <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
