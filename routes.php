@@ -41,6 +41,8 @@ function call($controller,$action){
         case"user": require_once("models/userModel.php");
                     require_once("models/prenameModel.php");
                     require_once("models/loginModel.php");
+                    require_once("models/hospitalModel.php");
+                    require_once("models/maxperdayModel.php");
                     $controller = new userController();
         break;
 

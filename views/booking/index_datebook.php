@@ -38,7 +38,7 @@
         #customers {
             font-family: 'Prompt', sans-serif;
             border-collapse: collapse;
-            width: 80%;
+            width: 50%;
             
             }
 
@@ -48,17 +48,17 @@
             
             }
 
-        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        /*#customers tr:nth-child(even){background-color: #f2f2f2;}
 
-        #customers tr:hover {background-color: #ddd;}
+        #customers tr:hover {background-color: #ddd;}*/
 
-        #customers th {
+       /* #customers th {
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: center;
             background-color: #0974ba;
             color: white;
-            }
+            }*/
 
         .btn-group .button {
             /*border-radius: 5%;*/
@@ -177,6 +177,28 @@
             padding: 8px;
             
             }*/
+
+        #table2 {
+            font-family: 'Prompt', sans-serif;  
+            border-radius: 10px;
+            padding: 20px 20px 20px 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+         /* .table2 td {
+            padding: 8px;
+        } */
+
+        /* th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #0974ba;
+            color: white;
+        }  */
         
         #cus td:hover {
             background-color: #ddd;
@@ -228,10 +250,12 @@
 
             <div class="topnav">
             
-            <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
+
             <a href="?controller=booking&action=index&userid=<?php echo $userid;?>"> จองตรวจ RT-PCR </a>
             <a href="?controller=results&action=indexUser&userid=<?php echo $userid;?>"> ผลการตรวจ </a>
             <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid;?>"> โรงพยาบาล </a>
+            <a href="?controller=user&action=logoutUser&userid=<?php echo $userid?>" style="float:right">
+                    <i class='fas fa-door-open' style='font-size:24px'></i></a>
             <a href="?controller=user&action=index&userid=<?php echo $userid;?>" style="float:right">
             <i class='fas fa-user-alt' style='font-size:24px'></i></a>
 
@@ -245,6 +269,9 @@
     <div class="try2">
         <br>
         <h2><?php echo $name->H_name ;?></h2>
+        <h4>เวลาเปิด-ปิดทำการ : <?php echo "$name->H_time_open - $name->H_time_close";?></h4>
+        <h4>ราคาตรวจ RT-PCR : <?php echo "$name->H_price";?> บาท</h4> 
+        
     </div>
     
     <?php

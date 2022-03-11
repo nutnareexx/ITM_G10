@@ -120,10 +120,12 @@ class userController
             $loginList = loginModel::get($userid);
             if($loginList->pw == $pass){
                 if($loginList->permission == 'N'){
-                    require_once('views/pages/home_n.php');
+                    $maxperday_list = MaxperdayModel::getAll();
+                    require_once('views/max_per_day/index_maxperday.php');
                 }
                 else if($loginList->permission == 'G'){
-                    require_once('views/pages/home.php');
+                    $hospitalmodelList = hospitalModel::getAll();
+                    require_once('views/booking/index_booking.php');
                 }
                 
             }
