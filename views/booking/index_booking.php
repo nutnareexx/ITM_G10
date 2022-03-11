@@ -171,7 +171,7 @@
         <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
         <a href="?controller=user&action=logoutUser&userid=<?php echo $userid?>" style="float:right">
                     <i class='fas fa-door-open' style='font-size:24px'></i></a>
-        <a href="?controller=user&action=indexUser&userid=<?php echo $userid?>" style="float:right">
+        <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
             <i class='fas fa-user-alt' style='font-size:24px'></i></a>
         
             <form method="get" action="">
@@ -184,7 +184,7 @@
             </form> 
         </div>
 
-        <?php echo $userid?>
+        
     </div><br>
             
     
