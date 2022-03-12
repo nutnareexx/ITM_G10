@@ -59,6 +59,7 @@ function call($controller,$action){
                         require_once("models/perdayModel.php");
                         require_once("models/maxModel.php");
                         require_once("models/countModel.php");
+                        require_once("models/allBookingModel.php");
                     $controller = new bookingController();
         break;
 
