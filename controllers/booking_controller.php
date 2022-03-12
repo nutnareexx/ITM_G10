@@ -66,8 +66,9 @@ class bookingController
     public function addBooking(){
         $userid = $_GET['userid'];
         $maxid = $_GET['maxid'];
+        $allList = allBookingModel::get($userid);
         bookingModel::add($maxid,$userid);
-        require_once('views/pages/home.php');
+        require_once('views/history/index_history.php');
     }
     
 
