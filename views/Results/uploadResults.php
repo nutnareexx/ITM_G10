@@ -101,7 +101,7 @@
   <i class='fas fa-user-alt' style='font-size:24px'></i></a>
 
 </div>
-
+<br>
 
 <div class="card2 center">
   <form action="add_file_db.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
