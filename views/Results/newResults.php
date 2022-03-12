@@ -92,8 +92,7 @@
     <a href="?controller=user&action=indexAdmin&userid=<?php echo $userid?>" style="float:right">
     <i class='fas fa-user-alt' style='font-size:24px'></i></a>
 
-                <?php echo $userid?>
-</div>
+</div><br>
 
     <div class="card center">
         <form method="get" action="">
