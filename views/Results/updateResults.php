@@ -48,8 +48,8 @@
             font-family: 'Prompt', sans-serif;
             background-color: #f1f1f1;
             padding: 10px;
-            width: 100%;
-            
+            width: 50%;
+            border-radius: 10px;
         }
 
         .btn-group .button {
@@ -92,6 +92,9 @@
         .center {
             text-align: center;
             border: none;
+            margin: auto;
+            width: 60%;
+            padding: 10px;
             }
 
         table, td {
@@ -113,7 +116,7 @@
                 <?php echo $userid?>
 </div>            
 
-<div class="card">
+<div class="card center">
 
 
         <form method="get" action="">
