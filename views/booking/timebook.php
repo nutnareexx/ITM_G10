@@ -254,13 +254,16 @@
 
         </div>
         
-        <a href="?controller=booking&action=time&userid=<?php echo $userid;?>&Hid=<?php echo $name->Hid ;?>">try</a>
+        <!-- <a href="?controller=booking&action=time&userid=<?php echo $userid;?>&Hid=<?php echo $name->Hid ;?>">try</a> -->
 
 
     <div class="try2">
         <br>
         <h2><?php echo $name->H_name ;?></h2>
         <h3>วันที่ : <?php echo $s ;?></h3>
+        <h4>เวลาเปิด-ปิดทำการ : <?php echo "$name->H_time_open - $name->H_time_close";?></h4>
+        <h4>ราคาตรวจ RT-PCR : <?php echo "$name->H_price";?> บาท</h4> 
+        
     </div>
     
     <table  id="customers" align="center">
