@@ -14,27 +14,27 @@ class allBookingModel{
     public $phone;
     public $mail;
 
-    public function __construct($id,$bid,$uid,$d,$start,$end,$name,$hprice,$nt,$uname,$sname,$phone,$mail)
+    public function __construct($mid,$bid,$uid,$d,$start,$end,$hname,$hprice,$nt,$uname,$sname,$phone,$mail)
     {
-        $this->mid = $id;
+        $this->mid = $mid;
         $this->bid = $bid;
         $this->uid = $uid;
         $this->d = $d;
         $this->start = $start;
         $this->end = $end;
-        $this->hname = $name;
+        $this->hname = $hname;
         $this->hprice = $hprice;
-        $this->$nt = $nt;
-        $this->$uname = $uname;
-        $this->$sname = $sname;
-        $this->$phone = $phone;
-        $this->$mail = $mail;
+        $this->nt = $nt;
+        $this->uname = $uname;
+        $this->sname = $sname;
+        $this->phone = $phone;
+        $this->mail = $mail;
     }
 
     public static function get($uid){
         $allList = [];
         require("connection_connect.php");
-        $sql = "SELECT m.max_id,b.bid,b.user_id,nt.name_nt,u.user_name,u.user_surname,
+        $sql = "SELECT m.max_id,b.bid,b.user_id,nt.name_nt AS nt,u.user_name,u.user_surname,
         u.user_phone,u.user_mail,h.H_price,DATE_FORMAT(m.date,'%d/%m/%Y') AS d, 
         TIME_FORMAT(m.time_open,'%H:%i') AS s,TIME_FORMAT(m.time_close,'%H:%i') AS e,
         h.H_name FROM `booking` AS b NATURAL JOIN max_per_day AS m NATURAL JOIN hostpital AS h 
@@ -49,7 +49,7 @@ class allBookingModel{
             $end = $my_row['e'];
             $hname = $my_row['H_name'];
             $hprice = $my_row['H_price'];
-            $nt = $my_row['name_nt'];
+            $nt = $my_row['nt'];
             $uname = $my_row['user_name'];
             $sname = $my_row['user_surname'];
             $phone = $my_row['user_phone'];
