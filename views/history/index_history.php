@@ -135,6 +135,27 @@
             box-sizing: border-box;
             float: right;
         }
+
+        .card {
+        text-align: center;
+        font-family: 'Prompt', sans-serif;
+        font-size: 18px;
+       background-color: #f2f2f2;
+        /*padding: 0px;*/
+        margin-top: 10px;
+        /* margin-left: 100px; */
+        width: 50%;
+        border-radius: 10px;
+    }
+
+    .center {
+            text-align: center;
+            border: none;
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+
+            }
         
             
     </style>
@@ -151,12 +172,69 @@
                 <form method="get" action="">
                 <div class="btn-group2">
                 <input type="text" name="key">
-                    <input type="hidden" name="controller" value="hospital"/>
+                    <input type="hidden" name="controller" value="history"/>
                     <input type="hidden" name="userid" value="<?php echo $userid?>"/>
-                    <button class="button" type="submit" name="action" value="searchuser"> 
+                    <button class="button" type="submit" name="action" value="search"> 
                     <i class='fas fa-search' style='font-size: 24px'></i> </button>
                 </div>    
                 </form>
                 
             </div>
+          
+
+   
+        <?php foreach($allList as $al) {
+            echo "<br><br>
+            <div class='card center'>
+            <table align='center'>
+                <tr>
+                    <th align='right'>ชื่อโรงพยาบาล : </th>
+                    <td>$al->hname</td>
+                </tr>
+                <tr>
+                    <th align='right'>รหัสการจอง : </th>
+                    <td>$al->bid</td>
+                </tr>
+                <tr>
+                    <th align='right'>รหัสผู้จอง : </th>
+                    <td>$al->uid</td>
+                </tr>
+                <tr>
+                    <th align='right'>ชื่อผู้จอง : </th>
+                    <td>$al->nt$al->uname   $al->sname</td>
+                </tr>
+                <tr>
+                    <th align='right'>เบอร์ผู้จอง : </th>
+                    <td>$al->phone</td>
+                </tr>
+                <tr>
+                    <th align='right'>อีเมล์ผู้จอง : </th>
+                    <td>$al->mail</td>
+                </tr>
+                <tr>
+                    <th align='right'>เวลาในการจอง : </th>
+                    <td>$al->start - $al->end</td>
+                </tr>
+                <tr>
+                    <th align='right'>วันที่จอง : </th>
+                    <td>$al->d</td>
+                </tr>
+                
+                <tr>
+                    <th align='right'>ราคาการตรวจ RT-PCR : </th>
+                    <td>$al->hprice บาท</td>
+                </tr>
+            </table>
+            </div><br>
+            ";
+        }
+        
+        // echo "";
+
+    ?>
+
+
+
+
+   
 </html>
