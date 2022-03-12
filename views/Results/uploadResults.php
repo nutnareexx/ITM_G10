@@ -65,8 +65,8 @@
       font-family: 'Prompt', sans-serif;
       background-color: #f1f1f1;
       padding: 20px;
-      
-               
+      width: 50%;
+      border-radius: 10px;
     }
     input[type=file], select {
       font-family: 'Prompt', sans-serif;
@@ -78,6 +78,15 @@
       border-radius: 50px;
       box-sizing: border-box;
     }
+
+    .center {
+            text-align: center;
+            border: none;
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+
+            }
 
     
   </style>
@@ -95,7 +104,7 @@
 </div>
 
 
-<div class="card2">
+<div class="card2 center">
   <form action="add_file_db.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
     <center>
       <div class="btn-group">
