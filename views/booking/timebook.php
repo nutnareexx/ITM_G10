@@ -39,7 +39,7 @@
             font-family: 'Prompt', sans-serif;
             border-collapse: collapse;
             width: 80%;
-            
+            border-radius: 10px;
             }
 
         #customers td, #customers th {
@@ -170,6 +170,7 @@
             font-family: 'Prompt', sans-serif;
             border-collapse: collapse;
             width: 100%;
+            border-radius: 10px;
         }
         
         /*#cus tr  {

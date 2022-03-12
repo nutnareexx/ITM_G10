@@ -170,6 +170,7 @@
             font-family: 'Prompt', sans-serif;
             border-collapse: collapse;
             width: 100%;
+            border-radius: 10px;
         }
         
         /*#cus tr  {

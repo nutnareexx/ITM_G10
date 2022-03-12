@@ -60,7 +60,8 @@
                 background-color: #f1f1f1;
                 padding: 20px;
                 /*margin-top: 20px;*/
-               
+                border-radius: 10px;
+                width: 50%;
             }
 
         input[type=text], select {
@@ -95,6 +96,15 @@
             box-sizing: border-box;
         }
 
+        .center {
+            text-align: center;
+            border: none;
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+
+            }
+
     </style>
 
 <div class="topnav">
@@ -110,7 +120,7 @@
             </div>
             
 
-<div class="card2">
+<div class="card2 center">
     <form method="get" action = "">
     <table align="center">
         <tr>
