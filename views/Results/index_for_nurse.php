@@ -155,7 +155,6 @@
             </div>
         </form>
         
-        <?php echo $userid?>
 </div><br>
 
  <div class="center">
