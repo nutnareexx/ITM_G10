@@ -123,8 +123,7 @@
                 <tr>  
                 
                         <td align ="right">ลำดับที่ : </td>
-                        <td><label>  <input type="text" name="id" 
-                    value="<?php echo $resultss->id;?>"/></label></td>
+                        <td><label><?php echo $resultss->id;?></label></td>
                         
                         </tr>
                         <tr>
