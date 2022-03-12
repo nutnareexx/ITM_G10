@@ -82,8 +82,8 @@ class hospital
         $H_time_open = $_GET['H_time_open'];
         $H_time_close = $_GET['H_time_close'];
         $H_price = $_GET['H_price'];
-        $Hidnew = $_GET['Hidnew'];
-        hospitalModel::update($Hid,$H_name,$H_time_open,$H_time_close,$H_price,$Hidnew);
+        // $Hidnew = $_GET['Hidnew'];
+        hospitalModel::update($Hid,$H_name,$H_time_open,$H_time_close,$H_price);
         hospital::indexAdmin();
      }
 
