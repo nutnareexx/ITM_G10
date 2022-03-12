@@ -164,6 +164,7 @@
     <div class="topnav">
         <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
         <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
+        <a href="?controller=history&action=index&userid=<?php echo $userid;?>"> ประวัติการจอง </a>
         <a href="?controller=hospital&action=index"> โรงพยาบาล </a>
         
 
