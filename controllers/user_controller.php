@@ -47,7 +47,7 @@ class userController
         $check = 0;
 
         echo strlen($id);
-        if(strlen($id)>=3&&strlen($id)<=5){
+        // if(strlen($id)>=3&&strlen($id)<=5){
             foreach ($userList as $u){
                 if($u->uid==$id){
                     echo "".$u->uid. ", ".$id;
@@ -68,10 +68,10 @@ class userController
                 userModel::add($id,$preid,$name,$surname,$dob,$phone,$mail);
                 userController::newpassword($id);
             }
-        }
-        else{
-            echo "Under 3 or Upper 5";
-        }
+        // }
+        // else{
+        //     echo "Under 3 or Upper 5";
+        // }
         
 
         
@@ -104,6 +104,7 @@ class userController
 
     public function login(){
         $logList = loginModel::getAll();
+        $prenameList = prenameModel::getAll();
         $userid = $_GET['username'];
         $pass = $_GET['password'];
         $c = 0;
