@@ -85,11 +85,11 @@ class hospitalModel{
         return;
     }
     
-    public static function update($Hid,$H_name,$H_time_open,$H_time_close,$H_price,$Hidnew)
+    public static function update($Hid,$H_name,$H_time_open,$H_time_close,$H_price)
     {
         require("connection_connect.php");
-        $sql = "UPDATE `hostpital` SET `Hid`='$Hid',`H_name`='$H_name',
-        `H_time_open`='$H_time_open',`H_time_close`='$H_time_close',`H_price`='$H_price' WHERE Hid = '$Hidnew' ";
+        $sql = "UPDATE `hostpital` SET `H_name`='$H_name',
+        `H_time_open`='$H_time_open',`H_time_close`='$H_time_close',`H_price`='$H_price' WHERE Hid = '$Hid' ";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
