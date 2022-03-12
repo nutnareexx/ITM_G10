@@ -147,7 +147,6 @@
             <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
             <i class='fas fa-user-alt' style='font-size:24px'></i></a>
 
-            <?php echo $userid?>
 
         </div>
         <br>
