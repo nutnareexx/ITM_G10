@@ -10,6 +10,8 @@
             background-color: #f1f1f1;
             padding: 20px;
             /*margin-top: 20px;*/
+            width: 50%;
+            border-radius: 10px;
         }
 
         /* Style the top navigation bar */
@@ -75,6 +77,10 @@
         .center {
             text-align: center;
             border: none;
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+
             }
     </style>
 
@@ -91,6 +97,7 @@
 
         
     </div>
+    <br>
 
     <div class="card center">
         <div class="btn-group">
