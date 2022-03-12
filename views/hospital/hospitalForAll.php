@@ -118,6 +118,7 @@
     <div class="topnav">
         <a href="?controller=user&action=indexlogin"> จองตรวจ RT-PCR </a>
         <a href="?controller=user&action=indexlogin"> ผลการตรวจ </a>
+        <a href="?controller=user&action=indexlogin"> ประวัติการจอง </a>
         <a href="?controller=hospital&action=index"> โรงพยาบาล </a>
         
 
