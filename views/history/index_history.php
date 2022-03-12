@@ -170,9 +170,9 @@
                 <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
                 <i class='fas fa-user-alt' style='font-size:24px'></i></a>
                 <form method="get" action="">
-                    
+
                 <div class="btn-group2">
-                <input type="text" name="key">
+                    <input type="text" name="key">
                     <input type="hidden" name="controller" value="history"/>
                     <input type="hidden" name="userid" value="<?php echo $userid?>"/>
                     <button class="button" type="submit" name="action" value="search"> 
