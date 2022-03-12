@@ -187,14 +187,14 @@
             <th><b>ราคาตรวจ RT-PCR</th>
             <th><b>แก้ไข</th>
             <th><b>ลบ</th> </tr>
-            <?php foreach( $hospitalmodelList as $hospitallist)
+            <?php foreach( $hospitalmodelList as $h)
             {
-                echo "<tr> <td>$hospitallist->H_name</td>
-                <td>$hospitallist->H_time_open - $hospitallist->H_time_close</td>
-                <td>$hospitallist->H_price</td> 
-                <td align=center>  <a href=?controller=hospital&action=updateforms&Hid=$hospitallist->Hid&userid=$userid>
+                echo "<tr> <td>$h->H_name</td>
+                <td>$h->H_time_open - $h->H_time_close</td>
+                <td>$h->H_price</td> 
+                <td align=center>  <a href=?controller=hospital&action=updateforms&Hid=$h->Hid&userid=$userid>
                 <i class='fas fa-edit' style='font-size: 24px;'></i> </a> </td>
-                <td align=center>  <a href=?controller=hospital&action=deleteconfirm&Hid=$hospitallist->Hid&userid=$userid>
+                <td align=center>  <a href=?controller=hospital&action=deleteconfirm&Hid=$h->Hid&userid=$userid>
                 <i class='fas fa-trash-alt' style='font-size: 24px;'></i></a> </td></tr>";
             }
             echo "</table>";
