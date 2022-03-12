@@ -118,7 +118,7 @@
                 <i class='fas fa-user-alt' style='font-size:24px'></i></a>
 
             </div>
-
+            <br>
 <div class="card center" >
     <br>
     <b><?php echo "$m->H_name ";?> <br></b>
