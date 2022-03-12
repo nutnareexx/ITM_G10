@@ -159,7 +159,7 @@
                     <i class='fas fa-search' style='font-size: 24px'></i> </button>
                 </div>    
                 </form>
-                <?php echo $userid?>
+                
             </div>
             <br>
 
