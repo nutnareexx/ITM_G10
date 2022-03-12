@@ -68,9 +68,9 @@ class allBookingModel{
         TIME_FORMAT(m.time_open,'%H:%i') AS s,TIME_FORMAT(m.time_close,'%H:%i') AS e,h.H_name
         FROM `booking` AS b NATURAL JOIN max_per_day AS m NATURAL JOIN hostpital AS h NATURAL JOIN user AS u
         NATURAL JOIN names_title AS nt WHERE ( m.max_id LIKE '%$key%' OR b.bid LIKE '%$key%' 
-       OR b.user_id LIKE '%$key%' OR h.H_price LIKE '%$key%' OR m.date LIKE '%$key%' OR m.time_open LIKE '%$key%' OR
-        m.time_close LIKE '%key%' OR h.H_name LIKE '%key%' OR u.id_nt LIKE '%$key%' OR u.user_name LIKE '%$key%' OR 
-        u.user_surname LIKE '%$key%' OR u.user_phone LIKE '%$key%' OR u.user_mail LIKE '%$key%' OR nt.name_nt LIKE '%$key%')";
+        OR b.user_id LIKE '%$key%' OR h.H_price LIKE '%$key%' OR m.date LIKE '%$key%' OR m.time_open LIKE '%$key%' OR
+        m.time_close LIKE '%$key%' OR h.H_name LIKE '%$key%' OR u.id_nt LIKE '%$key%' OR u.user_name LIKE '%$key%' OR 
+        u.user_surname LIKE '%$key%' OR u.user_phone LIKE '%$key%' OR u.user_mail LIKE '%$key%' OR nt.name_nt LIKE '%$key%');";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
