@@ -200,15 +200,15 @@
                     <td>$al->uid</td>
                 </tr>
                 <tr>
-                    <th align='right'>ชื่อผู้จอง : </th>
+                    <th align='right'>ชื่อ : </th>
                     <td>$al->nt$al->uname   $al->sname</td>
                 </tr>
                 <tr>
-                    <th align='right'>เบอร์ผู้จอง : </th>
+                    <th align='right'>เบอร์โทรศัพท์ : </th>
                     <td>$al->phone</td>
                 </tr>
                 <tr>
-                    <th align='right'>อีเมล์ผู้จอง : </th>
+                    <th align='right'>อีเมล์ : </th>
                     <td>$al->mail</td>
                 </tr>
                 <tr>
