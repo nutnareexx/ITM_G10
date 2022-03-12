@@ -170,6 +170,7 @@
                 <a href="?controller=user&action=index&userid=<?php echo $userid?>" style="float:right">
                 <i class='fas fa-user-alt' style='font-size:24px'></i></a>
                 <form method="get" action="">
+                    
                 <div class="btn-group2">
                 <input type="text" name="key">
                     <input type="hidden" name="controller" value="history"/>
@@ -183,46 +184,46 @@
           
 
    
-        <?php foreach($allList as $al) {
+        <?php foreach($allList as $a) {
             echo "<br><br>
             <div class='card center'>
             <table align='center'>
                 <tr>
                     <th align='right'>ชื่อโรงพยาบาล : </th>
-                    <td>$al->hname</td>
+                    <td>$a->hname</td>
                 </tr>
                 <tr>
                     <th align='right'>รหัสการจอง : </th>
-                    <td>$al->bid</td>
+                    <td>$a->bid</td>
                 </tr>
                 <tr>
                     <th align='right'>รหัสผู้จอง : </th>
-                    <td>$al->uid</td>
+                    <td>$a->uid</td>
                 </tr>
                 <tr>
-                    <th align='right'>ชื่อ : </th>
-                    <td>$al->nt$al->uname   $al->sname</td>
+                    <th align='right'>ชื่อ-นามสกุล : </th>
+                    <td>$a->nt$a->uname   $a->sname</td>
                 </tr>
                 <tr>
                     <th align='right'>เบอร์โทรศัพท์ : </th>
-                    <td>$al->phone</td>
+                    <td>$a->phone</td>
                 </tr>
                 <tr>
                     <th align='right'>อีเมล์ : </th>
-                    <td>$al->mail</td>
+                    <td>$a->mail</td>
                 </tr>
                 <tr>
                     <th align='right'>เวลาในการจอง : </th>
-                    <td>$al->start - $al->end</td>
+                    <td>$a->start - $a->end</td>
                 </tr>
                 <tr>
                     <th align='right'>วันที่จอง : </th>
-                    <td>$al->d</td>
+                    <td>$a->d</td>
                 </tr>
                 
                 <tr>
                     <th align='right'>ราคาการตรวจ RT-PCR : </th>
-                    <td>$al->hprice บาท</td>
+                    <td>$a->hprice บาท</td>
                 </tr>
             </table>
             </div><br>
