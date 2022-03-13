@@ -47,6 +47,8 @@ function call($controller,$action){
         break;
 
         case"history": require_once("models/allBookingModel.php");
+                    require_once("models/dateModel.php");
+                    require_once("models/showallModel.php");
                     $controller = new historyController;
         break;
 
