@@ -189,7 +189,7 @@
     }
 
     html { 
-        background: url("pic/bg3.png") ; 
+        background: url("pic/o.jpg") ; 
         background-size: cover;
 
     }
