@@ -7,8 +7,8 @@
 
 <style>
     html { 
-        background: url("pic/bg3.png") ; 
-        background-size: cover;
+        background: url("pic/n.jpg") ;
+        background-size: 100% 100%;
 
     }
     img {
@@ -54,6 +54,7 @@
     }
 
     .btn-group .button {
+        font-family: 'Prompt', sans-serif;
         /*border-radius: 5%;*/
         position: relative;
         background-color: #0974ba ; /* Green */
@@ -82,9 +83,9 @@
     .card {
         text-align: left;
         font-family: 'Prompt', sans-serif;
-        /*font-size: 16px;*/
+        font-size: 18px;
        /* background-color: white;*/
-        /*padding: 0px;*/
+        padding: 40px;
         margin-top: 10px;
         margin-left: 100px;
         
@@ -92,11 +93,12 @@
 
     .card2 {
         font-family: 'Prompt', sans-serif;
-        background-color: #f1f1f1;
-        padding: 20px;
-        margin-top: 50px;
-        margin-left: auto;
-        margin-right: auto;
+        text-align: center;
+        /* background-color: #f1f1f1; */
+        /* padding: 20px; */
+        margin-top: 80px;
+        margin-left: 90px;
+        /* margin-right: auto; */
        
     }
 
@@ -154,6 +156,7 @@
     }
 
     .alert {
+        font-family: 'Prompt', sans-serif;
         padding: 15px;
         background-color: #f44336;
         color: white;
@@ -166,7 +169,7 @@
 <body>
     
 
-    <div class="topnav">
+    <!-- <div class="topnav">
         <a href="?controller=booking&action=index&userid=<?php echo $userid?>"> จองตรวจ RT-PCR </a>
         <a href="?controller=results&action=indexUser&userid=<?php echo $userid?>"> ผลการตรวจ </a>
         <a href="?controller=hospital&action=indexUser&userid=<?php echo $userid?>"> โรงพยาบาล </a>
@@ -174,7 +177,7 @@
             <i class='fas fa-user-alt' style='font-size:24px'></i></a>
 
        
-    </div>
+    </div> -->
 
     <div class='alert'>
                   
@@ -183,16 +186,20 @@
 
 <div class="row">
     <div class="leftcolumn">
+    
+    <div class="card2">
+        <h1>จองการตรวจ RT-PCR</h1>
+    </div>
             <div class="card">
                 <form method="get" action="">
                 <div class="btn-group" align="center"> 
                     <table>
                         <tr>
-                             <td align="right">เลขบัตรประชาชน</td>
+                             <td align="right">เลขบัตรประชาชน : </td>
                              <td> <label>  <input type="text"  name="username"/> </label></td>
                         </tr>
                         <tr>
-                            <td align="right">รหัสผ่าน</td>
+                            <td align="right">รหัสผ่าน : </td>
                             <td><label>  <input type="password" name="password"/> </label></td>
                         </tr>
                        
@@ -200,28 +207,29 @@
         <br>
                 
                     <input type="hidden" name="controller" value="user"/>
-                        <button class="button" type="submit" name="action" value="login" id="myBtn"> เข้าสู่ระบบ </button><br><br>
-                            <!--<button type="submit" class="btn">Login</button>-->
-                            <!--<button class="button" type="button" class="btn cancel" onclick="closeForm()">Close</button>-->
-                            สมัครสมาชิกใหม่ <?php echo "<a href=?controller=user&action=signin> SIGN UP </a> ";?>
+                    <button class="button" type="submit" name="action" value="login" id="myBtn"> เข้าสู่ระบบ </button><br><br>
+
+                            สมัครสมาชิกใหม่ <?php echo "<a href=?controller=user&action=signin> SIGN UP
+                            <i class='fas fa-sign-in-alt' style='font-size:18px'></i> </a> ";?>
                 </form>
                 </div>         
             </div>
     </div>    
 
     <div class="rightcolumn">
-        <div class="img">
+        
+        <!-- <div class="img">
             <img src="pic/amico.png" width="500" height="500">
         </div>
     </div>
 
-    <br><br>
-                <div class="card">
+    <br><br> -->
+                <!-- <div class="card">
                     username : 12345 password : 12345 General
                     <br>
                     username : 888 password : admin Admin
                     
-                </div>
+                </div> -->
 </div>                
                 <br><br>
     
