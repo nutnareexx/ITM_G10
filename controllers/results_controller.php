@@ -112,7 +112,7 @@ class ResultsController
             require_once('views/Results/waitForResult.php');
         }
         else{
-            $fileList = fileModel::get($resultsList->id);
+            $fileList = fileModel::get($userid);
             require_once('views/Results/index_for_user.php');
         }
         
