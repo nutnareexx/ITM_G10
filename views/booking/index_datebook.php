@@ -210,9 +210,9 @@
             background-color: #0974ba ; 
             border: 1px black;
             color: white;
-            width: 100%;
+            width: 90%;
             height: 100%;
-            /* padding: 10px; */
+            padding: 5px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -227,8 +227,8 @@
         }
 
         .button:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #80b0cf;
+            color: whitesmoke;
         }
 
         
