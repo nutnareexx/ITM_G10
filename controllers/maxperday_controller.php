@@ -57,7 +57,7 @@ class maxperdayController
         
          $max_num = $_GET['max_num'];
 
-        echo $userid."|".$Hid."|".$max_date;
+        
 
         if(isset($_GET['max_topen'])==1 && isset($_GET['max_tclose'])==1){
             $max_topen = $_GET['max_topen'];
@@ -136,7 +136,7 @@ class maxperdayController
         // echo $max_op_6."||".$max_cl_6."<br>" ;
         // $hospitalmodelList = hospitalModel::getAll();
         // MaxperdayModel::add($Hid,$max_date,$max_topen,$max_tclose,$max_num);
-        // maxperdayController::index();
+         maxperdayController::index();
         // maxperdayController::add2();
 
     }
