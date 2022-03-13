@@ -85,6 +85,7 @@
             cursor: pointer;
             /*float: center;*/
             border-radius: 50px;
+            width: 50%;
         }
 
         .btn-group .button:not(:last-child) {
@@ -188,8 +189,8 @@
     }
 
     html { 
-        background: url("pic/bg3.png") ; 
-        background-size: cover;
+        background: url("pic/o.jpg") ; 
+        background-size: 100% 100%;
 
     }
     
@@ -234,13 +235,13 @@
             </div>
 
         </div>
-        <div class="rightcolumn">
+        <!-- <div class="rightcolumn">
                 <div class="img">
                     <img src="pic/Sanitizing mat-pana.png" width="500" height="500">
                 </div>
             
             
-        </div>
+        </div> -->
 
             
                 
