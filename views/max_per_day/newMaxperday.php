@@ -121,11 +121,12 @@
             
             <br>
 <div class="card2 center">
+    <!-- <form action="<?=$_SERVER['PHP_SELF'];?>" method="GET"> -->
     <form method="get" action = "">
     <table align="center">
         <tr>
             <td align="right">โรงพยาบาล : </td>
-            <td><label> <select name="H_name">
+            <td><label> <select name="Hid">
             <option value=""> เลือกโรงพยาบาล </option>
             <?php foreach($hospitalmodelList as $hos) {echo "<option value = $hos->Hid>$hos->H_name</option>";}?>
             </select>
@@ -135,48 +136,21 @@
             <td align="right">วันที่ : </td>
             <td><label> <input type = "date" name = "max_date" /> </label></td>
         </tr>
+        <!-- > -->
+        <tr>
+            <td>รูปแบบเวลา</td>
+            <td>
+                
+                <input type="radio" id="html" name="s" value="fix">
+                <label for="html"> HTML </label>
+                <input type="radio" id="css" name="s" value="your">
+                <label for="css"> CSS </label>
+                
+            
+            </td>
+        </tr>
         
-        <tr>
-            <td align="right"><input type="checkbox" name="select-all" id="select-all" /></td>
-            <td><label for="select-all"> ALL </label> </td><br>
-        </tr>
-        <tr>
-            <td align="right"><input type="checkbox" name="checkbox-1" id="checkbox-1" value="08:30-09:30"/></td>
-            <td><label for="checkbox-1"> 08:30 - 09:30</label> </td>
-        </tr>
-
-        <tr>
-            <td align="right"><input type="checkbox" name="checkbox-2" id="checkbox-2" value="09:30-10:30"/></td>
-            <td><label for="checkbox-2"> 09:30 - 10:30 </label> </td>
-        </tr>
-        <tr>
-            <td align="right"><input type="checkbox" name="checkbox-3" id="checkbox-3" value="10:30-11:30"/></td>
-            <td><label for="checkbox-3"> 10:30 - 11:30 </label></td>
-        </tr>
-        <tr>
-            <td align="right"><input type="checkbox" name="checkbox-4" id="checkbox-4" value="13:00-14:00"/></td>
-            <td><label for="checkbox-4"> 13:00 - 14:00 </label></td> 
-        </tr>
-        <tr>
-            <td align="right"><input type="checkbox" name="checkbox-5" id="checkbox-5" value="14:00-15:00"/></td>
-            <td><label for="checkbox-3"> 14:00 - 15:00 </label></td> 
-        </tr>
-        <tr>
-            <td align="right"><input type="checkbox" name="checkbox-6" id="checkbox-6" value="15:00-16:00"/></td>
-            <td><label for="checkbox-3"> 15:00 - 16:00 </label></td> 
-        </tr>
-        <!-- <tr>
-            <td align="right">เวลาเปิดทำการ : </td>
-            <td><label>  <input type = "time" name = "max_topen" /> </label></td>
-        </tr>
-        <tr>
-            <td align="right">เวลาปิดทำการ : </td>
-            <td><label>  <input type = "time" name = "max_tclose" /> </label></td>
-        </tr> -->
-        <tr>
-            <td align="right">จำนวนที่รับ : </td>
-            <td><label>  <input type = "text" name = "max_num" /> </label></td>
-        </tr>
+       
         
     </table>
         
@@ -184,8 +158,8 @@
         <div class="btn-group" align="center">
         <input type="hidden" name="controller" value="maxperday"/>
         <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-        <button class="button" type="submit" name="action" value="index">กลับ</button>
-        <button class="button" type="submit" name="action" value="addMaxperday">บันทึก</button>
+        <button class="button" type="submit" name="action" value="index"> กลับ </button>
+        <button class="button" type="submit" name="action" value="add2"> ต่อไป </button>
         </div>
 
     </form>
