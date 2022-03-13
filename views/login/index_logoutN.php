@@ -200,7 +200,7 @@
     </style>
    
 
-    <div class="topnav">
+    <!-- <div class="topnav">
                 <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
                 <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
                 <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
@@ -212,7 +212,7 @@
                 <i class='fas fa-user-alt' style='font-size:24px'></i></a>
                
                 
-    </div>
+    </div> -->
             
 
 <body>
@@ -220,6 +220,7 @@
     <div class="row">
         <div class="leftcolumn">
             <div class="card" align="center">
+                <h1>ลงชื่อออก</h1>
             <br><br>คุณแน่ใจใช่ไหมว่าต้องการลงชื่อออก?<br><br>
                 <form method="get" action="" >
                     <div class="btn-group">
