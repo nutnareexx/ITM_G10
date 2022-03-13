@@ -43,12 +43,9 @@ class bookingController
     {
         $max_id = $_GET['max_id'];
         $userid = $_GET['userid'];
-<<<<<<< Updated upstream
         //$id = $_GET['Hid'];
         
-=======
 
->>>>>>> Stashed changes
         $booking = MaxperdayModel::get($max_id);
         require_once('views/booking/checkbook.php');
     }
@@ -59,11 +56,8 @@ class bookingController
         
         $d = $_GET['post'];
         $s = $_GET['show'];
-<<<<<<< Updated upstream
         
-=======
   
->>>>>>> Stashed changes
         $dmyList = maxModel::getd($hid);
         $timeList = perdayModel::get($hid,$d);
         $name = hospitalModel::get($hid);
