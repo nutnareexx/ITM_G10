@@ -50,8 +50,8 @@ class userController
          if(strlen($id)==13){
             foreach ($userList as $u){
                 if($u->uid==$id){
-                    // echo "".$u->uid. ", ".$id;
-                    // echo " have user ";
+                    echo "".$u->uid. ", ".$id;
+                    echo " have user ";
                     $check = 1;
                     break;
                 }
@@ -64,13 +64,17 @@ class userController
                 userController::error();
             }
             else{
-                // echo " suceess ";
                 userModel::add($id,$preid,$name,$surname,$dob,$phone,$mail);
                 userController::newpassword($id);
             }
         }
         else{
-            echo "Under 3 or Upper 5";
+            echo "<script type='text/javascript'>";
+            echo "alert('เลขบัตรประชาชนไม่ถูกต้อง');";
+            echo "window.location.assign('http://localhost/ITM_G10/index.php?controller=user&action=signin');";
+
+            echo "</script>";
+
         }
         
 
@@ -97,7 +101,11 @@ class userController
             require_once('views/login/index_login.php');
         }
         else{
-            echo "- Password Don't Match -";
+            // echo "<script type='text/javascript'>";
+            // echo "alert('เลขบัตรประชาชนไม่ถูกต้อง');";
+            // echo "window.location.assign('http://localhost/ITM_G10/index.php?uid=$id&preid=$preid&uname=$name&usurname=$surname&udob=$dob&uphone=$phone&umail=$mail&controller=user&action=adduser');";
+
+            // echo "</script>";
             require_once('views/login/newlogin.php');
         }
     }
@@ -145,6 +153,7 @@ class userController
             
         }
         if($c == 0){
+            echo "<br> DON'T HAVE";
             //userController::indexlogin();
             echo "<script type='text/javascript'>";
             echo "window.onload = function () {";
