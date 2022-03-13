@@ -46,14 +46,6 @@
             text-align: center;
             }
 
-        #customers tr:nth-child(odd){
-            background-color: #f2f2f2;
-        }
-
-        #customers tr:nth-child(even){
-            background-color: white;
-        }
-
         #customers tr:hover {
             background-color: #80b0cf;
         }
