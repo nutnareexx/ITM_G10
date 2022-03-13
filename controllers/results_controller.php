@@ -108,9 +108,16 @@ class ResultsController
     {
         $userid = $_GET['userid'];
         $resultsList = Results::get($userid);
-        $fileList = fileModel::get($resultsList->id);
+        if($resultsList->id==null){
+            require_once('views/Results/waitForResult.php');
+        }
+        else{
+            $fileList = fileModel::get($resultsList->id);
+            require_once('views/Results/index_for_user.php');
+        }
+        
         //require_once('views/Results/index_for_nurse.php');
-        require_once('views/Results/index_for_user.php');
+        // require_once('views/Results/index_for_user.php');
     } 
 
     public function download()
