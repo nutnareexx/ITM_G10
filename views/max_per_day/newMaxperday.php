@@ -142,9 +142,9 @@
             <td>
                 
                 <input type="radio" id="html" name="s" value="fix">
-                <label for="html"> HTML </label>
+                <label for="html"> เวลาที่กำหนดไว้ </label><br>
                 <input type="radio" id="css" name="s" value="your">
-                <label for="css"> CSS </label>
+                <label for="css"> กำหนดเวลาด้วยตนเอง </label>
                 
             
             </td>
