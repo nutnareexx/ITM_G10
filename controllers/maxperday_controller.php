@@ -39,22 +39,38 @@ class maxperdayController
         $hospitalmodelList = hospitalModel::getAll();
         require_once('views/max_per_day/newMaxperday.php');
     }
+    public function add2(){
+        $userid = $_GET['userid'];
+        $hid = $_GET['Hid'];
+        $max_date = $_GET['max_date'];
+        $ty = $_GET['s'];
+         $hList = hospitalModel::get($hid);
+         require_once('views/max_per_day/newmaxperday2.php');
+    }
 
     public function addMaxperday()
     {
         $userid = $_GET['userid'];
         //$max_id = $_GET['max_id'];
-        $Hid = $_GET['H_name'];
+        $Hid = $_GET['Hid'];
         $max_date = $_GET['max_date'];
-        // $max_topen = $_GET['max_topen'];
-        // $max_tclose = $_GET['max_tclose'];
-        $max_num = $_GET['max_num'];
+        
+         $max_num = $_GET['max_num'];
+
+        echo $userid."|".$Hid."|".$max_date;
+
+        if(isset($_GET['max_topen'])==1 && isset($_GET['max_tclose'])==1){
+            $max_topen = $_GET['max_topen'];
+            $max_tclose = $_GET['max_tclose'];
+            MaxperdayModel::add($Hid,$max_date,$max_topen,$max_tclose,$max_num);
+        }
         
         if(isset($_GET['checkbox-1'])){
             $one = $_GET['checkbox-1'];
             $max_op_1 = substr($one,0,5);
             $max_cl_1 = substr($one,6,5);
-            MaxperdayModel::add($Hid,$max_date,$max_op_1,$max_cl_1,$max_num);
+            
+             MaxperdayModel::add($Hid,$max_date,$max_op_1,$max_cl_1,$max_num);
         }else{
             $one =0;
         }
@@ -118,9 +134,10 @@ class maxperdayController
         // echo $max_op_4."||".$max_cl_4."<br>" ;
         // echo $max_op_5."||".$max_cl_5."<br>" ;
         // echo $max_op_6."||".$max_cl_6."<br>" ;
-        $hospitalmodelList = hospitalModel::getAll();
+        // $hospitalmodelList = hospitalModel::getAll();
         // MaxperdayModel::add($Hid,$max_date,$max_topen,$max_tclose,$max_num);
-        maxperdayController::index();
+        // maxperdayController::index();
+        // maxperdayController::add2();
 
     }
 
