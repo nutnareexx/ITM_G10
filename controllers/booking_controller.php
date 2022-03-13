@@ -43,7 +43,7 @@ class bookingController
     {
         $max_id = $_GET['max_id'];
         $userid = $_GET['userid'];
-        //$id = $_GET['Hid'];
+        
         
 
         $booking = MaxperdayModel::get($max_id);
@@ -66,11 +66,17 @@ class bookingController
         require_once('views/booking/timebook.php');
     }
 
-    public function addBooking(){
+    public function addBooking()
+    {
         $userid = $_GET['userid'];
         $maxid = $_GET['maxid'];
         $allList = allBookingModel::get($userid);
         bookingModel::add($maxid,$userid);
+        bookingController::history();
+    }
+    public function history(){
+        $userid = $_GET['userid'];
+        $allList = allBookingModel::get($userid);
         require_once('views/history/index_history.php');
     }
     
