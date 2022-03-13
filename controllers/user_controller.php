@@ -46,12 +46,12 @@ class userController
         $mail = $_GET['umail'];
         $check = 0;
 
-        echo strlen($id);
+        // echo strlen($id);
         // if(strlen($id)>=3&&strlen($id)<=5){
             foreach ($userList as $u){
                 if($u->uid==$id){
-                    echo "".$u->uid. ", ".$id;
-                    echo " have user ";
+                    // echo "".$u->uid. ", ".$id;
+                    // echo " have user ";
                     $check = 1;
                     break;
                 }
@@ -64,7 +64,7 @@ class userController
                 userController::error();
             }
             else{
-                echo " suceess ";
+                // echo " suceess ";
                 userModel::add($id,$preid,$name,$surname,$dob,$phone,$mail);
                 userController::newpassword($id);
             }
@@ -145,7 +145,6 @@ class userController
             
         }
         if($c == 0){
-            echo "<br> DON'T HAVE";
             //userController::indexlogin();
             echo "<script type='text/javascript'>";
             echo "window.onload = function () {";
