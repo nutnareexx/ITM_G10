@@ -154,58 +154,23 @@
             
                 <table border=1 id="customers" align="center">
                 <tr> 
-                        <!--<th>ลำดับที่</th>
-                        <th>เลขบัตรประชาชน</th>
-                        <th>คำนำหน้า</th>
-                        <th>ชื่อ</td>
-                        <th>นามสกุล</th>
-                        <th>เบอร์โทรศัพท์</th>
-                        <th>อีเมลล์</th>-->
                         <th><b>โรงพยาบาล</th>
                         <th><b>ผลการตรวจ</th>
                         <th><b>ดาวน์โหลด</th>
                         </tr>
-                    <?php
+
+                    <?php foreach($fileList as $r)
                     {
                         echo "<tr> 
                         
-                        <td>$resultsList->hname</td>
-                        <td>$resultsList->rs</td>
-                        <td> <a href='up/$fileList->fname'> $fileList->fname </a>  </td>
+                        <td>$r->hname</td>
+                        <td>$r->re</td>
+                        <td> <a href='up/$r->fname'> $r->fname </a>  </td>
                         </tr>";
                     }
                     echo "</table> "
                     ?> 
-                <!--<form method="get" action="">
-                    <div class="btn-group">
-                        <input type="hidden" name="controller" value="user"/>
-                        <input type="hidden" name="userid" value="<?php echo $resultsList->uid?>"/>
-                        <button class="button" type="submit" name="action" value="indexuser">Back</button>
-                        </div>
-                </form> -->    
-          
-            
-        <!--</div>-->
-        
-        <!--<div class="rightcolumn">
-            <div class="circle">
-                <img src="pic/account.png" width="150" height="150">
-            </div>
-
-            <div class="card3">
-                <?php echo "
-                <br>
-                เลขบัตรประชาชน : $resultsList->uid
-                <br><br>
-                ชื่อ-นามสกุล : $resultsList->pname$resultsList->name   $resultsList->sname
-                <br><br>
-                เบอร์โทรศัพท์ : $resultsList->phone
-                <br><br>
-                E-mail : $resultsList->mail"
-                ?>
-            </div>
-            
-        </div>-->
+                
             
     </div>
     
