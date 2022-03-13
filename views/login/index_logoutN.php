@@ -136,12 +136,12 @@
             float: right;
         }
 
-    .card {
+        card {
         text-align: center;
         font-family: 'Prompt', sans-serif;
-        font-size: 20px;
+        font-size: 18px;
        /* background-color: white;*/
-        /*padding: 0px;*/
+        padding: 40px;
         margin-top: 10px;
         margin-left: 100px;
         
@@ -149,11 +149,12 @@
 
     .card2 {
         font-family: 'Prompt', sans-serif;
-        background-color: #f1f1f1;
-        padding: 20px;
-        margin-top: 50px;
-        margin-left: auto;
-        margin-right: auto;
+        text-align: center;
+        /* background-color: #f1f1f1; */
+        /* padding: 20px; */
+        margin-top: 80px;
+        margin-left: 10px;
+        /* margin-right: auto; */
        
     }
 
@@ -219,9 +220,13 @@
 
     <div class="row">
         <div class="leftcolumn">
+        
+        <div class="card2">
+            <h1>ลงชื่อออก</h1>
+        </div>
             <div class="card" align="center">
-                <h1>ลงชื่อออก</h1>
-            <br><br>คุณแน่ใจใช่ไหมว่าต้องการลงชื่อออก?<br><br>
+            
+            คุณแน่ใจใช่ไหมว่าต้องการลงชื่อออก?<br><br>
                 <form method="get" action="" >
                     <div class="btn-group">
                         <input type="hidden" name="controller" value="user"/>
