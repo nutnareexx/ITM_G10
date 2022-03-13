@@ -146,19 +146,7 @@
                         </tr>
                         <tr>
                             <td align ="right">โรงพยาบาล : </td>
-                            <td>
-                                    <label> <select name="hid">
-                            <?php foreach($h_List as $h)
-                            {
-                                echo "<option value= $h->Hid";
-                                if($h->Hid==$resultss->hid) 
-                                {
-                                    echo " selected='selected'";
-                                }
-                                echo "> $h->H_name</option>";
-                            }?>
-                            </select></label>
-                            </td>
+                            <td><?php echo "$resultss->hname";?></td>
                         </tr>
                         <tr>
                             <td align ="right">ผลการตรวจ : </td>
@@ -172,6 +160,7 @@
             <br><input type="hidden" name="controller" value="results"/>
             <input type="hidden" name="id" value="<?php echo $resultss->id;?>"/>
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+            <input type="hidden" name="hid" value="<?php echo $resultss->hid;?>"/>
             <button class="button" type="submit" name="action" value="indexNurse"> กลับ </button>
             <button class="button" type="submit" name="action" value="updateNurse"> บันทึก </button>
            
