@@ -152,7 +152,6 @@
                 <input type="hidden" name="max_id" value="<?php echo $m->max_id;?>"/>
                 <input type="hidden" name="Hid" value="<?php echo $m->Hid;?>"/>
                 <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-                <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
                 <button class="button" type="submit" name="action" value="indexNurse">กลับ</button>
                 <button class="button" type="submit" name="action" value="update"> บันทึก </button>
         </div>
