@@ -141,6 +141,7 @@
         <a href="?controller=maxperday&action=index&userid=<?php echo $userid?>"> วันเวลาที่รับตรวจ </a>
         <a href="?controller=results&action=indexNurse&userid=<?php echo $userid?>"> ผลการตรวจ </a>
         <a href="?controller=hospital&action=indexAdmin&userid=<?php echo $userid?>"> โรงพยาบาล </a>
+        <a href="?controller=history&action=indexNurse&userid=<?php echo $userid?>"> รายชื่อผู้จอง </a>
         <a href="?controller=user&action=logoutNurse&userid=<?php echo $userid?>" style="float:right">
                     <i class='fas fa-door-open' style='font-size:24px'></i></a>
         <a href="?controller=user&action=indexAdmin&userid=<?php echo $userid?>" style="float:right">
