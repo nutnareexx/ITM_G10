@@ -133,7 +133,7 @@
         <br>
         <div class="btn-group" align ="center">
             <input type="hidden" name="controller" value="hospital"/>
-            <!-- <input type="hidden" name="Hidnew" value="<?php echo $hospitalmodels->Hid;?>"/> -->
+            <input type="hidden" name="Hid" value="<?php echo $hospitalmodels->Hid;?>"/>
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
             <button class="button" type="submit" name="action" value="indexAdmin"> กลับ </button>
             <button class="button" type="submit" name="action" value="update"> บันทึก </button>
