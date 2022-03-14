@@ -155,6 +155,7 @@
                 <table border=1 id="customers" align="center">
                 <tr> 
                         <th><b>โรงพยาบาล</th>
+                        <th><b>วันที่ผลออก</th>
                         <th><b>ผลการตรวจ</th>
                         <th><b>ดาวน์โหลด</th>
                         </tr>
@@ -164,6 +165,7 @@
                         echo "<tr> 
                         
                         <td>$r->hname</td>
+                        <td>$r->fdate</td>
                         <td>$r->re</td>
                         <td> <a href='up/$r->fname'> $r->fname </a>  </td>
                         </tr>";
